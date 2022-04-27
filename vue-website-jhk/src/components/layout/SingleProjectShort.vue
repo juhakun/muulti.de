@@ -10,7 +10,7 @@
         </div>
       </td>
       <td style="vertical-align: top">
-        <h2>{{ projectName }}</h2>
+        <h2>{{ projectName.toUpperCase() }}</h2>
         <p>{{ projectDes }}</p>
       </td>
     </tr>

@@ -3,14 +3,14 @@
     <header-de-eng></header-de-eng>
     <header-logo></header-logo>
     <base-navigation></base-navigation>
-    <overview-projects></overview-projects>
+    <the-projects></the-projects>
   </div>
 </template>
 
 <script>
-import OverviewProjects from "./components/layout/OverviewProjects.vue";
+import TheProjects from "./components/TheProjects.vue";
 export default {
-  components: { OverviewProjects },
+  components: { TheProjects },
 };
 </script>
 

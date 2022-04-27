@@ -1,16 +1,16 @@
 <template>
   <div id="nav">
-    <base-button @click="setSelectedTab('de-home')">Home</base-button>
-    <base-button @click="setSelectedTab('de-software')">Software</base-button>
-    <base-button @click="setSelectedTab('de-exhibit')"
+    <base-button @click="setCategory('de-home')">Home</base-button>
+    <base-button @click="setCategory('de-software')">Software</base-button>
+    <base-button @click="setCategory('de-exhibit')"
       >Exhibition / Interior</base-button
     >
-    <base-button @click="setSelectedTab('de-graphics')">Graphics</base-button>
-    <base-button @click="setSelectedTab('de-management')"
+    <base-button @click="setCategory('de-graphics')">Graphics</base-button>
+    <base-button @click="setCategory('de-management')"
       >Design Management</base-button
     >
-    <base-button @click="setSelectedTab('de-abaout')">About</base-button>
-    <base-button @click="setSelectedTab('de-contact')">Contact</base-button>
+    <base-button @click="setCategory('de-about')">About</base-button>
+    <base-button @click="setCategory('de-contact')">Contact</base-button>
   </div>
 </template>
 
@@ -18,12 +18,17 @@
 export default {
   data() {
     return {
-      selectedTab: "de-home",
+      selectedCategory: "de-home",
+    };
+  },
+  provide() {
+    return {
+      category: this.selectedCategory,
     };
   },
   methods: {
-    setSelectedTab(tab) {
-      this.selectedTab = tab;
+    setCategory(category) {
+      this.selectedCategory = category;
     },
   },
 };
