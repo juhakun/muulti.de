@@ -17,8 +17,11 @@
     <tr>
       <td></td>
       <td>
-        <base-button style="float: right" mode="de-eng"
-          ><single-project-long></single-project-long>mehr</base-button
+        <base-button
+          @click="$emit('details-wanted', true)"
+          style="float: right"
+          mode="de-eng"
+          >mehr</base-button
         >
       </td>
     </tr>
@@ -26,12 +29,26 @@
 </template>
 
 <script>
-import SingleProjectLong from "./SingleProjectLong.vue";
+// import SingleProjectLong from "./SingleProjectLong.vue";
 export default {
-  components: { SingleProjectLong },
+  //   components: { SingleProjectLong },
   props: ["projectName", "projectDes", "projectImgSrc"],
   data() {
     return {};
+  },
+  provide() {
+    return {
+      openProjectDetails: this.openProjectDetails,
+    };
+  },
+  methods: {
+    // setOpenProjectDetails() {
+    //   this.detailsWanted = true;
+    //   console.log(this.detailsWanted);
+    // },
+    // statusOpenProjectDetails() {
+    //   this.$emit("details-wanted", this.detailsWanted);
+    // },
   },
 };
 </script>

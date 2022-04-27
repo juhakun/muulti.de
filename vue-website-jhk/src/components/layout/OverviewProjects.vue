@@ -1,11 +1,15 @@
 <template>
   <div class="content">
+    <!-- <keep-alive
+      ><component :is="selectedTab" v-bind="properties"></component>
+    </keep-alive> -->
     <single-project-short
       v-for="project in filteredProjects"
       :key="project.id"
       :projectName="project.name"
       :projectDes="project.description"
       :projectImgSrc="project.img"
+      @details-wanted="$emit('details-wanted2', true)"
     ></single-project-short>
   </div>
 </template>
@@ -13,12 +17,14 @@
 <script>
 import SingleProjectShort from "./SingleProjectShort.vue";
 export default {
+  emits: ["details-wanted"],
   props: ["filteredProjects"],
   components: {
     SingleProjectShort,
   },
   data() {
     return {
+      detailsWanted: false,
       //   projects: [
       //     {
       //       id: "01",
@@ -43,6 +49,31 @@ export default {
       //     },
       //   ],
     };
+  },
+  computed: {
+    // properties: {
+    //   function() {
+    //     if (this.selectedTab === "single-project-short") {
+    //       for (var i = 0; i < this.filteredProjects.length; i++) {
+    //         return {
+    //           key: "project.id",
+    //           projectName: "project.name",
+    //           projectDes: "project.description",
+    //           projectImgSrc: "project.img",
+    //         };
+    //       }
+    //     }
+    //   },
+    // },
+  },
+  methods: {
+    setDetailStatus(details) {
+      this.detailsWanted = details;
+      console.log(this.detailsWanted);
+    },
+    statusOpenProjectDetails() {
+      this.$emit("details-wanted", this.detailsWanted);
+    },
   },
 };
 </script>

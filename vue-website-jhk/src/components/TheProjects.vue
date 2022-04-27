@@ -1,18 +1,36 @@
 <template>
   <header>
     <base-navigation @filter-category="filterProjects"></base-navigation>
-    <overview-projects :filteredProjects="filteredProjects"></overview-projects>
+    <OverviewProjects
+      v-if="detailsWanted === false"
+      :filteredProjects="filteredProjects"
+      @details-wanted2="setDetailStatus"
+    ></OverviewProjects>
+    <SingleProjectLong v-if="detailsWanted === true"></SingleProjectLong>
+    <!-- <overview-projects
+      :v-if="detailsWanted === 'false'"
+      :filteredProjects="filteredProjects"
+      @details-wanted="setDetailStatus"
+    ></overview-projects>
+    <single-project-long v-if="detailsWanted === true"></single-project-long> -->
   </header>
 </template>
 
 <script>
 import BaseNavigation from "./UI/BaseNavigation.vue";
 import OverviewProjects from "./layout/OverviewProjects.vue";
+import SingleProjectLong from "./layout/SingleProjectLong.vue";
 export default {
-  emits: ["filter-category"],
-  components: { OverviewProjects, BaseNavigation },
+  emits: ["filter-category", "details-wanted2"],
+  components: {
+    OverviewProjects,
+    BaseNavigation,
+    SingleProjectLong,
+  },
   data() {
     return {
+      detailsWanted: false,
+      component: "overview-projects",
       projects: [
         {
           id: "01",
@@ -70,13 +88,37 @@ export default {
       ],
     };
   },
+  computed: {},
+
+  // properties: {
+  //   function() {
+  //     if (this.openProjectDetails === "true") {
+  //       return {
+  //         filteredProjects: "filteredProjects",
+  //       };
+  //     } else {
+  //       return 0;
+  //     }
+  //   },
+  // },
 
   methods: {
+    userComponent() {
+      if (this.detailsWanted === false) {
+        return { OverviewProjects };
+      } else {
+        return { SingleProjectLong };
+      }
+    },
     filterProjects(cat) {
       this.filteredProjects = this.projects.filter(
         (proj) => proj.category === cat
       );
       console.log(this.filteredProjects);
+    },
+    setDetailStatus(details) {
+      this.detailsWanted = details;
+      console.log(this.detailsWanted);
     },
   },
 };
