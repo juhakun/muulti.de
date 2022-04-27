@@ -2,12 +2,15 @@
   <div>
     <header-de-eng></header-de-eng>
     <header-logo></header-logo>
+    <base-navigation></base-navigation>
+    <overview-tab-content></overview-tab-content>
   </div>
 </template>
 
 <script>
+import OverviewTabContent from "./components/layout/OverviewTabContent.vue";
 export default {
-  components: {},
+  components: { OverviewTabContent },
 };
 </script>
 
@@ -18,9 +21,21 @@ a:visited {
   text-decoration: none;
 }
 
-a:hover,
-a:active,
-a:focus {
+button {
+  padding: 0.2rem 1.5rem;
+  font-family: arial;
+  font-size: 12pt;
+  color: gray;
+  background-color: white;
+  border: 1px solid #3a0061;
+  border: 0px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover,
+button:active,
+button:focus {
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -29,27 +44,23 @@ a:focus {
 div {
   padding: 0.5rem;
   margin: auto;
-  max-width: 1200px;
-  min-width: 480px;
+  max-width: 1000px;
+  min-width: 600px;
 }
 
-#nr3 {
-  position: relative;
-  top: 55px;
-  left: 0px;
-  border-bottom: 1px dotted gray;
-  width: 800px;
-  height: 38px;
+#right {
+  text-align: right;
 }
-#nr4 {
-  position: relative;
-  top: 90px;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-bottom: 20px;
-  width: 680px;
-  min-height: 120%;
+
+#nav {
+  padding-top: 2rem;
+  margin: 1rem;
+  white-space: nowrap;
+  border-bottom: 1px dashed;
+  border-color: gray;
+  float: left;
 }
+
 #nr5 {
   border-top: 1px dotted gray;
   position: relative;
@@ -84,13 +95,8 @@ h1 {
   font-size: 14pt;
 }
 h2 {
-  font-size: 10pt;
+  font-size: 12pt;
   font-family: "Arial";
-}
-#Element2 {
-  font-size: 8pt;
-  float: right;
-  word-spacing: 0;
 }
 #Element3 {
   float: left;
@@ -114,7 +120,8 @@ h2 {
 }
 p {
   font-family: "Arial";
-  font-size: 10pt;
+  font-size: 11pt;
+  text-align: justify;
 }
 #Element4 {
   font-style: italic;

@@ -6,7 +6,6 @@
 
 <style scoped>
 img {
-  padding: 0.5rem;
   margin-top: 1rem;
   max-width: 480px;
 }

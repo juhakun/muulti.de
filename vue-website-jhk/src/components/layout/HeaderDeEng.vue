@@ -1,16 +1,29 @@
 <template>
   <header>
-    <h2 id="Element2">
-      <a href="Home.html">deutsch / </a>
-      <a href="Home_english.html">english</a>
-    </h2>
+    <div id="right">
+      <base-button @click="setSelectedLanguage('de')" mode="de-eng"
+        >deutsch /
+      </base-button>
+      <base-button @click="setSelectedLanguage('eng')" mode="de-eng">
+        english</base-button
+      >
+    </div>
   </header>
 </template>
 
-<style scoped>
-h2 #Element2 {
-  font-size: 8pt;
-  word-spacing: 0;
-  text-align: right;
-}
-</style>
+<script>
+export default {
+  data() {
+    return {
+      selectedLanguage: "de",
+    };
+  },
+  methods: {
+    setSelectedLanguage(language) {
+      this.selectedLanguage = language;
+    },
+  },
+};
+</script>
+
+<style scoped></style>
