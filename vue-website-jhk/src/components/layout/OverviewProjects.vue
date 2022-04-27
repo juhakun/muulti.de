@@ -1,8 +1,7 @@
 <template>
   <div class="content">
     <single-project-short
-      v-for="project in allProjects"
-      :v-if="'project.category' === 'category'"
+      v-for="project in filteredProjects"
       :key="project.id"
       :projectName="project.name"
       :projectDes="project.description"
@@ -14,7 +13,7 @@
 <script>
 import SingleProjectShort from "./SingleProjectShort.vue";
 export default {
-  inject: ["allProjects", "category"],
+  props: ["filteredProjects"],
   components: {
     SingleProjectShort,
   },

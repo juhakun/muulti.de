@@ -2,7 +2,6 @@
   <div>
     <header-de-eng></header-de-eng>
     <header-logo></header-logo>
-    <base-navigation></base-navigation>
     <the-projects></the-projects>
   </div>
 </template>

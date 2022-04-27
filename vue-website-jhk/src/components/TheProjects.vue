@@ -1,15 +1,18 @@
 <template>
   <header>
-    <keep-alive><component :is="selectedCategory"></component> </keep-alive>
+    <base-navigation @filter-category="filterProjects"></base-navigation>
+    <overview-projects :filteredProjects="filteredProjects"></overview-projects>
   </header>
 </template>
+
 <script>
+import BaseNavigation from "./UI/BaseNavigation.vue";
 import OverviewProjects from "./layout/OverviewProjects.vue";
 export default {
-  components: { OverviewProjects },
+  emits: ["filter-category"],
+  components: { OverviewProjects, BaseNavigation },
   data() {
     return {
-      selectedCategory: "overview-projects",
       projects: [
         {
           id: "01",
@@ -42,12 +45,28 @@ export default {
           img: require("@/assets/img/ECO_Darmstadt_01.jpg"),
         },
       ],
+      filteredProjects: [
+        {
+          id: "03",
+          category: "de-exhibit",
+          name: "Woher kommt das Neue?",
+          description:
+            "Die Ausstellung WOHER KOMMT DAS NEUE – KREATIVITÄT UND EINFALLSREICHTUM IM DESIGN stellte nicht das fertige Produkte, sondern den kreativen Prozess in den Mittelpunkt: Sensibilität, Leidenschaft, Aufgeschlossenheit für Neues und Unerwartetes und der Mut über Grenzen zu gehen prägen diesen Prozess und die Arbeit der Kreativen und ermöglichen die Entwicklung einzigartiger Ideen. ",
+          nameEng: "Where does the New come from?",
+          descriptionEng: "",
+          img: require("@/assets/img/ECO_Darmstadt_01.jpg"),
+        },
+      ],
     };
   },
-  provide() {
-    return {
-      allProjects: this.projects,
-    };
+
+  methods: {
+    filterProjects(cat) {
+      this.filteredProjects = this.projects.filter(
+        (proj) => proj.category !== cat
+      );
+      console.log(this.filteredProjects);
+    },
   },
 };
 </script>
