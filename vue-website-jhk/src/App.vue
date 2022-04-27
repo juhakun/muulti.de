@@ -3,14 +3,14 @@
     <header-de-eng></header-de-eng>
     <header-logo></header-logo>
     <base-navigation></base-navigation>
-    <overview-tab-content></overview-tab-content>
+    <overview-projects></overview-projects>
   </div>
 </template>
 
 <script>
-import OverviewTabContent from "./components/layout/OverviewTabContent.vue";
+import OverviewProjects from "./components/layout/OverviewProjects.vue";
 export default {
-  components: { OverviewTabContent },
+  components: { OverviewProjects },
 };
 </script>
 
@@ -121,7 +121,8 @@ h2 {
 p {
   font-family: "Arial";
   font-size: 11pt;
-  text-align: justify;
+  text-align: left;
+  /* text-align: justify; */
 }
 #Element4 {
   font-style: italic;
