@@ -15,7 +15,9 @@
       </td>
     </tr>
     <tr>
-      <td></td>
+      <td>
+        <p class="copyright">{{ projectCopyright }}</p>
+      </td>
       <td>
         <base-button
           @click="$emit('details-wanted', true)"
@@ -32,7 +34,7 @@
 // import SingleProjectLong from "./SingleProjectLong.vue";
 export default {
   //   components: { SingleProjectLong },
-  props: ["projectName", "projectDes", "projectImgSrc"],
+  props: ["projectName", "projectDes", "projectImgSrc", "projectCopyright"],
   data() {
     return {};
   },
@@ -60,7 +62,7 @@ img {
 
 table {
   padding-bottom: 0.5rem;
-  padding-top: 2.5rem;
+  padding-top: 2rem;
   border-bottom: 1px dashed;
   border-color: gray;
   vertical-align: top;
@@ -72,5 +74,10 @@ table {
   margin-left: rem;
   margin-right: 1rem;
   float: left;
+}
+
+.copyright {
+  font-size: 7pt;
+  color: #7f7f7f;
 }
 </style>

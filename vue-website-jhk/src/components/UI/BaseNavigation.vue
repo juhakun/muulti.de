@@ -1,22 +1,27 @@
 <template>
   <div id="nav">
-    <base-button @click="$emit('filter-category', 'de-home')">Home</base-button>
-    <base-button @click="$emit('filter-category', 'de-software')"
+    <base-button v-if="buttonsClicked === false" mode="active"
+      >News</base-button
+    >
+    <base-button v-else @click="$emit('filter-category', 'news', true)"
+      >News</base-button
+    >
+    <base-button @click="$emit('filter-category', 'software', true)"
       >Software</base-button
     >
-    <base-button @click="$emit('filter-category', 'de-exhibit')"
+    <base-button @click="$emit('filter-category', 'exhibitions', true)"
       >Exhibition / Interior</base-button
     >
-    <base-button @click="$emit('filter-category', 'de-graphics')"
+    <base-button @click="$emit('filter-category', 'graphics', true)"
       >Graphics</base-button
     >
-    <base-button @click="$emit('filter-category', 'de-management')"
+    <base-button @click="$emit('filter-category', 'management', true)"
       >Design Management</base-button
     >
-    <base-button @click="$emit('filter-category', 'de-about')"
+    <base-button @click="$emit('filter-category', 'about', true)"
       >About</base-button
     >
-    <base-button @click="$emit('filter-category', 'de-contact')"
+    <base-button @click="$emit('filter-category', 'contact', true)"
       >Contact</base-button
     >
   </div>
@@ -24,6 +29,7 @@
 
 <script>
 export default {
+  props: ["buttonsClicked"],
   data() {
     return {};
   },

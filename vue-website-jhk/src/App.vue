@@ -41,7 +41,8 @@ button:focus {
 }
 
 div {
-  padding: 0.5rem;
+  padding: 0rem;
+  padding-top: 0.75rem;
   margin: auto;
   max-width: 1000px;
   min-width: 600px;
@@ -52,7 +53,7 @@ div {
 }
 
 #nav {
-  padding-top: 2rem;
+  padding-top: 3rem;
   margin: 1rem;
   white-space: nowrap;
   border-bottom: 1px dashed;
@@ -125,10 +126,6 @@ p {
 }
 #Element4 {
   font-style: italic;
-}
-#Element7 {
-  font-size: 7pt;
-  color: #7f7f7f;
 }
 #Element9 {
   font-size: 6pt;

@@ -9,8 +9,10 @@
       :projectName="project.name"
       :projectDes="project.description"
       :projectImgSrc="project.img"
+      :projectCopyright="project.copyright"
       @details-wanted="$emit('details-wanted2', true)"
     ></single-project-short>
+    <h2 style="padding-left: 1rem">{{ title }}</h2>
   </div>
 </template>
 
@@ -18,13 +20,14 @@
 import SingleProjectShort from "./SingleProjectShort.vue";
 export default {
   emits: ["details-wanted"],
-  props: ["filteredProjects"],
+  props: ["filteredProjects", "title"],
   components: {
     SingleProjectShort,
   },
   data() {
     return {
       detailsWanted: false,
+
       //   projects: [
       //     {
       //       id: "01",
