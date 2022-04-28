@@ -8,8 +8,7 @@
     ></base-navigation>
     <OverviewProjects
       v-if="detailsWanted === false && buttonsClicked === false"
-      :filteredProjects="news"
-      :selectedLanguage="selectedLanguage"
+      :filteredProjects="filteredProjects"
       @details-wanted2="setDetailStatus"
     ></OverviewProjects>
     <overview-projects
@@ -44,7 +43,21 @@ export default {
       component: "overview-projects",
       buttonsClicked: false,
       selectedLanguage: "de",
-      filteredProjects: undefined,
+      filteredProjects: [
+        {
+          id: "01",
+          category: "software",
+          name: "Webseite mit Vue.JS und JavaScript",
+          nameDe: "Webseite mit Vue.JS und JavaScript",
+          nameEng: "Website with Vue.JS and JavaScript",
+          description:
+            "Die Webseite www.juliahaeusler.com, die vor fast 10 Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
+          descriptionEng: "",
+          img: require("@/assets/img/vuejs.png"),
+          copyright: "",
+          news: true,
+        },
+      ],
       news: [
         {
           id: "01",
@@ -221,41 +234,29 @@ export default {
   methods: {
     setLanguage(language) {
       this.selectedLanguage = language;
+      this.filterLanguage(this.selectedLanguage);
       // console.log(this.selectedLanguage);
     },
-    // filterLanguage(language, projects) {
-    //   if (this.selectedLanguage === language) {
-    //     let newsEng = [
-    //       {
-    //         id: "",
-    //         category: "",
-    //         name: "",
-    //         description: "",
-    //         nameEng: "",
-    //         descriptionEng: "",
-    //         img: "",
-    //         copyright: "",
-    //         news: false,
-    //       },
-    //     ];
-    //     for (let i = 0; i < this.projects.length; i++) {
-    //       newsEng.id = this.projects.id;
-    //       newsEng.category = this.projects.category;
-    //       newsEng.name = this.projects.nameEng;
-    //       newsEng.description = this.projects.descriptionEng;
-    //       newsEng.nameEng = "";
-    //       newsEng.descriptionEng = "";
-    //       newsEng.img = this.projects.img;
-    //       newsEng.copyright = this.projects.copyright;
-    //       newsEng.news = this.projects.news;
-    //     }
-    //   } else {
-    //     this.filteredProjects = projects;
-    //   }
-    // },
+    filterLanguage(language) {
+      console.log(this.selectedLanguage);
+      if (language === "de") {
+        for (let i = 0; i < this.filteredProjects.length; i++) {
+          this.filteredProjects[i].name = this.filteredProjects[i].nameDe;
+          this.filteredProjects[i].description =
+            this.filteredProjects[i].descriptionDe;
+        }
+      } else if (language === "eng") {
+        for (let i = 0; i < this.filteredProjects.length; i++) {
+          this.filteredProjects[i].name = this.filteredProjects[i].nameEng;
+          // this.selectedProjects[i].description =
+          //   this.filteredProjects[i].descriptionEng;
+        }
+      }
+    },
 
     filterProjects(cat, buttonsClicked) {
       this.buttonsClicked = buttonsClicked;
+
       if (cat === "news") {
         this.filteredProjects = this.news;
       } else if (cat === "software") {
@@ -271,6 +272,7 @@ export default {
       } else if (cat === "contact") {
         this.filteredProjects = this.contact;
       }
+      this.filterLanguage(this.selectedLanguage);
     },
 
     setDetailStatus(details) {

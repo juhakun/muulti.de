@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <single-project-short
-      v-for="project in selectedProjects"
+      v-for="project in filteredProjects"
       :key="project.id"
       :projectName="project.name"
       :projectDes="project.description"
@@ -24,7 +24,6 @@ export default {
   data() {
     return {
       detailsWanted: false,
-      selectedProjects: this.filteredProjects,
     };
   },
   computed: {
@@ -52,23 +51,23 @@ export default {
     //   }
     // },
   },
-  watch: {
-    selectedLanguage: function (value) {
-      if (value === "de") {
-        for (let i = 0; i < this.selectedProjects.length; i++) {
-          this.selectedProjects[i].name = this.filteredProjects[i].nameDe;
-          this.selectedProjects[i].description =
-            this.filteredProjects[i].descriptionDe;
-        }
-      } else if (value === "eng") {
-        for (let i = 0; i < this.selectedProjects.length; i++) {
-          this.selectedProjects[i].name = this.filteredProjects[i].nameEng;
-          // this.selectedProjects[i].description =
-          //   this.filteredProjects[i].descriptionEng;
-        }
-      }
-    },
-  },
+  // watch: {
+  //   selectedLanguage: function (value) {
+  //     if (value === "de") {
+  //       for (let i = 0; i < this.selectedProjects.length; i++) {
+  //         this.selectedProjects[i].name = this.filteredProjects[i].nameDe;
+  //         this.selectedProjects[i].description =
+  //           this.filteredProjects[i].descriptionDe;
+  //       }
+  //     } else if (value === "eng") {
+  //       for (let i = 0; i < this.selectedProjects.length; i++) {
+  //         this.selectedProjects[i].name = this.filteredProjects[i].nameEng;
+  //         // this.selectedProjects[i].description =
+  //         //   this.filteredProjects[i].descriptionEng;
+  //       }
+  //     }
+  //   },
+  // },
   methods: {
     setDetailStatus(details) {
       this.detailsWanted = details;
