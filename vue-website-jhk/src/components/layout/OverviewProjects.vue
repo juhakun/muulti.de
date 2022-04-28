@@ -1,10 +1,7 @@
 <template>
   <div class="content">
-    <!-- <keep-alive
-      ><component :is="selectedTab" v-bind="properties"></component>
-    </keep-alive> -->
     <single-project-short
-      v-for="project in filteredProjects"
+      v-for="project in selectedProjects"
       :key="project.id"
       :projectName="project.name"
       :projectDes="project.description"
@@ -20,54 +17,57 @@
 import SingleProjectShort from "./SingleProjectShort.vue";
 export default {
   emits: ["details-wanted"],
-  props: ["filteredProjects", "title"],
+  props: ["filteredProjects", "title", "selectedLanguage"],
   components: {
     SingleProjectShort,
   },
   data() {
     return {
       detailsWanted: false,
-
-      //   projects: [
-      //     {
-      //       id: "01",
-      //       name: "Bundespreis Ecodesign",
-      //       description:
-      //         "Seit 2013 ist die Ausstellung zum BUNDESPREIS ECODESIGN jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.",
-      //       img: require("@/assets/img/ECO_Darmstadt_02.jpg"),
-      //     },
-      //     {
-      //       id: "02",
-      //       name: "Spot on Materials",
-      //       description:
-      //         "Die Ausstellung SPOT ON MATERIALS präsentierte innovative Materialen und veranschaulichte diese anhand bereits umgesetzter Produkte. Die Produkte und Materialien verdeutlichen, welchen Stellenwert Materialien als Generator für Kreativität, für neue Ideen und ungewöhnliche Lösungen haben. ",
-      //       img: require("@/assets/img/ECO_Darmstadt_01.jpg"),
-      //     },
-      //     {
-      //       id: "03",
-      //       name: "Woher kommt das Neue?",
-      //       description:
-      //         "Die Ausstellung WOHER KOMMT DAS NEUE – KREATIVITÄT UND EINFALLSREICHTUM IM DESIGN stellte nicht das fertige Produkte, sondern den kreativen Prozess in den Mittelpunkt: Sensibilität, Leidenschaft, Aufgeschlossenheit für Neues und Unerwartetes und der Mut über Grenzen zu gehen prägen diesen Prozess und die Arbeit der Kreativen und ermöglichen die Entwicklung einzigartiger Ideen. ",
-      //       img: require("@/assets/img/ECO_Darmstadt_01.jpg"),
-      //     },
-      //   ],
+      selectedProjects: this.filteredProjects,
     };
   },
   computed: {
-    // properties: {
-    //   function() {
-    //     if (this.selectedTab === "single-project-short") {
-    //       for (var i = 0; i < this.filteredProjects.length; i++) {
-    //         return {
-    //           key: "project.id",
-    //           projectName: "project.name",
-    //           projectDes: "project.description",
-    //           projectImgSrc: "project.img",
-    //         };
-    //       }
+    // properties: function () {
+    //   if (this.selectedLanguage === "de") {
+    //     for (var i = 0; i < this.filteredProjects.length; i++) {
+    //       return {
+    //         key: "project.id",
+    //         projectName: "project.name",
+    //         projectDes: "project.description",
+    //         projectImgSrc: "project.img",
+    //         projectCopyright: "project.copyright",
+    //       };
     //     }
-    //   },
+    //   } else {
+    //     for (var j = 0; j < this.filteredProjects.length; j++) {
+    //       return {
+    //         key: "project.id",
+    //         projectName: "project.nameEng",
+    //         projectDes: "project.descriptionEng",
+    //         projectImgSrc: "project.img",
+    //         projectCopyright: "project.copyright",
+    //       };
+    //     }
+    //   }
     // },
+  },
+  watch: {
+    selectedLanguage: function (value) {
+      if (value === "de") {
+        for (let i = 0; i < this.selectedProjects.length; i++) {
+          this.selectedProjects[i].name = this.filteredProjects[i].nameDe;
+          this.selectedProjects[i].description =
+            this.filteredProjects[i].descriptionDe;
+        }
+      } else if (value === "eng") {
+        for (let i = 0; i < this.selectedProjects.length; i++) {
+          this.selectedProjects[i].name = this.filteredProjects[i].nameEng;
+          // this.selectedProjects[i].description =
+          //   this.filteredProjects[i].descriptionEng;
+        }
+      }
+    },
   },
   methods: {
     setDetailStatus(details) {

@@ -1,5 +1,7 @@
 <template>
   <header>
+    <header-de-eng @filter-language="setLanguage"></header-de-eng>
+    <header-logo></header-logo>
     <base-navigation
       @filter-category="filterProjects"
       :buttonsClicked="buttonsClicked"
@@ -7,14 +9,19 @@
     <OverviewProjects
       v-if="detailsWanted === false && buttonsClicked === false"
       :filteredProjects="news"
+      :selectedLanguage="selectedLanguage"
       @details-wanted2="setDetailStatus"
     ></OverviewProjects>
     <overview-projects
       v-else-if="detailsWanted === false && buttonsClicked === true"
       :filteredProjects="filteredProjects"
+      :selectedLanguage="selectedLanguage"
       @details-wanted2="setDetailStatus"
     ></overview-projects>
-    <SingleProjectLong v-if="detailsWanted === true"></SingleProjectLong>
+    <SingleProjectLong
+      v-if="detailsWanted === true"
+      :selectedLanguage="selectedLanguage"
+    ></SingleProjectLong>
   </header>
 </template>
 
@@ -22,27 +29,31 @@
 import BaseNavigation from "./UI/BaseNavigation.vue";
 import OverviewProjects from "./layout/OverviewProjects.vue";
 import SingleProjectLong from "./layout/SingleProjectLong.vue";
+import HeaderDeEng from "./layout/HeaderDeEng.vue";
 export default {
-  emits: ["filter-category", "details-wanted2"],
+  emits: ["filter-category", "details-wanted2", "filter-language"],
   components: {
     OverviewProjects,
     BaseNavigation,
     SingleProjectLong,
+    HeaderDeEng,
   },
   data() {
     return {
       detailsWanted: false,
       component: "overview-projects",
       buttonsClicked: false,
+      selectedLanguage: "de",
       filteredProjects: undefined,
       news: [
         {
           id: "01",
           category: "software",
           name: "Webseite mit Vue.JS und JavaScript",
+          nameDe: "Webseite mit Vue.JS und JavaScript",
+          nameEng: "Website with Vue.JS and JavaScript",
           description:
             "Die Webseite www.juliahaeusler.com, die vor fast 10 Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
-          nameEng: "Website with Vue.JS and JavaScript",
           descriptionEng: "",
           img: require("@/assets/img/vuejs.png"),
           copyright: "",
@@ -54,9 +65,11 @@ export default {
           id: "01",
           category: "software",
           name: "Webseite mit Vue.JS und JavaScript",
+          nameDe: "Webseite mit Vue.JS und JavaScript",
+          nameEng: "Website with Vue.JS and JavaScript",
           description:
             "Die Webseite www.juliahaeusler.com, die vor fast 10 Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
-          nameEng: "Website with Vue.JS and JavaScript",
+
           descriptionEng: "",
           img: require("@/assets/img/vuejs.png"),
           copyright: "",
@@ -70,7 +83,7 @@ export default {
           name: "Bundespreis Ecodesign",
           description:
             "Seit 2013 ist die Ausstellung zum BUNDESPREIS ECODESIGN jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.",
-          nameEng: this.name,
+          nameEng: "Bundespreis Ecodesign",
           descriptionEng: "",
           img: require("@/assets/img/ECO_Darmstadt_01.jpg"),
           copyright: "",
@@ -82,7 +95,7 @@ export default {
           name: "Spot on Materials",
           description:
             "Die Ausstellung SPOT ON MATERIALS präsentierte innovative Materialen und veranschaulichte diese anhand bereits umgesetzter Produkte. Die Produkte und Materialien verdeutlichen, welchen Stellenwert Materialien als Generator für Kreativität, für neue Ideen und ungewöhnliche Lösungen haben. ",
-          nameEng: this.name,
+          nameEng: "Spot on Materials",
           descriptionEng: "",
           img: require("@/assets/img/som_01.jpg"),
           copyright: "",
@@ -106,7 +119,7 @@ export default {
           name: "German Shades of Green",
           description:
             "Die Ausstellung GERMAN SHADES OF GREEN – SUSTAINABLE DESIGN FROM GERMANY stellte Beispiele nachhaltiger Gestaltung vor. Sie zeigte anhand von Produkten, Konzepten und Ideen aus Deutschland, wie Nachhaltigkeit im Design umgesetzt werden kann und wie Gestaltung entscheidend zum Erfolg nachhaltiger Entwicklung beiträgt. Auch die Ausstellungsgestaltung und die grafische Präsentation der Exponate orientierte sich an diesem Nachhaltigkeitsanspruch.",
-          nameEng: this.name,
+          nameEng: "German Shades of Green",
           descriptionEng: "",
           img: require("@/assets/img/gg_tai_02.jpg"),
           copyright: "© IDZ Internationales Design Zentrum Berlin e.V.",
@@ -118,7 +131,7 @@ export default {
           name: "Design Deutschland",
           description:
             "DESIGN DEUTSCHLAND ist eine internationale Wanderausstellung des Rat für Formgebung, die jährlich eine aktuelle, exemplarische Auswahl von jeweils 120 bis 150 Produkten renommierter deutscher Unternehmen und Designer umfasst. Parallel zur Wanderausstellung konnten sich deutsche Unternehmen an einzelnen internationalen Veranstaltungsorten im Rahmen eines Gemeinschaftsstands präsentieren.",
-          nameEng: this.name,
+          nameEng: "Design Deutschland",
           descriptionEng: "",
           img: require("@/assets/img/dd_nb_01.jpg"),
           copyright: "",
@@ -130,7 +143,7 @@ export default {
           name: "Imm Cologne",
           description:
             "Im Rahmen der Internationalen Möbelmesse IMM COLOGNE werden jedes Jahr zahlreiche Designaktivitäten und Sonderschauen präsentiert. In den vergangenen Jahren zählten hierzu unter anderen die Trendshow INFORMED BY COLOGNE und der BOULEVARD OF INNOVATIONS.",
-          nameEng: this.name,
+          nameEng: "Imm Cologne",
           descriptionEng: "",
           img: require("@/assets/img/imm_09_10.jpg"),
           copyright: "© Koelnmesse / Constantin Meyer",
@@ -142,7 +155,7 @@ export default {
           name: "Nominee selection",
           description:
             "Die Ausstellungsreihe NOMINEE SELECTION zeigte neben den Preisträgern des vom Bundesministerium für Wirtschaft und Technologie ausgelobten Designpreises der Bundesrepublik Deutschland eine Reihe von Produkten, die zum Designpreis 2009 und 2010 nominiert waren.",
-          nameEng: this.name,
+          nameEng: "Nominee selection",
           descriptionEng: "",
           img: require("@/assets/img/DPNS_09_03.jpg"),
           copyright: "© Rat für Formgebung/German Design Council / Guido Mieth",
@@ -154,7 +167,7 @@ export default {
           name: "usability park",
           description:
             "Die Ausstellung USABILITY PARK präsentierte Produkte, die sowohl dem Anspruch an hohe Benutzerfreundlichkeit als auch ästhetischen Ansprüchen der Verbraucher gerecht werden.",
-          nameEng: this.name,
+          nameEng: "usability park",
           descriptionEng: "",
           img: require("@/assets/img/up_08_03.jpg"),
           copyright: "© Frank Nickerl",
@@ -166,7 +179,7 @@ export default {
           name: "Access Berlin Design",
           description:
             "Die Ausstellung ACCESS BERLIN DESIGN stellte den Standort Berlin als wichtige Schnittstelle zwischen Industrie und Design vor und präsentierte designorientierte Unternehmen sowie Agenturen aus Berlin.",
-          nameEng: this.name,
+          nameEng: "Access Berlin Design",
           descriptionEng: "",
           img: require("@/assets/img/abd_08_06.jpg"),
           copyright: "© Antonia Roth",
@@ -178,7 +191,7 @@ export default {
           name: "Ideal Standard",
           description:
             "Das Projekt IDEAL STANDARD – DER CHARME DER DINGE befasste sich mit Produkten des täglichen Lebens. Kernstücke des Projekts waren ein Katalog und eine Ausstellung bei DMY zum Designmai 2006 in Berlin.",
-          nameEng: this.name,
+          nameEng: "Ideal Standard",
           descriptionEng: "",
           img: require("@/assets/img/is_06.jpg"),
           copyright: "",
@@ -190,7 +203,7 @@ export default {
           name: "Bundespressestrand",
           description:
             "Die bekannte Berliner Sommer-Gastronomie BUNDESPRESSESTRAND eröffnete während der Wintermonate 2004/2005 erstmals eine Winterpräsenz für Abendveranstaltungen in einem zur Sommerlocation nahegelegen Bürogebäude. Die leerstehende Büroetage wurde in eine Winterlandschaft verwandelt, um auch den Berlinern einen kleinen Skiurlaub zu ermöglichen.",
-          nameEng: this.name,
+          nameEng: "Bundespressestrand",
           descriptionEng: "",
           img: require("@/assets/img/bps_06.jpg"),
           copyright: "",
@@ -201,36 +214,46 @@ export default {
       management: [{}],
       about: [{}],
       contact: [{}],
-
-      // filteredProjects: [
-      //   {
-      //     id: "",
-      //     category: "home",
-      //     name: "Hallo",
-      //     description:
-      //       "Die Ausstellung WOHER KOMMT DAS NEUE – KREATIVITÄT UND EINFALLSREICHTUM IM DESIGN stellte nicht das fertige Produkte, sondern den kreativen Prozess in den Mittelpunkt: Sensibilität, Leidenschaft, Aufgeschlossenheit für Neues und Unerwartetes und der Mut über Grenzen zu gehen prägen diesen Prozess und die Arbeit der Kreativen und ermöglichen die Entwicklung einzigartiger Ideen. ",
-      //     nameEng: "Where does the New come from?",
-      //     descriptionEng: "",
-      //     img: require("@/assets/img/ECO_Darmstadt_01.jpg"),
-      //   },
-      // ],
     };
   },
   computed: {},
 
-  // properties: {
-  //   function() {
-  //     if (this.openProjectDetails === "true") {
-  //       return {
-  //         filteredProjects: "filteredProjects",
-  //       };
-  //     } else {
-  //       return 0;
-  //     }
-  //   },
-  // },
-
   methods: {
+    setLanguage(language) {
+      this.selectedLanguage = language;
+      // console.log(this.selectedLanguage);
+    },
+    // filterLanguage(language, projects) {
+    //   if (this.selectedLanguage === language) {
+    //     let newsEng = [
+    //       {
+    //         id: "",
+    //         category: "",
+    //         name: "",
+    //         description: "",
+    //         nameEng: "",
+    //         descriptionEng: "",
+    //         img: "",
+    //         copyright: "",
+    //         news: false,
+    //       },
+    //     ];
+    //     for (let i = 0; i < this.projects.length; i++) {
+    //       newsEng.id = this.projects.id;
+    //       newsEng.category = this.projects.category;
+    //       newsEng.name = this.projects.nameEng;
+    //       newsEng.description = this.projects.descriptionEng;
+    //       newsEng.nameEng = "";
+    //       newsEng.descriptionEng = "";
+    //       newsEng.img = this.projects.img;
+    //       newsEng.copyright = this.projects.copyright;
+    //       newsEng.news = this.projects.news;
+    //     }
+    //   } else {
+    //     this.filteredProjects = projects;
+    //   }
+    // },
+
     filterProjects(cat, buttonsClicked) {
       this.buttonsClicked = buttonsClicked;
       if (cat === "news") {
