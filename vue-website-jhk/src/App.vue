@@ -1,8 +1,14 @@
 <template>
   <div>
-    <header-de-eng></header-de-eng>
-    <header-logo></header-logo>
-    <the-projects></the-projects>
+    <div id="right">
+      <base-button @click="setSelectedLanguage('de')" mode="de-eng"
+        >deutsch /
+      </base-button>
+      <base-button @click="setSelectedLanguage('eng')" mode="de-eng">
+        english</base-button
+      >
+    </div>
+    <header-logo></header-logo><the-projects></the-projects>
   </div>
 </template>
 
@@ -10,6 +16,16 @@
 import TheProjects from "./components/TheProjects.vue";
 export default {
   components: { TheProjects },
+  data() {
+    return {
+      selectedLanguage: "de",
+    };
+  },
+  methods: {
+    setSelectedLanguage(language) {
+      this.selectedLanguage = language;
+    },
+  },
 };
 </script>
 
@@ -18,26 +34,6 @@ a:link,
 a:visited {
   color: gray;
   text-decoration: none;
-}
-
-button {
-  padding: 0.2rem 1.5rem;
-  font-family: arial;
-  font-size: 12pt;
-  color: gray;
-  background-color: white;
-  border: 1px solid #3a0061;
-  border: 0px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover,
-button:active,
-button:focus {
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 div {

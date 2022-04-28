@@ -161,7 +161,7 @@ export default {
           news: false,
         },
         {
-          id: "08",
+          id: "10",
           category: "exhibit",
           name: "Access Berlin Design",
           description:
@@ -173,7 +173,7 @@ export default {
           news: false,
         },
         {
-          id: "08",
+          id: "11",
           category: "exhibit",
           name: "Ideal Standard",
           description:
@@ -185,7 +185,7 @@ export default {
           news: false,
         },
         {
-          id: "08",
+          id: "12",
           category: "exhibit",
           name: "Bundespressestrand",
           description:

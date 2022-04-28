@@ -8,11 +8,14 @@
         english</base-button
       >
     </div>
+    <header-logo></header-logo><the-projects></the-projects>
   </header>
 </template>
 
 <script>
+import TheProjects from "../TheProjects.vue";
 export default {
+  components: { TheProjects },
   data() {
     return {
       selectedLanguage: "de",
