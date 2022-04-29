@@ -3,11 +3,12 @@
     <single-project-short
       v-for="project in filteredProjects"
       :key="project.id"
+      :id="project.id"
       :projectName="project.name"
       :projectDes="project.description"
       :projectImgSrc="project.img"
       :projectCopyright="project.copyright"
-      @details-wanted="$emit('details-wanted2', true)"
+      :selectedLanguage="selectedLanguage"
     ></single-project-short>
     <h2 style="padding-left: 1rem">{{ title }}</h2>
   </div>
@@ -16,67 +17,17 @@
 <script>
 import SingleProjectShort from "./SingleProjectShort.vue";
 export default {
-  emits: ["details-wanted"],
+  emits: ["details-wanted-on"],
   props: ["filteredProjects", "title", "selectedLanguage"],
   components: {
     SingleProjectShort,
   },
   data() {
-    return {
-      detailsWanted: false,
-    };
+    return {};
   },
-  computed: {
-    // properties: function () {
-    //   if (this.selectedLanguage === "de") {
-    //     for (var i = 0; i < this.filteredProjects.length; i++) {
-    //       return {
-    //         key: "project.id",
-    //         projectName: "project.name",
-    //         projectDes: "project.description",
-    //         projectImgSrc: "project.img",
-    //         projectCopyright: "project.copyright",
-    //       };
-    //     }
-    //   } else {
-    //     for (var j = 0; j < this.filteredProjects.length; j++) {
-    //       return {
-    //         key: "project.id",
-    //         projectName: "project.nameEng",
-    //         projectDes: "project.descriptionEng",
-    //         projectImgSrc: "project.img",
-    //         projectCopyright: "project.copyright",
-    //       };
-    //     }
-    //   }
-    // },
-  },
-  // watch: {
-  //   selectedLanguage: function (value) {
-  //     if (value === "de") {
-  //       for (let i = 0; i < this.selectedProjects.length; i++) {
-  //         this.selectedProjects[i].name = this.filteredProjects[i].nameDe;
-  //         this.selectedProjects[i].description =
-  //           this.filteredProjects[i].descriptionDe;
-  //       }
-  //     } else if (value === "eng") {
-  //       for (let i = 0; i < this.selectedProjects.length; i++) {
-  //         this.selectedProjects[i].name = this.filteredProjects[i].nameEng;
-  //         // this.selectedProjects[i].description =
-  //         //   this.filteredProjects[i].descriptionEng;
-  //       }
-  //     }
-  //   },
-  // },
-  methods: {
-    setDetailStatus(details) {
-      this.detailsWanted = details;
-      console.log(this.detailsWanted);
-    },
-    statusOpenProjectDetails() {
-      this.$emit("details-wanted", this.detailsWanted);
-    },
-  },
+  computed: {},
+  watch: {},
+  methods: {},
 };
 </script>
 

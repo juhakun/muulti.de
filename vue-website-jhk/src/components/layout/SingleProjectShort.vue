@@ -20,10 +20,18 @@
       </td>
       <td>
         <base-button
-          @click="$emit('details-wanted', true)"
+          @click="selectProject(this.id)"
+          v-if="selectedLanguage === 'de'"
           style="float: right"
           mode="de-eng"
           >mehr</base-button
+        >
+        <base-button
+          @click="selectProject(this.id)"
+          v-else-if="selectedLanguage === 'eng'"
+          style="float: right"
+          mode="de-eng"
+          >more</base-button
         >
       </td>
     </tr>
@@ -31,28 +39,20 @@
 </template>
 
 <script>
-// import SingleProjectLong from "./SingleProjectLong.vue";
 export default {
-  //   components: { SingleProjectLong },
-  props: ["projectName", "projectDes", "projectImgSrc", "projectCopyright"],
+  inject: ["selectProject"],
+  props: [
+    "id",
+    "projectName",
+    "projectDes",
+    "projectImgSrc",
+    "projectCopyright",
+    "selectedLanguage",
+  ],
   data() {
     return {};
   },
-  provide() {
-    return {
-      openProjectDetails: this.openProjectDetails,
-      detailsWanted: this.detailsWanted,
-    };
-  },
-  methods: {
-    // setOpenProjectDetails() {
-    //   this.detailsWanted = true;
-    //   console.log(this.detailsWanted);
-    // },
-    // statusOpenProjectDetails() {
-    //   this.$emit("details-wanted", this.detailsWanted);
-    // },
-  },
+  methods: {},
 };
 </script>
 

@@ -9,20 +9,21 @@
       @filter-category="filterProjects"
       :buttonsClicked="buttonsClicked"
     ></base-navigation>
-    <OverviewProjects
-      v-if="detailsWanted === false && buttonsClicked === false"
-      :filteredProjects="filteredProjects"
-      @details-wanted2="setDetailStatus"
-    ></OverviewProjects>
     <overview-projects
+      v-if="detailsWanted === false"
+      :filteredProjects="filteredProjects"
+      :selectedLanguage="selectedLanguage"
+    ></overview-projects>
+    <!-- <overview-projects
       v-else-if="detailsWanted === false && buttonsClicked === true"
       :filteredProjects="filteredProjects"
       :selectedLanguage="selectedLanguage"
       @details-wanted2="setDetailStatus"
-    ></overview-projects>
+    ></overview-projects> -->
     <SingleProjectLong
       v-if="detailsWanted === true"
       :selectedLanguage="selectedLanguage"
+      :selectedProject="selectedProject"
     ></SingleProjectLong>
   </header>
 </template>
@@ -33,7 +34,7 @@ import OverviewProjects from "./layout/OverviewProjects.vue";
 import SingleProjectLong from "./layout/SingleProjectLong.vue";
 import HeaderDeEng from "./layout/HeaderDeEng.vue";
 export default {
-  emits: ["filter-category", "details-wanted2", "filter-language"],
+  emits: ["details-wanted-on2", "filter-category", "filter-language"],
   components: {
     OverviewProjects,
     BaseNavigation,
@@ -43,9 +44,9 @@ export default {
   data() {
     return {
       detailsWanted: false,
-      component: "overview-projects",
       buttonsClicked: false,
       selectedLanguage: "de",
+      selectedProject: undefined,
       filteredProjects: [
         {
           id: "01",
@@ -270,6 +271,11 @@ export default {
       contact: [{}],
     };
   },
+  provide() {
+    return {
+      selectProject: this.setSelectedProject,
+    };
+  },
   computed: {},
 
   methods: {
@@ -298,6 +304,7 @@ export default {
 
     filterProjects(cat) {
       this.buttonsClicked = true;
+      this.detailsWanted = false;
 
       if (cat === "news") {
         this.filteredProjects = this.news;
@@ -317,9 +324,14 @@ export default {
       this.filterLanguage(this.selectedLanguage);
     },
 
-    setDetailStatus(details) {
-      this.detailsWanted = details;
+    setSelectedProject(id) {
+      this.detailsWanted = true;
       console.log(this.detailsWanted);
+      this.selectedProject = this.filteredProjects.filter(
+        (proj) => proj.id === id
+      );
+
+      // console.log(this.detailsWanted);
     },
   },
 };
