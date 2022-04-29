@@ -20,14 +20,14 @@
       </td>
       <td>
         <base-button
-          @click="selectProject(this.id)"
+          @click="selectProject(this.selectedProject)"
           v-if="selectedLanguage === 'de'"
           style="float: right"
           mode="de-eng"
           >mehr</base-button
         >
         <base-button
-          @click="selectProject(this.id)"
+          @click="selectProject(this.selectedProject)"
           v-else-if="selectedLanguage === 'eng'"
           style="float: right"
           mode="de-eng"
@@ -50,7 +50,15 @@ export default {
     "selectedLanguage",
   ],
   data() {
-    return {};
+    return {
+      selectedProject: {
+        id: this.id,
+        name: this.projectName,
+        description: this.projectDes,
+        im: this.projectImgSrc,
+        copyright: this.projectCopyright,
+      },
+    };
   },
   methods: {},
 };

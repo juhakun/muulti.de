@@ -14,16 +14,10 @@
       :filteredProjects="filteredProjects"
       :selectedLanguage="selectedLanguage"
     ></overview-projects>
-    <!-- <overview-projects
-      v-else-if="detailsWanted === false && buttonsClicked === true"
-      :filteredProjects="filteredProjects"
-      :selectedLanguage="selectedLanguage"
-      @details-wanted2="setDetailStatus"
-    ></overview-projects> -->
     <SingleProjectLong
       v-if="detailsWanted === true"
       :selectedLanguage="selectedLanguage"
-      :selectedProject="selectedProject"
+      :selectedProject="filteredProject"
     ></SingleProjectLong>
   </header>
 </template>
@@ -34,7 +28,7 @@ import OverviewProjects from "./layout/OverviewProjects.vue";
 import SingleProjectLong from "./layout/SingleProjectLong.vue";
 import HeaderDeEng from "./layout/HeaderDeEng.vue";
 export default {
-  emits: ["details-wanted-on2", "filter-category", "filter-language"],
+  emits: ["filter-category", "filter-language"],
   components: {
     OverviewProjects,
     BaseNavigation,
@@ -82,6 +76,7 @@ export default {
           news: true,
         },
       ],
+
       software: [
         {
           id: "01",
@@ -99,6 +94,7 @@ export default {
           news: true,
         },
       ],
+
       exhibitions: [
         {
           id: "02",
@@ -265,19 +261,23 @@ export default {
           news: false,
         },
       ],
+
       graphics: [{}],
+
       management: [{}],
+
       about: [{}],
+
       contact: [{}],
     };
   },
+
   provide() {
     return {
       selectProject: this.setSelectedProject,
     };
   },
   computed: {},
-
   methods: {
     setLanguage(language) {
       this.selectedLanguage = language;
@@ -305,11 +305,12 @@ export default {
     filterProjects(cat) {
       this.buttonsClicked = true;
       this.detailsWanted = false;
-
       if (cat === "news") {
-        this.filteredProjects = this.news;
+        this.filteredProjects = this.projects.filter((proj) => proj === "news");
       } else if (cat === "software") {
-        this.filteredProjects = this.software;
+        this.filteredProjects = this.projects.filter(
+          (proj) => proj === "software"
+        );
       } else if (cat === "exhibitions") {
         this.filteredProjects = this.exhibitions;
       } else if (cat === "graphics") {
@@ -324,14 +325,12 @@ export default {
       this.filterLanguage(this.selectedLanguage);
     },
 
-    setSelectedProject(id) {
+    setSelectedProject(project) {
       this.detailsWanted = true;
       console.log(this.detailsWanted);
-      this.selectedProject = this.filteredProjects.filter(
-        (proj) => proj.id === id
-      );
+      this.filteredProject = project;
 
-      // console.log(this.detailsWanted);
+      console.log(this.filteredProject.name);
     },
   },
 };
