@@ -57,29 +57,13 @@ div {
   float: left;
 }
 
-#nr5 {
-  border-top: 1px dotted gray;
-  position: relative;
-  top: 90px;
-  left: 0px;
-  padding-top: 10px;
-  width: 800px;
-  height: 50px;
+#detailedText {
+  margin-right: 7rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed;
+  border-color: gray;
 }
-#nr6 {
-  border-bottom: 1px dotted gray;
-  width: 680px;
-  height: 1px;
-  margin-top: 2px;
-}
-#nr7 {
-  position: relative;
-  top: 90px;
-  border-bottom: 1px dotted gray;
-  padding-top: 0;
-  width: 800px;
-  height: 30px;
-}
+
 body {
   background-color: white;
 }
@@ -94,38 +78,12 @@ h2 {
   font-size: 12pt;
   font-family: "Arial";
 }
-#Element3 {
-  float: left;
-  word-spacing: 0;
-}
-#Element5 {
-  font-size: 10pt;
-  float: left;
-  word-spacing: 0;
-}
-#Element6 {
-  font-size: 9pt;
-  font-style: italic;
-  float: left;
-  word-spacing: 0;
-}
-#Element8 {
-  font-size: 8pt;
-  float: left;
-  word-spacing: 0;
-}
+
 p {
   font-family: "Arial";
   font-size: 11pt;
   text-align: left;
   /* text-align: justify; */
-}
-#Element4 {
-  font-style: italic;
-}
-#Element9 {
-  font-size: 6pt;
-  color: #7f7f7f;
 }
 
 #InfoBox {
