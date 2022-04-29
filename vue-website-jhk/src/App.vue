@@ -49,6 +49,14 @@ div {
   float: left;
 }
 
+#content {
+  padding-left: 5rem;
+  padding-right: rem;
+  max-width: 90%;
+  min-width: 600px;
+  float: left;
+}
+
 #nr5 {
   border-top: 1px dotted gray;
   position: relative;

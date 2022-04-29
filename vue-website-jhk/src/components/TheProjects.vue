@@ -306,11 +306,9 @@ export default {
       this.buttonsClicked = true;
       this.detailsWanted = false;
       if (cat === "news") {
-        this.filteredProjects = this.projects.filter((proj) => proj === "news");
+        this.filteredProjects = this.news;
       } else if (cat === "software") {
-        this.filteredProjects = this.projects.filter(
-          (proj) => proj === "software"
-        );
+        this.filteredProjects = this.software;
       } else if (cat === "exhibitions") {
         this.filteredProjects = this.exhibitions;
       } else if (cat === "graphics") {

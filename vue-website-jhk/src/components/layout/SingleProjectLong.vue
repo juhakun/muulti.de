@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="content">
     <header>
       <h2>{{ selectedProject.name }}</h2>
       <p>Untertitel</p>

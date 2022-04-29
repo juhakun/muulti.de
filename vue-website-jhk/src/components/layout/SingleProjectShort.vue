@@ -72,13 +72,14 @@ img {
 table {
   padding-bottom: 0.5rem;
   padding-top: 2rem;
+  margin-right: 8rem;
   border-bottom: 1px dashed;
   border-color: gray;
   vertical-align: top;
 }
 
 .table {
-  max-width: 100%;
+  max-width: 90%;
   min-width: 300px;
   margin-left: rem;
   margin-right: 1rem;
