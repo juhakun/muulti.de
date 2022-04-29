@@ -3,25 +3,23 @@
     <base-button v-if="buttonsClicked === false" mode="active"
       >News</base-button
     >
-    <base-button v-else @click="$emit('filter-category', 'news', true)"
+    <base-button v-else @click="$emit('filter-category', 'news')"
       >News</base-button
     >
-    <base-button @click="$emit('filter-category', 'software', true)"
+    <base-button @click="$emit('filter-category', 'software')"
       >Software</base-button
     >
-    <base-button @click="$emit('filter-category', 'exhibitions', true)"
+    <base-button @click="$emit('filter-category', 'exhibitions')"
       >Exhibition / Interior</base-button
     >
-    <base-button @click="$emit('filter-category', 'graphics', true)"
+    <base-button @click="$emit('filter-category', 'graphics')"
       >Graphics</base-button
     >
-    <base-button @click="$emit('filter-category', 'management', true)"
+    <base-button @click="$emit('filter-category', 'management')"
       >Design Management</base-button
     >
-    <base-button @click="$emit('filter-category', 'about', true)"
-      >About</base-button
-    >
-    <base-button @click="$emit('filter-category', 'contact', true)"
+    <base-button @click="$emit('filter-category', 'about')">About</base-button>
+    <base-button @click="$emit('filter-category', 'contact')"
       >Contact</base-button
     >
   </div>

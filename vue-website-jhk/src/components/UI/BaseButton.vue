@@ -40,6 +40,14 @@ button:focus {
   font-size: 10pt;
 }
 
+.de-eng-active {
+  padding: 0.75rem 0.15rem 0rem;
+  font-size: 10pt;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .active {
   color: black;
   text-decoration: none;

@@ -41,6 +41,7 @@ export default {
   provide() {
     return {
       openProjectDetails: this.openProjectDetails,
+      detailsWanted: this.detailsWanted,
     };
   },
   methods: {
