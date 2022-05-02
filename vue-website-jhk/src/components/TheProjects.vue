@@ -8,6 +8,7 @@
     <base-navigation
       @filter-category="filterProjects"
       @show-about="showDetailsAbout"
+      @show-contact="showContactInfo"
       :buttonsClicked="buttonsClicked"
     ></base-navigation>
     <personal-details
@@ -25,7 +26,25 @@
       v-if="detailsWanted === true"
       :selectedLanguage="selectedLanguage"
       :selectedProject="selectedProject"
-    ></single-project-long>
+    ></single-project-long
+    ><contact-details
+      v-if="contactInfoWanted === true"
+      :me="me"
+    ></contact-details>
+    <the-footer
+      @go-back="filterProjects"
+      v-if="selectedLanguage === 'de'"
+      :footer1="'zurück'"
+      :footer2="'Impressum'"
+      :selectedProject="selectedProject"
+    ></the-footer>
+    <the-footer
+      @go-back="filterProjects"
+      v-else-if="selectedLanguage === 'eng'"
+      :footer1="'back'"
+      :footer2="'Imprint'"
+      :selectedProject="selectedProject"
+    ></the-footer>
   </header>
 </template>
 
@@ -35,15 +54,19 @@ import OverviewProjects from "./layout/OverviewProjects.vue";
 import SingleProjectLong from "./layout/SingleProjectLong.vue";
 import HeaderDeEng from "./layout/HeaderDeEng.vue";
 import PersonalDetails from "./layout/PersonalDetails.vue";
+import ContactDetails from "./layout/ContactDetails.vue";
+import TheFooter from "./layout/TheFooter.vue";
 
 export default {
-  emits: ["filter-category", "filter-language"],
+  emits: ["filter-category", "filter-language", "go-back"],
   components: {
     OverviewProjects,
     BaseNavigation,
     SingleProjectLong,
     HeaderDeEng,
     PersonalDetails,
+    ContactDetails,
+    TheFooter,
   },
   data() {
     return {
@@ -51,6 +74,7 @@ export default {
       buttonsClicked: false,
       selectedLanguage: "de",
       selectedProject: undefined,
+      contactInfoWanted: false,
       me: {
         detailsWanted: false,
         portrait: "",
@@ -65,6 +89,7 @@ export default {
       filteredProjects: [
         {
           id: "01",
+          category: "software",
           name: "Webseite mit Vue.JS und JavaScript",
           nameDe: "Webseite mit Vue.JS und JavaScript",
           nameEng: "Website with Vue.JS and JavaScript",
@@ -93,6 +118,7 @@ export default {
       news: [
         {
           id: "01",
+          category: "software",
           name: "Webseite mit Vue.JS und JavaScript",
           nameDe: "Webseite mit Vue.JS und JavaScript",
           nameEng: "Website with Vue.JS and JavaScript",
@@ -121,6 +147,7 @@ export default {
       software: [
         {
           id: "01",
+          category: "software",
           name: "Webseite mit Vue.JS und JavaScript",
           nameDe: "Webseite mit Vue.JS und JavaScript",
           nameEng: "Website with Vue.JS and JavaScript",
@@ -149,6 +176,7 @@ export default {
       exhibitions: [
         {
           id: "02",
+          category: "exhibitions",
           name: "",
           nameDe: "Bundespreis Ecodesign",
           nameEng: "GERMAN ECODESIGN AWARD",
@@ -176,6 +204,7 @@ export default {
         },
         {
           id: "03",
+          category: "exhibitions",
           name: "",
           nameDe: "Spot on Materials",
           nameEng: "Spot on Materials",
@@ -185,8 +214,10 @@ export default {
           descriptionEng:
             "The exhibition SPOT ON MATERIALS presented new and innovative materials and illustrateed these on the basis of products that have already been implemented. The products and materials make clear, which status materials have as a generator for creativity, for new ideas and unusual solutions.",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe:
+            "Die Ausstellungsgestaltung greift Elemente auf, die dem Besucher bereits aus Innenräumen öffentlicher Verkehrsmittel bekannt sind. So setzt sich die Grundkonstruktion des Ausstellungssystems aus Rohrverbindern und Rohren zusammen, die durch Halteschlaufen und Informationstafeln ergänzt werden. ",
+          textEng:
+            "The exhibition design takes up elements, that are already familiar to the visitors from the interiors of public transportation. The basic construction of the exhibition system consists of pipe connectors and pipes, that are supplemented by straps and information boards. ",
           img: require("@/assets/img/som_01.jpg"),
           img1: "",
           img2: "",
@@ -201,6 +232,7 @@ export default {
         },
         {
           id: "04",
+          category: "exhibitions",
           name: "Woher kommt das Neue?",
           nameDe: "Woher kommt das Neue?",
           nameEng: "Where does the New come from?",
@@ -226,6 +258,7 @@ export default {
         },
         {
           id: "05",
+          category: "exhibitions",
           name: "",
           nameDe: "German Shades of Green",
           nameEng: "German Shades of Green",
@@ -251,6 +284,7 @@ export default {
         },
         {
           id: "06",
+          category: "exhibitions",
           name: "",
           nameDe: "Design Deutschland",
           nameEng: "Design Deutschland",
@@ -276,6 +310,7 @@ export default {
         },
         {
           id: "07",
+          category: "exhibitions",
           name: "",
           nameDe: "Imm Cologne",
           nameEng: "Imm Cologne",
@@ -301,6 +336,7 @@ export default {
         },
         {
           id: "08",
+          category: "exhibitions",
           name: "",
           nameDe: "Nominee selection",
           nameEng: "Nominee selection",
@@ -326,6 +362,7 @@ export default {
         },
         {
           id: "09",
+          category: "exhibitions",
           name: "",
           nameDe: "usability park",
           nameEng: "usability park",
@@ -350,6 +387,7 @@ export default {
         },
         {
           id: "10",
+          category: "exhibitions",
           name: "",
           nameDe: "Access Berlin Design",
           nameEng: "Access Berlin Design",
@@ -375,6 +413,7 @@ export default {
         },
         {
           id: "11",
+          category: "exhibitions",
           name: "",
           nameDe: "Ideal Standard",
           nameEng: "Ideal Standard",
@@ -400,6 +439,7 @@ export default {
         },
         {
           id: "12",
+          category: "exhibitions",
           name: "",
           nameDe: "Bundespressestrand",
           nameEng: "Bundespressestrand",
@@ -428,6 +468,7 @@ export default {
       graphics: [
         {
           id: "13",
+          category: "graphics",
           name: "",
           nameDe: "Spot on Materials",
           nameEng: "Spot on Materials",
@@ -453,6 +494,7 @@ export default {
         },
         {
           id: "14",
+          category: "graphics",
           name: "",
           nameDe: "German Shades of Green",
           nameEng: "German Shades of Green",
@@ -478,6 +520,7 @@ export default {
         },
         {
           id: "15",
+          category: "graphics",
           name: "",
           nameDe: "Hotel Weisshaar",
           nameEng: "Hotel Weisshaar",
@@ -503,6 +546,7 @@ export default {
         },
         {
           id: "16",
+          category: "graphics",
           name: "",
           nameDe: "Access Berlin Design",
           nameEng: "Access Berlin Design",
@@ -528,6 +572,7 @@ export default {
         },
         {
           id: "17",
+          category: "graphics",
           name: "",
           nameDe: "Berliner Republik",
           nameEng: "Berliner Republik",
@@ -553,6 +598,7 @@ export default {
         },
         {
           id: "18",
+          category: "graphics",
           name: "",
           nameDe: "Marquardt lässt grüssen",
           nameEng: "Marquardt says Hello",
@@ -581,6 +627,7 @@ export default {
       management: [
         {
           id: "19",
+          category: "management",
           name: "",
           nameDe: "Bundespreis Ecodesign",
           nameEng: "German Ecodesign Award",
@@ -607,6 +654,7 @@ export default {
         },
         {
           id: "20",
+          category: "management",
           name: "",
           nameDe: "Deutscher Marken- und Designkongress",
           nameEng: "German Brand and Design Congress",
@@ -633,6 +681,7 @@ export default {
         },
         {
           id: "21",
+          category: "management",
           name: "",
           nameDe: "Deutsches Design Museum",
           nameEng: "German Design Museum",
@@ -659,6 +708,7 @@ export default {
         },
         {
           id: "22",
+          category: "management",
           name: "",
           nameDe: "Brand New Germany",
           nameEng: "Brand New Germany",
@@ -684,6 +734,7 @@ export default {
         },
         {
           id: "23",
+          category: "management",
           name: "",
           nameDe: "Material Vision Konferenz",
           nameEng: "Material Vision Conference",
@@ -710,6 +761,7 @@ export default {
         },
         {
           id: "24",
+          category: "management",
           name: "",
           nameDe: "YDMI–Young Designers Meet the Industry",
           nameEng: "YDMI–Young Designers Meet the Industry",
@@ -739,6 +791,7 @@ export default {
       about: [
         {
           id: "12",
+          category: "management",
           name: "",
           nameDe: "Julia Haeusler-Kun",
           nameEng: "Julia Haeusler-Kun",
@@ -764,33 +817,7 @@ export default {
         },
       ],
 
-      contact: [
-        {
-          id: "12",
-          name: "",
-          nameDe: "Bundespressestrand",
-          nameEng: "Bundespressestrand",
-          description: "",
-          descriptionDe:
-            "Die bekannte Berliner Sommer-Gastronomie BUNDESPRESSESTRAND eröffnete während der Wintermonate 2004/2005 erstmals eine Winterpräsenz für Abendveranstaltungen in einem zur Sommerlocation nahegelegen Bürogebäude. Die leerstehende Büroetage wurde in eine Winterlandschaft verwandelt, um auch den Berlinern einen kleinen Skiurlaub zu ermöglichen.",
-          descriptionEng:
-            "In 2004/2005 the well known Berlin summer event location BUNDESPRESSESTRAND for the first time opened up a winter venue for evening events in an office buliding near to the summer site. The empty office floor was transformed into a winter landscape in order to allow the Berliners a small skiing vacation.",
-          text: "",
-          textDe: "",
-          textEng: "",
-          img: require("@/assets/img/bps_06.jpg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
-          img8: "",
-          img9: "",
-          copyright: "",
-        },
-      ],
+      contact: [],
     };
   },
 
@@ -839,11 +866,12 @@ export default {
     },
 
     filterProjects(cat) {
+      this.selectedProject = undefined;
       this.detailsWanted = false;
       this.buttonsClicked = true;
-
+      this.me.detailsWanted = false;
+      this.contactInfoWanted = false;
       if (cat !== "about" || cat !== "contact") {
-        this.me.detailsWanted = false;
         if (cat === "news") {
           this.filteredProjects = this.news;
         } else if (cat === "software") {
@@ -868,6 +896,7 @@ export default {
     showDetailsAbout() {
       this.filteredProjects = undefined;
       this.detailsWanted = false;
+      this.contactInfoWanted = false;
       this.me.detailsWanted = true;
       this.me.portrait = require("@/assets/img/jh2.jpg");
       this.me.headline = "Julia Haeusler-Kun";
@@ -882,6 +911,15 @@ export default {
         this.me.cv =
           "offers a wide range of services in the areas of programming, design and communication. The combination of different disciplines is a central part of her work and enables the development of extraordinary, holistic concepts. Since 2004 she has worked for numerous well-known clients. Born in Constance, she first studied architecture at the Technical University of Karlsruhe and then completed her design studies with a focus on product design at the Postdam University of Applied Sciences. In addition to her training in design, she completed a one-year training course to become a certified software developer, which she completed in summer 2022. Julia Häusler lives and works in Berlin.";
       }
+    },
+    showContactInfo() {
+      this.filteredProjects = undefined;
+      this.me.detailsWanted = false;
+      this.detailsWanted = false;
+      this.contactInfoWanted = true;
+      this.me.title = "Diplom Designer (FH)";
+      this.me.mail = "mail@juliahaeusler.com";
+      this.me.imprint = "Impressum";
     },
   },
 };

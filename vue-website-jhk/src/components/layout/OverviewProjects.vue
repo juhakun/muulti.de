@@ -4,6 +4,7 @@
       v-for="project in filteredProjects"
       :key="project.id"
       :id="project.id"
+      :projectCategory="project.category"
       :projectName="project.name"
       :projectDes="project.description"
       :projectText="project.text"

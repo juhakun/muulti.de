@@ -44,6 +44,7 @@ export default {
   props: [
     "id",
     "projectName",
+    "projectCategory",
     "projectDes",
     "projectText",
     "projectTextDe",
@@ -65,6 +66,7 @@ export default {
     return {
       selectedProject: {
         id: this.id,
+        category: this.cathegory,
         name: this.projectName,
         description: this.projectDes,
         text: this.projectText,
@@ -90,7 +92,7 @@ export default {
 
 <style scoped>
 img {
-  max-width: 320px;
+  max-width: 350px;
 }
 
 td {

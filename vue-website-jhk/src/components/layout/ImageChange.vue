@@ -9,10 +9,13 @@
     <tr>
       <td>
         <tr>
-          <img :src="img" style="width: 450px" />
+          <img
+            :src="img"
+            style="width: 450px; padding-top: 1rem; padding-bottom: 1rem"
+          />
         </tr>
       </td>
-      <td style="vertical-align: top">
+      <td style="vertical-align: top; padding-top: 1rem">
         <tr>
           <td>
             <img

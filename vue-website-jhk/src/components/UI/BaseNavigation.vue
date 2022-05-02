@@ -22,9 +22,7 @@
       >Design Management</base-button
     >
     <base-button @click="$emit('show-about', 'about')">About</base-button>
-    <base-button @click="$emit('filter-category', 'contact')"
-      >Contact</base-button
-    >
+    <base-button @click="$emit('show-contact', 'contact')">Contact</base-button>
   </div>
 </template>
 

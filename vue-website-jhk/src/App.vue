@@ -58,7 +58,8 @@ div {
 }
 
 #detailedText {
-  margin-right: 7rem;
+  margin-right: 9rem;
+  padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px dashed;
   border-color: gray;
@@ -67,13 +68,12 @@ div {
 body {
   background-color: white;
 }
+
 h1 {
   font-family: "Arial";
   font-size: 24pt;
 }
-#Element1 {
-  font-size: 14pt;
-}
+
 h2 {
   font-size: 11pt;
   font-family: "Arial";
