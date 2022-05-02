@@ -1,6 +1,7 @@
 <template>
   <div id="content">
-    <table style="vertical-align: top; padding-top: 0.5rem">
+    <image-change></image-change>
+    <!-- <table style="vertical-align: top; padding-top: 0.5rem">
       <tr>
         <h2>
           {{ selectedProject.name.toUpperCase() }}<br />
@@ -96,7 +97,7 @@
       <tr>
         <p class="copyright">{{ selectedProject.copyright }}</p>
       </tr>
-    </table>
+    </table> -->
     <div id="detailedText">
       <p>
         Bei der Konzeption und Gestaltung der Wanderausstellung wurde besonderen
@@ -127,8 +128,10 @@
 </template>
 
 <script>
+import ImageChange from "./ImageChange.vue";
 export default {
-  props: ["selectedProject"],
+  components: { ImageChange },
+  props: ["selectedProject", "me"],
   data() {
     return { img: this.selectedProject.img };
   },

@@ -92,7 +92,7 @@ table {
   min-width: 760px;
   max-width: 900px;
   padding-bottom: 0.5rem;
-  padding-top: 2rem;
+  padding-top: 0;
   margin-right: 8rem;
   border-bottom: 1px dashed;
   border-color: gray;

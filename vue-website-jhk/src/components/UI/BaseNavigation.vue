@@ -21,7 +21,7 @@
     <base-button @click="$emit('filter-category', 'management')"
       >Design Management</base-button
     >
-    <base-button @click="$emit('filter-category', 'about')">About</base-button>
+    <base-button @click="$emit('show-about', 'about')">About</base-button>
     <base-button @click="$emit('filter-category', 'contact')"
       >Contact</base-button
     >

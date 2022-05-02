@@ -7,17 +7,30 @@
     <header-logo></header-logo>
     <base-navigation
       @filter-category="filterProjects"
+      @show-about="showDetailsAbout"
       :buttonsClicked="buttonsClicked"
     ></base-navigation>
+    <SingleProjectLong
+      v-if="me.detailsWanted === true"
+      :selectedLanguage="selectedLanguage"
+      :me="me"
+    ></SingleProjectLong>
     <overview-projects
       v-if="detailsWanted === false"
       :filteredProjects="filteredProjects"
       :selectedLanguage="selectedLanguage"
+      :me="me"
     ></overview-projects>
+
     <SingleProjectLong
       v-if="detailsWanted === true"
       :selectedLanguage="selectedLanguage"
       :selectedProject="selectedProject"
+    ></SingleProjectLong>
+    <SingleProjectLong
+      v-else-if="me.detailsWanted === true"
+      :selectedLanguage="selectedLanguage"
+      :me="me"
     ></SingleProjectLong>
   </header>
 </template>
@@ -41,6 +54,15 @@ export default {
       buttonsClicked: false,
       selectedLanguage: "de",
       selectedProject: undefined,
+      me: {
+        detailsWanted: false,
+        portrait: "",
+        headline: "",
+        cv: "",
+        title: "",
+        mail: "",
+        imprint: "",
+      },
       filteredProjects: [
         {
           id: "01",
@@ -121,7 +143,7 @@ export default {
           id: "02",
           name: "",
           nameDe: "Bundespreis Ecodesign",
-          nameEng: "Bundespreis Ecodesign",
+          nameEng: "GERMAN ECODESIGN AWARD",
           description: "",
           descriptionDe:
             "Seit 2013 ist die Ausstellung zum BUNDESPREIS ECODESIGN jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.",
@@ -497,26 +519,141 @@ export default {
 
       management: [
         {
-          id: "18",
+          id: "19",
           name: "",
-          nameDe: "Marquardt lässt grüssen",
-          nameEng: "MARQUARDT SAYS HELLO",
+          nameDe: "Bundespreis Ecodesign",
+          nameEng: "GERMAN ECODESIGN AWARD",
           description: "",
           descriptionDe:
-            "Eine Kleiderkollektion mit Illustrationen zum Ort Marquardt bei Potsdam. ",
+            "Der BUNDESPREIS ECODESIGN wurde 2012 erstmals vom Bundesumweltministerium und dem Umweltbundesamt ausgelobt und zeichnet innovative Produkte und Konzepte aus, die gleichermaßen ästhetischen als auch ökologischen Ansprüchen genügen. Der Preis bietet Unternehmen sowie Designerinnen und Designern eine Plattform, um ihre Produkte und Ideen von herausragender ökologischer und gestalterischer Qualität zu präsentieren.",
           descriptionEng:
-            "A dress collection with illustrations inspired by the village of Marquardt near Potsdam.",
-          img: require("@/assets/img/Illustration_04_2.jpg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
+            "In 2012 the GERMAN ECODESIGN AWARD was awarded for the first time by the Federal Minister of the Environment and the Federal Environmental Agency and honors innovative products and concepts, that meet aesthetic as well as ecological demands. The prize offers companies as well as designers a platform to present their products and ideas of exceptional ecological and artistic quality. ",
+          img: require("@/assets/img/eco1.jpg"),
+          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
+          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
+          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
+          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
+          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
+          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
           img7: "",
           img8: "",
           img9: "",
-          copyright: "",
+          copyright:
+            "© IDZ Internationales Design Zentrum Berlin e.V. / Sandra Kühnapfel",
+        },
+        {
+          id: "20",
+          name: "",
+          nameDe: "DEUTSCHER MARKEN- UND DESIGNKONGRESS",
+          nameEng: "GERMAN BRAND AND DESIGN CONGRESS",
+          description: "",
+          descriptionDe:
+            "Auf dem DEUTSCHE MARKEN- UND DESIGNKONGRESS diskutieren hochrangige Experten verschiedener Gestaltungsbereiche über Brandmanagementprozesse. Unter dem Titel Establishing High-Value Brands beschäftigte sich der Kongress in 2011 mit der Implementierung von Marken, wobei die Markenkommunikation nach innen und außen im Mittelpunkt stand.",
+          descriptionEng:
+            "At the GERMAN BRAND AND DESIGN CONGRESS experts from different design areas discuss brand management processes. Under the title Establishing High-Value Brands in 2011 the congress dealt with the implementation of brands focussing on the inward and outward communication of brands.",
+          img: require("@/assets/img/dmdk_11_06.jpg"),
+          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
+          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
+          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
+          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
+          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
+          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright:
+            "© Rat für Formgebung/German Design Council / Sandra Kühnapfel",
+        },
+        {
+          id: "21",
+          name: "",
+          nameDe: "DEUTSCHES DESIGN MUSEUM",
+          nameEng: "GERMAN DESIGN MUSEUM",
+          description: "",
+          descriptionDe:
+            "Über die Relevanz und Aufgabe eines DEUTSCHEN DESIGN MUSEUMS diskutierten renommierte Designer, Künstler und Pressevertreter im Rahmen einer Roundtable-Veranstaltung in Berlin. Der folgende öffentlichen Diskurs eröffnete der deutschen Designszene die Möglichkeit, sich an der Diskussion zu beteiligen. ",
+          descriptionEng:
+            "Renowned designers, artists and press representatives discussed the relevance and intention of a GERMAN DESIGN MUSEUM in the course of a round-table event in Berlin. The following public discourse offered the German design scene the possibility to be involved in the discussion. ",
+          img: require("@/assets/img/ddm_03.jpg"),
+          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
+          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
+          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
+          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
+          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
+          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright:
+            "© Rat für Formgebung/German Design Council / Sandra Kühnapfel",
+        },
+        {
+          id: "22",
+          name: "",
+          nameDe: "BRAND NEW GERMANY",
+          nameEng: "BRAND NEW GERMANY",
+          description: "",
+          descriptionDe:
+            "Die BRAND NEW GERMANY KONFERENZ UND VORTRAGSREIHE bot Designagenturen, Designern und Unternehmen der deutschen Kreativwirtschaft die Möglichkeit, sich über Chancen und Risiken des asiatischen Markts, dem sie sich häufig nicht länger entziehen können, zu informieren. Bereits in Asien vertretene Unternehmen und Dienstleister berichteten über ihre Erfahrungen.",
+          descriptionEng:
+            "The BRAND NEW GERMANY CONFERENCE AND SERIES OF LECTURES offered design agencies, designers and companies from the German creative industry the opportunity to catch up on the chances and risks of the Asian market, from which they can often no longer evade. Companies and service providers already represented in Asia reported on their experiences. ",
+          img: require("@/assets/img/bng_01.jpg"),
+          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
+          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
+          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
+          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
+          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
+          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "© Rat für Formgebung/German Design Council",
+        },
+        {
+          id: "23",
+          name: "",
+          nameDe: "MATERIAL VISION KONFERENZ",
+          nameEng: "MATERIAL VISION CONFERENCE",
+          description: "",
+          descriptionDe:
+            "Auf der MATERIAL VISION KONFERENZ mit dem Titel Designing the Weightless World erhielten Produktentwickler, Designer und Architekten parallel zur Fachmesse Material Vision 2011 einen exklusiven Ausblick in die Materialtrends von morgen.",
+          descriptionEng:
+            "Parallel to the trade fair Material Vision 2011, product developers, designers and architects got an exclusive outlook on the material trends of tomorrow at the MATERIAL VISION CONFERENCE under the title Designing the Weightless World. ",
+          img: require("@/assets/img/mv_11_02.jpg"),
+          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
+          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
+          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
+          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
+          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
+          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright:
+            "© Rat für Formgebung/German Design Council / Lutz Sternstein",
+        },
+        {
+          id: "24",
+          name: "",
+          nameDe: "YDMI–YOUNG DESIGNERS MEET THE INDUSTRY",
+          nameEng: "YDMI—YOUNG DESIGNERS MEET THE INDUSTRY",
+          description: "",
+          descriptionDe:
+            "YDMI – YOUNG DESIGNERS MEET THE INDUSTRY ist die Recruiting- und Akquiseplattform des Rat für Formgebung für die Designszene, auf der ausgewählte Young Professionals aus den Bereichen Kommunikations-, Produkt- sowie Industriedesign auf Unternehmen mit ausgewiesener Design-Kompetenz treffen. ",
+          descriptionEng:
+            "YDMI—YOUNG DESIGNERS MEET THE INDUSTRY is the recruiting and acquisition platform for the design scene organised by the German Design Council, on which selected Young Professionals from the fields of communication design, product design and industrial design meet up with companies with outstanding design expertise.",
+          img: require("@/assets/img/YDMI_08_09_2.jpg"),
+          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
+          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
+          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
+          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
+          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
+          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright:
+            "© Rat für Formgebung/German Design Council / Lutz Sternstein",
         },
       ],
 
@@ -524,13 +661,13 @@ export default {
         {
           id: "12",
           name: "",
-          nameDe: "Bundespressestrand",
-          nameEng: "Bundespressestrand",
+          nameDe: "Julia Haeusler-Kun",
+          nameEng: "Julia Haeusler-Kun",
           description: "",
           descriptionDe:
-            "Die bekannte Berliner Sommer-Gastronomie BUNDESPRESSESTRAND eröffnete während der Wintermonate 2004/2005 erstmals eine Winterpräsenz für Abendveranstaltungen in einem zur Sommerlocation nahegelegen Bürogebäude. Die leerstehende Büroetage wurde in eine Winterlandschaft verwandelt, um auch den Berlinern einen kleinen Skiurlaub zu ermöglichen.",
+            "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig. Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.",
           descriptionEng:
-            "In 2004/2005 the well known Berlin summer event location BUNDESPRESSESTRAND for the first time opened up a winter venue for evening events in an office buliding near to the summer site. The empty office floor was transformed into a winter landscape in order to allow the Berliners a small skiing vacation.",
+            "born in Constance, studied architecture at the Technical University Karlsruhe before she finished her design studies at the University of Applied Sciences in Potsdam with her diploma. Since 2004 she works for clients such as the German Design Council—the German competence center for design in Frankfurt—, the IDZ International Design Center Berlin and the Goethe Institute in Taipei. Her knowledge—both in architecture and design—, her interest in present developments and trends in the design sector as well as best contacts into the national and international design scene serve as a basis of inspiration to her in order to develop unique concepts. Julia Häusler lives and works in Berlin and Mannheim. ",
           img: require("@/assets/img/bps_06.jpg"),
           img1: "",
           img2: "",
@@ -605,31 +742,50 @@ export default {
     filterProjects(cat) {
       this.detailsWanted = false;
       this.buttonsClicked = true;
-      this.detailsWanted = false;
-      if (cat === "news") {
-        this.filteredProjects = this.news;
-      } else if (cat === "software") {
-        this.filteredProjects = this.software;
-      } else if (cat === "exhibitions") {
-        this.filteredProjects = this.exhibitions;
-      } else if (cat === "graphics") {
-        this.filteredProjects = this.graphics;
-      } else if (cat === "management") {
-        this.filteredProjects = this.management;
+
+      if (cat !== "about" || cat !== "contact") {
+        this.me.detailsWanted = false;
+        if (cat === "news") {
+          this.filteredProjects = this.news;
+        } else if (cat === "software") {
+          this.filteredProjects = this.software;
+        } else if (cat === "exhibitions") {
+          this.filteredProjects = this.exhibitions;
+        } else if (cat === "graphics") {
+          this.filteredProjects = this.graphics;
+        } else if (cat === "management") {
+          this.filteredProjects = this.management;
+        }
       } else if (cat === "about") {
-        this.filteredProjects = this.about;
-      } else if (cat === "contact") {
-        this.filteredProjects = this.contact;
+        this.me.detailsWanted = true;
+        this.me.portrait = require("@/assets/img/jh2.jpg");
+        this.me.headline = "Julia Haeusler-Kun";
+        this.me.cv =
+          "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
+          " Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.";
+        this.title = "Diplom Designer (FH)";
+        this.me.mail = "mail@juliahaeusler.com";
+        this.me.imprint = "";
       }
       this.filterLanguage(this.selectedLanguage);
     },
-
     setSelectedProject(project) {
       this.detailsWanted = true;
       console.log(this.detailsWanted);
       this.selectedProject = project;
 
       console.log(this.selectedProject.name);
+    },
+    showDetailsAbout() {
+      this.me.detailsWanted = true;
+      this.me.portrait = require("@/assets/img/jh2.jpg");
+      this.me.headline = "Julia Haeusler-Kun";
+      this.me.cv =
+        "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
+        " Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.";
+      this.title = "Diplom Designer (FH)";
+      this.me.mail = "mail@juliahaeusler.com";
+      this.me.imprint = "";
     },
   },
 };
