@@ -46,6 +46,8 @@ export default {
     "projectName",
     "projectDes",
     "projectText",
+    "projectTextDe",
+    "projectTextEng",
     "projectImgSrc",
     "projectImgSrc1",
     "projectImgSrc2",
@@ -56,7 +58,6 @@ export default {
     "projectImgSrc7",
     "projectImgSrc8",
     "projectImgSrc9",
-
     "projectCopyright",
     "selectedLanguage",
   ],
@@ -67,6 +68,8 @@ export default {
         name: this.projectName,
         description: this.projectDes,
         text: this.projectText,
+        textDe: this.projectTextDe,
+        textEng: this.projectTextEng,
         img: this.projectImgSrc,
         img1: this.projectImgSrc1,
         img2: this.projectImgSrc2,
@@ -88,17 +91,6 @@ export default {
 <style scoped>
 img {
   max-width: 320px;
-}
-
-table {
-  min-width: 760px;
-  max-width: 900px;
-  padding-bottom: 0.5rem;
-  padding-top: 2rem;
-  margin-right: 8rem;
-  border-bottom: 1px dashed;
-  border-color: gray;
-  vertical-align: top;
 }
 
 td {

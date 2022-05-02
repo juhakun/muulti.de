@@ -74,8 +74,8 @@
             Ambiente, Frankfurt <br />www.ambiente.messefrankfurt.com
             <br /><br />City of Design, Shenzhen/China
             <br />www.shenzhendesign.org <br /><br />DMY, Berlin
-            <br />dmy-berlin.com <br /><br />Fuori Salone zur Internationalen
-            Möbelmesse <br />Salone del Mobile, Mailand/Italien
+            <br />www.dmy-berlin.com <br /><br />Fuori Salone zur
+            Internationalen Möbelmesse <br />Salone del Mobile, Mailand/Italien
             <br />www.fuorisalone.it <br /><br />ICFF International Contemporary
             Furniture Fair, <br />New York/USA <br />www.icff.com
             <br /><br />IFA Internationale Funkausstellung, Berlin

@@ -2,16 +2,17 @@
   <div id="content">
     <image-change :selectedProject="selectedProject"></image-change>
 
-    <div id="detailedText">
+    <div id="detailedText" v-if="selectedLanguage === 'de'">
       <p>
-        {{ selectedProject.text }}
+        {{ selectedProject.textDe }}
       </p>
     </div>
-    <div
-      id="detailedText"
-      style="border-color: white"
-      v-if="selectedLanguage === 'de'"
-    >
+    <div id="detailedText" v-else-if="selectedLanguage === 'eng'">
+      <p>
+        {{ selectedProject.textEng }}
+      </p>
+    </div>
+    <div id="detailedText" v-if="selectedLanguage === 'de'">
       <p>
         AUFTRAGEBER<br />
         {{ selectedProject.name }}
@@ -22,11 +23,7 @@
         {{ selectedProject.name }}
       </p>
     </div>
-    <div
-      id="detailedText"
-      style="border-color: white"
-      v-if="selectedLanguage === 'eng'"
-    >
+    <div id="detailedText" v-if="selectedLanguage === 'eng'">
       <p>
         CLIENT<br />
         {{ selectedProject.name }}

@@ -55,6 +55,8 @@ export default {
         portrait: "",
         headline: "",
         cv: "",
+        cvDe: "",
+        cvEng: "",
         title: "",
         mail: "",
         imprint: "",
@@ -482,7 +484,7 @@ export default {
           descriptionDe:
             "Logo-Redesign für das traditionsreiche HOTEL WEISSHAAR in Meersburg am Bodensee sowie Entwicklung und Gestaltung diverser Druckerzeugnisse und Werbemittel. ",
           descriptionEng:
-            "Logo-Redesign für das traditionsreiche HOTEL WEISSHAAR in Meersburg am Bodensee sowie Entwicklung und Gestaltung diverser Druckerzeugnisse und Werbemittel. ",
+            "Logo redesign for the traditional HOTEL WEISSHAAR in Meersburg at the Lake of Constance as well as concept and design for various means of advertising and printed material. ",
           text: "",
           textDe: "",
           textEng: "",
@@ -496,7 +498,7 @@ export default {
           img7: "",
           img8: "",
           img9: "",
-          copyright: "© IDZ Internationales Design Zentrum Berlin e.V.",
+          copyright: "",
         },
         {
           id: "16",
@@ -552,7 +554,7 @@ export default {
           id: "18",
           name: "",
           nameDe: "Marquardt lässt grüssen",
-          nameEng: "MARQUARDT SAYS HELLO",
+          nameEng: "Marquardt says Hello",
           description: "",
           descriptionDe:
             "Eine Kleiderkollektion mit Illustrationen zum Ort Marquardt bei Potsdam. ",
@@ -580,7 +582,7 @@ export default {
           id: "19",
           name: "",
           nameDe: "Bundespreis Ecodesign",
-          nameEng: "GERMAN ECODESIGN AWARD",
+          nameEng: "German Ecodesign Award",
           description: "",
           descriptionDe:
             "Der BUNDESPREIS ECODESIGN wurde 2012 erstmals vom Bundesumweltministerium und dem Umweltbundesamt ausgelobt und zeichnet innovative Produkte und Konzepte aus, die gleichermaßen ästhetischen als auch ökologischen Ansprüchen genügen. Der Preis bietet Unternehmen sowie Designerinnen und Designern eine Plattform, um ihre Produkte und Ideen von herausragender ökologischer und gestalterischer Qualität zu präsentieren.",
@@ -605,8 +607,8 @@ export default {
         {
           id: "20",
           name: "",
-          nameDe: "DEUTSCHER MARKEN- UND DESIGNKONGRESS",
-          nameEng: "GERMAN BRAND AND DESIGN CONGRESS",
+          nameDe: "Deutscher Marken- und Designkongress",
+          nameEng: "German Brand and Design Congress",
           description: "",
           descriptionDe:
             "Auf dem DEUTSCHE MARKEN- UND DESIGNKONGRESS diskutieren hochrangige Experten verschiedener Gestaltungsbereiche über Brandmanagementprozesse. Unter dem Titel Establishing High-Value Brands beschäftigte sich der Kongress in 2011 mit der Implementierung von Marken, wobei die Markenkommunikation nach innen und außen im Mittelpunkt stand.",
@@ -631,8 +633,8 @@ export default {
         {
           id: "21",
           name: "",
-          nameDe: "DEUTSCHES DESIGN MUSEUM",
-          nameEng: "GERMAN DESIGN MUSEUM",
+          nameDe: "Deutsches Design Museum",
+          nameEng: "German Design Museum",
           description: "",
           descriptionDe:
             "Über die Relevanz und Aufgabe eines DEUTSCHEN DESIGN MUSEUMS diskutierten renommierte Designer, Künstler und Pressevertreter im Rahmen einer Roundtable-Veranstaltung in Berlin. Der folgende öffentlichen Diskurs eröffnete der deutschen Designszene die Möglichkeit, sich an der Diskussion zu beteiligen. ",
@@ -657,8 +659,8 @@ export default {
         {
           id: "22",
           name: "",
-          nameDe: "BRAND NEW GERMANY",
-          nameEng: "BRAND NEW GERMANY",
+          nameDe: "Brand New Germany",
+          nameEng: "Brand New Germany",
           description: "",
           descriptionDe:
             "Die BRAND NEW GERMANY KONFERENZ UND VORTRAGSREIHE bot Designagenturen, Designern und Unternehmen der deutschen Kreativwirtschaft die Möglichkeit, sich über Chancen und Risiken des asiatischen Markts, dem sie sich häufig nicht länger entziehen können, zu informieren. Bereits in Asien vertretene Unternehmen und Dienstleister berichteten über ihre Erfahrungen.",
@@ -682,8 +684,8 @@ export default {
         {
           id: "23",
           name: "",
-          nameDe: "MATERIAL VISION KONFERENZ",
-          nameEng: "MATERIAL VISION CONFERENCE",
+          nameDe: "Material Vision Konferenz",
+          nameEng: "Material Vision Conference",
           description: "",
           descriptionDe:
             "Auf der MATERIAL VISION KONFERENZ mit dem Titel Designing the Weightless World erhielten Produktentwickler, Designer und Architekten parallel zur Fachmesse Material Vision 2011 einen exklusiven Ausblick in die Materialtrends von morgen.",
@@ -708,8 +710,8 @@ export default {
         {
           id: "24",
           name: "",
-          nameDe: "YDMI–YOUNG DESIGNERS MEET THE INDUSTRY",
-          nameEng: "YDMI—YOUNG DESIGNERS MEET THE INDUSTRY",
+          nameDe: "YDMI–Young Designers Meet the Industry",
+          nameEng: "YDMI–Young Designers Meet the Industry",
           description: "",
           descriptionDe:
             "YDMI – YOUNG DESIGNERS MEET THE INDUSTRY ist die Recruiting- und Akquiseplattform des Rat für Formgebung für die Designszene, auf der ausgewählte Young Professionals aus den Bereichen Kommunikations-, Produkt- sowie Industriedesign auf Unternehmen mit ausgewiesener Design-Kompetenz treffen. ",
@@ -800,10 +802,22 @@ export default {
   methods: {
     setLanguage(language) {
       this.selectedLanguage = language;
-      this.filterLanguage(this.selectedLanguage);
       this.buttonsClicked = true;
-      // console.log(this.selectedLanguage);
+      if (this.detailsWanted === false && this.me.detailsWanted === false) {
+        this.filterLanguage(this.selectedLanguage);
+      }
+      if (this.me.detailsWanted === true && language === "de") {
+        this.me.cv =
+          "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
+          "Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.";
+      } else if (this.me.detailsWanted === true && language === "eng") {
+        this.me.cv =
+          "offers a wide range of services in the areas of programming, design and communication. The combination of different disciplines is a central part of her work and enables the development of extraordinary, holistic concepts. Since 2004 she has worked for numerous well-known clients. Born in Constance, she first studied architecture at the Technical University of Karlsruhe and then completed her design studies with a focus on product design at the Postdam University of Applied Sciences. In addition to her training in design, she completed a one-year training course to become a certified software developer, which she completed in summer 2022. Julia Häusler lives and works in Berlin.";
+      }
     },
+
+    // console.log(this.selectedLanguage);
+
     filterLanguage(language) {
       console.log(this.selectedLanguage);
       if (language === "de") {
@@ -856,12 +870,17 @@ export default {
       this.me.detailsWanted = true;
       this.me.portrait = require("@/assets/img/jh2.jpg");
       this.me.headline = "Julia Haeusler-Kun";
-      this.me.cv =
-        "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
-        " Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.";
-      this.title = "Diplom Designer (FH)";
       this.me.mail = "mail@juliahaeusler.com";
+      this.title = "Diplom Designer (FH)";
       this.me.imprint = "";
+      if (this.selectedLanguage === "de") {
+        this.me.cv =
+          "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
+          " Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.";
+      } else if (this.selectedLanguage === "eng") {
+        this.me.cv =
+          "offers a wide range of services in the areas of programming, design and communication. The combination of different disciplines is a central part of her work and enables the development of extraordinary, holistic concepts. Since 2004 she has worked for numerous well-known clients. Born in Constance, she first studied architecture at the Technical University of Karlsruhe and then completed her design studies with a focus on product design at the Postdam University of Applied Sciences. In addition to her training in design, she completed a one-year training course to become a certified software developer, which she completed in summer 2022. Julia Häusler lives and works in Berlin.";
+      }
     },
   },
 };

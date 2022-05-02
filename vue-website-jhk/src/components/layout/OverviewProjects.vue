@@ -7,6 +7,8 @@
       :projectName="project.name"
       :projectDes="project.description"
       :projectText="project.text"
+      :projectTextDe="project.textDe"
+      :projectTextEng="project.textEng"
       :projectImgSrc="project.img"
       :projectImgSrc1="project.img1"
       :projectImgSrc2="project.img2"
