@@ -1,6 +1,9 @@
 <template>
   <div id="nav">
-    <base-button v-if="buttonsClicked === false" mode="active"
+    <base-button
+      v-if="buttonsClicked === false"
+      mode="active"
+      @click="$emit('filter-category', 'news')"
       >News</base-button
     >
     <base-button v-else @click="$emit('filter-category', 'news')"

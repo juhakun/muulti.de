@@ -17,7 +17,7 @@
     <SingleProjectLong
       v-if="detailsWanted === true"
       :selectedLanguage="selectedLanguage"
-      :selectedProject="filteredProject"
+      :selectedProject="selectedProject"
     ></SingleProjectLong>
   </header>
 </template>
@@ -360,13 +360,215 @@ export default {
         },
       ],
 
-      graphics: [{}],
+      graphics: [
+        {
+          id: "13",
+          name: "",
+          nameDe: "Spot on Materials",
+          nameEng: "Spot on Materials",
+          description: "",
+          descriptionDe:
+            "Die Ausstellung SPOT ON MATERIALS präsentierte innovative Materialen und veranschaulichte diese anhand bereits umgesetzter Produkte. Die Produkte und Materialien verdeutlichen, welchen Stellenwert Materialien als Generator für Kreativität, für neue Ideen und ungewöhnliche Lösungen haben. ",
+          descriptionEng:
+            "The exhibition SPOT ON MATERIALS presented new and innovative materials and illustrateed these on the basis of products that have already been implemented. The products and materials make clear, which status materials have as a generator for creativity, for new ideas and unusual solutions.",
+          img: require("@/assets/img/som_logo.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "",
+        },
+        {
+          id: "14",
+          name: "",
+          nameDe: "German Shades of Green",
+          nameEng: "German Shades of Green",
+          description: "",
+          descriptionDe:
+            "Die Ausstellung GERMAN SHADES OF GREEN – SUSTAINABLE DESIGN FROM GERMANY stellte Beispiele nachhaltiger Gestaltung vor. Sie zeigte anhand von Produkten, Konzepten und Ideen aus Deutschland, wie Nachhaltigkeit im Design umgesetzt werden kann und wie Gestaltung entscheidend zum Erfolg nachhaltiger Entwicklung beiträgt. Auch die Ausstellungsgestaltung und die grafische Präsentation der Exponate orientierte sich an diesem Nachhaltigkeitsanspruch.",
+          descriptionEng:
+            "The exhibition GERMAN SHADES OF GREEN—SUSTAINABLE DESIGN FROM GERMANY showcased examples of sustainable design. It showed by means of products, concepts and ideas from Germany how sustainability can be implemented into design and how design decisively contributes to the success of sustainable development.",
+          img: require("@/assets/img/gg_tai_10_2.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "© IDZ Internationales Design Zentrum Berlin e.V.",
+        },
+        {
+          id: "15",
+          name: "",
+          nameDe: "Hotel Weisshaar",
+          nameEng: "Hotel Weisshaar",
+          description: "",
+          descriptionDe:
+            "Logo-Redesign für das traditionsreiche HOTEL WEISSHAAR in Meersburg am Bodensee sowie Entwicklung und Gestaltung diverser Druckerzeugnisse und Werbemittel. ",
+          descriptionEng:
+            "Logo-Redesign für das traditionsreiche HOTEL WEISSHAAR in Meersburg am Bodensee sowie Entwicklung und Gestaltung diverser Druckerzeugnisse und Werbemittel. ",
+          img: require("@/assets/img/Weisshaar_01.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "© IDZ Internationales Design Zentrum Berlin e.V.",
+        },
+        {
+          id: "16",
+          name: "",
+          nameDe: "Access Berlin Design",
+          nameEng: "Access Berlin Design",
+          description: "",
+          descriptionDe:
+            "Die Ausstellung ACCESS BERLIN DESIGN stellte den Standort Berlin als wichtige Schnittstelle zwischen Industrie und Design vor und präsentierte designorientierte Unternehmen sowie Agenturen aus Berlin.",
+          descriptionEng:
+            "The exhibition ACCESS BERLIN DESIGN introduced the city of Berlin as an important business location at the interface between industry and design and presented design oriented companies as well as design agencies from Berlin.",
+          img: require("@/assets/img/abd_Logo.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "© Antonia Roth",
+        },
+        {
+          id: "17",
+          name: "",
+          nameDe: "Berliner Republik",
+          nameEng: "Berliner Republik",
+          description: "",
+          descriptionDe:
+            "Gestaltung des Covers für die Jubiläumsausgabe der Zeitschrift BERLINER REPUBLIK anlässlich ihres fünfjährigen Bestehens.",
+          descriptionEng:
+            "Cover design for the anniversary edition of the magazine BERLINER REPUBLIK in celebration of its fifth birthday. ",
+          img: require("@/assets/img/BR_01.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "© Antonia Roth",
+        },
+        {
+          id: "18",
+          name: "",
+          nameDe: "Marquardt lässt grüssen",
+          nameEng: "MARQUARDT SAYS HELLO",
+          description: "",
+          descriptionDe:
+            "Eine Kleiderkollektion mit Illustrationen zum Ort Marquardt bei Potsdam. ",
+          descriptionEng:
+            "A dress collection with illustrations inspired by the village of Marquardt near Potsdam.",
+          img: require("@/assets/img/Illustration_04_2.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "",
+        },
+      ],
 
-      management: [{}],
+      management: [
+        {
+          id: "18",
+          name: "",
+          nameDe: "Marquardt lässt grüssen",
+          nameEng: "MARQUARDT SAYS HELLO",
+          description: "",
+          descriptionDe:
+            "Eine Kleiderkollektion mit Illustrationen zum Ort Marquardt bei Potsdam. ",
+          descriptionEng:
+            "A dress collection with illustrations inspired by the village of Marquardt near Potsdam.",
+          img: require("@/assets/img/Illustration_04_2.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "",
+        },
+      ],
 
-      about: [{}],
+      about: [
+        {
+          id: "12",
+          name: "",
+          nameDe: "Bundespressestrand",
+          nameEng: "Bundespressestrand",
+          description: "",
+          descriptionDe:
+            "Die bekannte Berliner Sommer-Gastronomie BUNDESPRESSESTRAND eröffnete während der Wintermonate 2004/2005 erstmals eine Winterpräsenz für Abendveranstaltungen in einem zur Sommerlocation nahegelegen Bürogebäude. Die leerstehende Büroetage wurde in eine Winterlandschaft verwandelt, um auch den Berlinern einen kleinen Skiurlaub zu ermöglichen.",
+          descriptionEng:
+            "In 2004/2005 the well known Berlin summer event location BUNDESPRESSESTRAND for the first time opened up a winter venue for evening events in an office buliding near to the summer site. The empty office floor was transformed into a winter landscape in order to allow the Berliners a small skiing vacation.",
+          img: require("@/assets/img/bps_06.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "",
+        },
+      ],
 
-      contact: [{}],
+      contact: [
+        {
+          id: "12",
+          name: "",
+          nameDe: "Bundespressestrand",
+          nameEng: "Bundespressestrand",
+          description: "",
+          descriptionDe:
+            "Die bekannte Berliner Sommer-Gastronomie BUNDESPRESSESTRAND eröffnete während der Wintermonate 2004/2005 erstmals eine Winterpräsenz für Abendveranstaltungen in einem zur Sommerlocation nahegelegen Bürogebäude. Die leerstehende Büroetage wurde in eine Winterlandschaft verwandelt, um auch den Berlinern einen kleinen Skiurlaub zu ermöglichen.",
+          descriptionEng:
+            "In 2004/2005 the well known Berlin summer event location BUNDESPRESSESTRAND for the first time opened up a winter venue for evening events in an office buliding near to the summer site. The empty office floor was transformed into a winter landscape in order to allow the Berliners a small skiing vacation.",
+          img: require("@/assets/img/bps_06.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          copyright: "",
+        },
+      ],
     };
   },
 
@@ -401,6 +603,7 @@ export default {
     },
 
     filterProjects(cat) {
+      this.detailsWanted = false;
       this.buttonsClicked = true;
       this.detailsWanted = false;
       if (cat === "news") {
@@ -424,9 +627,9 @@ export default {
     setSelectedProject(project) {
       this.detailsWanted = true;
       console.log(this.detailsWanted);
-      this.filteredProject = project;
+      this.selectedProject = project;
 
-      console.log(this.filteredProject.name);
+      console.log(this.selectedProject.name);
     },
   },
 };

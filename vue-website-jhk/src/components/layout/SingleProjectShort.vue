@@ -85,16 +85,22 @@ export default {
 
 <style scoped>
 img {
-  max-width: 400px;
+  max-width: 320px;
 }
 
 table {
+  min-width: 760px;
+  max-width: 900px;
   padding-bottom: 0.5rem;
   padding-top: 2rem;
   margin-right: 8rem;
   border-bottom: 1px dashed;
   border-color: gray;
   vertical-align: top;
+}
+
+td {
+  max-width: 350px;
 }
 
 .table {

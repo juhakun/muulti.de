@@ -33,7 +33,7 @@ div {
   padding-top: 0.75rem;
   margin: auto;
   max-width: 1000px;
-  min-width: 600px;
+  min-width: 760px;
 }
 
 #right {
@@ -53,7 +53,7 @@ div {
   padding-left: 5rem;
   padding-right: rem;
   max-width: 90%;
-  min-width: 600px;
+  min-width: 700px;
   float: left;
 }
 
