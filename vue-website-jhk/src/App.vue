@@ -75,7 +75,7 @@ h1 {
   font-size: 14pt;
 }
 h2 {
-  font-size: 12pt;
+  font-size: 11pt;
   font-family: "Arial";
 }
 
@@ -86,21 +86,14 @@ p {
   /* text-align: justify; */
 }
 
-#InfoBox {
-  visibility: hidden;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-  width: 155px;
-  background-color: #fdfeff;
-  border: 1px solid gray;
-}
-#BoxInnen {
-  padding: 5px;
-}
-#BoxInhalte {
-  font-family: "Arial";
-  font-size: 8pt;
+table {
+  min-width: 760px;
+  max-width: 900px;
+  padding-bottom: 0.5rem;
+  padding-top: 2rem;
+  margin-right: 8rem;
+  border-bottom: 1px dashed;
+  border-color: gray;
+  vertical-align: top;
 }
 </style>
