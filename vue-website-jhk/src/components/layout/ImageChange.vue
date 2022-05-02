@@ -97,3 +97,21 @@
     </tr>
   </table>
 </template>
+
+<script>
+export default {
+  props: ["selectedProject"],
+  data() {
+    return {
+      img: this.selectedProject.img,
+    };
+  },
+};
+</script>
+
+<style scoped>
+.copyright {
+  font-size: 7pt;
+  color: #7f7f7f;
+}
+</style>

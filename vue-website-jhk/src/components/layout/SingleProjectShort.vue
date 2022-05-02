@@ -45,6 +45,7 @@ export default {
     "id",
     "projectName",
     "projectDes",
+    "projectText",
     "projectImgSrc",
     "projectImgSrc1",
     "projectImgSrc2",
@@ -65,6 +66,7 @@ export default {
         id: this.id,
         name: this.projectName,
         description: this.projectDes,
+        text: this.projectText,
         img: this.projectImgSrc,
         img1: this.projectImgSrc1,
         img2: this.projectImgSrc2,
@@ -92,7 +94,7 @@ table {
   min-width: 760px;
   max-width: 900px;
   padding-bottom: 0.5rem;
-  padding-top: 0;
+  padding-top: 2rem;
   margin-right: 8rem;
   border-bottom: 1px dashed;
   border-color: gray;
