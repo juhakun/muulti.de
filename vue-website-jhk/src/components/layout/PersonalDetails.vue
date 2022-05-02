@@ -12,12 +12,12 @@
     >
       {{ me.cv }}
     </p>
-    <table style="padding-top: 0rem">
+    <!-- <table style="padding-top: 0rem">
       <tr>
         <td>
           <h2>SOFTWARE</h2>
           <p>
-            // Konzeption und Gestaltung <br />// Kuratierung und Inszenierung
+            // Frontend-Programmierung in Java <br />// Kuratierung und Inszenierung
             <br />// Styling, Material- und Farbauswahl <br />// Messestände und
             Präsentationssysteme <br />// Detailplanung
           </p>
@@ -46,44 +46,68 @@
           </p>
         </td>
       </tr>
-    </table>
+    </table> -->
     <table>
       <tr>
         <td style="vertical-align: top">
-          <h2>REFERENZEN</h2>
+          <h2 v-if="selectedLanguage === 'de'">AUFTRAGGEBER</h2>
+          <h2 v-else-if="selectedLanguage === 'eng'">CLIENTS</h2>
           <p>
-            Deutsches Design Museum <br />www.deutschesdesignmuseum.de<br />
-            <br />Die Neue Sammlung–The International Design <br />Museum
-            <br />www.die-neue-sammlung.de <br /><br />Goethe Institut Taipeh
-            <br />www.goethe.de/taipei <br /><br />Hessen Design e.V.
-            <br />www.hessendesign.de <br /><br />Hotel Weisshaar
-            <br />www.hotel-weisshaar.de <br /><br />IDZ Internationales Design
-            Zentrum Berlin e.V. <br />www.idz.de <br /><br />Koelnmesse GmbH
-            <br />www.imm-cologne.de <br /><br />Messe Berlin GmbH
-            <br />www.messe-berlin.de <br /><br />Messe Frankfurt GmbH
-            <br />www.messefrankfurt.com <br /><br />Rat für Formgebung/German
-            Design Council <br />www.german-design-council.de
-            <br /><br />republic movida GmbH <br />www.republik-movida.de
-            <br /><br />Serco GmbH & Co. <br />www.serco.de <br /><br />walks
-            and talks GmbH <br />www.bundespressestrand.de
+            // Deutsches Design Museum <br />
+            <!-- www.deutschesdesignmuseum.de<br /><br /> -->
+            // Die Neue Sammlung–The International Design Museum<br />
+            <!-- www.die-neue-sammlung.de <br /><br /> -->
+            // Goethe Institut Taipeh<br />
+            <!-- www.goethe.de/taipei <br /><br /> -->
+            // Hessen Design e.V.<br />
+            <!-- www.hessendesign.de <br /><br /> -->
+            // Hotel Weisshaar<br />
+            <!-- www.hotel-weisshaar.de <br /><br /> -->
+            // IDZ Internationales Design Zentrum Berlin e.V. <br />
+            <!-- www.idz.de <br /><br /> -->
+            // Koelnmesse GmbH<br />
+            <!-- www.imm-cologne.de <br /><br /> -->
+            // Messe Berlin GmbH
+            <!-- <br />www.messe-berlin.de <br /><br /> -->
+            // Messe Frankfurt GmbH<br />
+            <!-- www.messefrankfurt.com <br /><br /> -->
+            // Rat für Formgebung/German Design Council <br />
+            <!-- www.german-design-council.de -->
+            <!-- <br /><br /> -->
+            // republic movida GmbH <br />
+            <!-- www.republik-movida.de -->
+            <!-- <br /><br /> -->
+            // Serco GmbH & Co. <br />
+            <!-- www.serco.de <br /><br /> -->
+            // walks and talks GmbH <br /><br />
+            <!-- www.bundespressestrand.de -->
           </p>
-        </td>
-        <td style="vertical-align: top">
-          <h2>MESSEN</h2>
+
+          <h2 v-if="selectedLanguage === 'de'">MESSEN</h2>
+          <h2 v-else-if="selectedLanguage === 'eng'">TRADE FAIRS</h2>
           <p>
-            Ambiente, Frankfurt <br />www.ambiente.messefrankfurt.com
-            <br /><br />City of Design, Shenzhen/China
-            <br />www.shenzhendesign.org <br /><br />DMY, Berlin
-            <br />www.dmy-berlin.com <br /><br />Fuori Salone zur
-            Internationalen Möbelmesse <br />Salone del Mobile, Mailand/Italien
-            <br />www.fuorisalone.it <br /><br />ICFF International Contemporary
-            Furniture Fair, <br />New York/USA <br />www.icff.com
-            <br /><br />IFA Internationale Funkausstellung, Berlin
-            <br />www.ifa-berlin.de <br /><br />imm cologne, Köln
-            <br />www.imm-cologne.de <br /><br />InnoTrans, Berlin
-            <br />www.innotrans.de <br /><br />Taiwan Design Expo, Taipeh/Taiwan
-            <br />designexpo.boco.com.tw <br /><br />Tendence, Frankfurt
-            <br />tendence.messefrankfurt.com
+            // Ambiente, Frankfurt <br />
+            <!-- www.ambiente.messefrankfurt.com<br /><br /> -->
+            // City of Design, Shenzhen/China<br />
+            <!-- www.shenzhendesign.org <br /><br /> -->
+            // DMY, Berlin<br />
+            <!-- www.dmy-berlin.com <br /><br /> -->
+            // Fuori Salone zurInternationalen Möbelmesse Salone del Mobile,
+            Mailand/Italien<br />
+            <!-- www.fuorisalone.it <br /><br /> -->
+            // ICFF International Contemporary Furniture Fair, New York/USA
+            <br />
+            <!-- www.icff.com<br /><br /> -->
+            // IFA Internationale Funkausstellung, Berlin<br />
+            <!-- www.ifa-berlin.de <br /><br /> -->
+            // imm cologne, Köln<br />
+            <!-- www.imm-cologne.de <br /><br /> -->
+            // InnoTrans, Berlin<br />
+            <!-- www.innotrans.de <br /><br /> -->
+            // Taiwan Design Expo, Taipeh/Taiwan<br />
+            <!-- designexpo.boco.com.tw <br /><br /> -->
+            // Tendence, Frankfurt<br />
+            <!-- tendence.messefrankfurt.com -->
           </p>
         </td>
       </tr>
@@ -92,6 +116,19 @@
 </template>
 <script>
 export default {
-  props: ["me"],
+  props: ["me", "selectedLanguage"],
 };
 </script>
+
+<style scoped>
+table {
+  min-width: 760px;
+  max-width: 900px;
+  padding-bottom: 0.5rem;
+  padding-top: 0.25rem;
+  margin-right: 8rem;
+  border-bottom: 1px dashed;
+  border-color: gray;
+  vertical-align: top;
+}
+</style>

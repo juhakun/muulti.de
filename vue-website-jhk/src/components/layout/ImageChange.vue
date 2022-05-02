@@ -9,7 +9,7 @@
     <tr>
       <td>
         <tr>
-          <img :src="img" style="width: 500px" />
+          <img :src="img" style="width: 450px" />
         </tr>
       </td>
       <td style="vertical-align: top">

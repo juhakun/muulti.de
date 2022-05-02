@@ -35,6 +35,7 @@ import OverviewProjects from "./layout/OverviewProjects.vue";
 import SingleProjectLong from "./layout/SingleProjectLong.vue";
 import HeaderDeEng from "./layout/HeaderDeEng.vue";
 import PersonalDetails from "./layout/PersonalDetails.vue";
+
 export default {
   emits: ["filter-category", "filter-language"],
   components: {
