@@ -1,31 +1,66 @@
 <template>
   <div id="content">
-    <section style="padding-top: 1rem" v-if="selectedLanguage === 'de'">
-      <h2>
-        {{ selectedProject.nameDe.toUpperCase() }}<br />
-        {{ selectedProject.subtitleDe }}
-      </h2>
-      <image-change :selectedProject="selectedProject"></image-change>
+    <div>
+      <section style="padding-top: 1rem" v-if="selectedLanguage === 'de'">
+        <h2>
+          {{ selectedProject.nameDe.toUpperCase() }}<br />
+          {{ selectedProject.subtitleDe }}
+        </h2>
+        <image-change :selectedProject="selectedProject"></image-change>
 
-      <div id="detailedText">
-        <p>
-          {{ selectedProject.textDe }}
-        </p>
-      </div>
-    </section>
-    <section style="padding-top: 1rem" v-if="selectedLanguage === 'eng'">
-      <h2>
-        {{ selectedProject.nameEng.toUpperCase() }}<br />
-        {{ selectedProject.subtitleEng }}
-      </h2>
-      <image-change :selectedProject="selectedProject"></image-change>
+        <div id="detailedText">
+          <p>
+            {{ selectedProject.textDe }}
+          </p>
+        </div>
+      </section>
+      <section style="padding-top: 1rem" v-if="selectedLanguage === 'eng'">
+        <h2>
+          {{ selectedProject.nameEng.toUpperCase() }}<br />
+          {{ selectedProject.subtitleEng }}
+        </h2>
+        <image-change :selectedProject="selectedProject"></image-change>
 
-      <div id="detailedText">
-        <p>
-          {{ selectedProject.textEng }}
-        </p>
-      </div>
-    </section>
+        <div id="detailedText">
+          <p>
+            {{ selectedProject.textEng }}
+          </p>
+        </div>
+      </section>
+    </div>
+    <div
+      v-if="
+        selectedProject.name === 'Design Deutschland' ||
+        selectedProject.name === 'Imm Cologne'
+      "
+    >
+      <section style="padding-top: 1rem" v-if="selectedLanguage === 'de'">
+        <h2>
+          {{ selectedProject.nameDe.toUpperCase() }}<br />
+          {{ selectedProject.subtitleDe }}
+        </h2>
+        <image-change :selectedProject="selectedProject"></image-change>
+
+        <div id="detailedText">
+          <p>
+            {{ selectedProject.textDe }}
+          </p>
+        </div>
+      </section>
+      <section style="padding-top: 1rem" v-if="selectedLanguage === 'eng'">
+        <h2>
+          {{ selectedProject.nameEng.toUpperCase() }}<br />
+          {{ selectedProject.subtitleEng }}
+        </h2>
+        <image-change :selectedProject="selectedProject"></image-change>
+
+        <div id="detailedText">
+          <p>
+            {{ selectedProject.textEng }}
+          </p>
+        </div>
+      </section>
+    </div>
     <section v-if="selectedLanguage === 'de' && selectedProject.client !== ''">
       <div id="detailedText">
         <p>
@@ -79,6 +114,7 @@ li {
 }
 
 p {
+  white-space: pre-line;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }

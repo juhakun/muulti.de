@@ -3,17 +3,21 @@
     <tr>
       <td>
         <tr v-if="selectedProject.copyright[1] !== ''">
-          <img
-            :src="img"
-            style="width: 450px; padding-top: 0rem; padding-bottom: 0rem"
-          />
+          <section>
+            <img
+              :src="img"
+              style="width: 450px; padding-top: 0rem; padding-bottom: 0rem"
+            />
+          </section>
           <p class="copyright">{{ selectedProject.copyright[1] }}</p>
         </tr>
         <tr v-else-if="selectedProject.copyright[1] === ''">
-          <img
-            :src="img"
-            style="width: 450px; padding-top: 0rem; padding-bottom: 1rem"
-          />
+          <section>
+            <img
+              :src="img"
+              style="width: 450px; padding-top: 0rem; padding-bottom: 1rem"
+            />
+          </section>
           <p class="copyright">{{ selectedProject.copyright[1] }}</p>
         </tr>
       </td>
@@ -115,5 +119,9 @@ export default {
 .copyright {
   font-size: 7pt;
   color: #7f7f7f;
+}
+
+section {
+  height: 300px;
 }
 </style>

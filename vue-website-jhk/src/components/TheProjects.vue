@@ -21,6 +21,8 @@
       :selectedLanguage="selectedLanguage"
       :selectedProject="selectedProject"
       :servicesDe="selectedProject.servicesDe"
+      :designDtld="designDtld"
+      :imm="immCologne"
     ></single-project-long>
     <personal-details
       v-if="me.detailsWanted === true"
@@ -214,11 +216,15 @@ export default {
             "Seit 2013 ist die Ausstellung zum BUNDESPREIS ECODESIGN jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.",
           descriptionEng:
             "Since 2013, the exhibition has been on the move every year with the award winners and nominees of the award and has been exhibited at numerous trade fairs and museums, such as the Munich Creative Business Week in Munich, the Ecostyle in Frankfurt am Main , the Museum of Arts and Crafts in Hamburg and the Grassi Museum for Applied Arts in Leipzig.",
-          text: "Bei der Konzeption und Gestaltung der Wanderausstellung wurde besonderen Wert auf Aspekte der Nachhaltigkeit gelegt. Die Verwendung nachhaltiger Materialien, der langfristige Einsatz und die dafür erforderliche, flexible Anpassung an wechselnde Exponate und Ausstellungsorte sowie platzsparender und kostengünstiger Transport standen für die Gestaltung hierbei im Vordergrund. Seit 2013 ist die Ausstellung jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.",
-          textDe:
-            "Bei der Konzeption und Gestaltung der Wanderausstellung wurde besonderen Wert auf Aspekte der Nachhaltigkeit gelegt. Die Verwendung nachhaltiger Materialien, der langfristige Einsatz und die dafür erforderliche, flexible Anpassung an wechselnde Exponate und Ausstellungsorte sowie platzsparender und kostengünstiger Transport standen für die Gestaltung hierbei im Vordergrund. Seit 2013 ist die Ausstellung jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.",
-          textEng:
-            "For the concept and design of the travelling exhibition special emphasis was placed on sustainability aspects. A long-term use of the exhibition using sustainable materials and the possibility to adapt the exhibition to changing exhibits and exhibition venues as well as space-saving and cost-efficient transport are the most important features of the design. Since 2013, the exhibition has been on the move every year with the award winners and nominees of the award and has been exhibited at numerous trade fairs and museums, such as the Munich Creative Business Week in Munich, the Ecostyle in Frankfurt am Main , the Museum of Arts and Crafts in Hamburg and the Grassi Museum for Applied Arts in Leipzig.",
+          text: `Bei der Konzeption und Gestaltung der Wanderausstellung wurde besonderen Wert auf Aspekte der Nachhaltigkeit gelegt. Die Verwendung nachhaltiger Materialien, der langfristige Einsatz und die dafür erforderliche, flexible Anpassung an wechselnde Exponate und Ausstellungsorte sowie platzsparender und kostengünstiger Transport standen für die Gestaltung hierbei im Vordergrund. 
+          
+          Seit 2013 ist die Ausstellung jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.`,
+          textDe: `Bei der Konzeption und Gestaltung der Wanderausstellung wurde besonderen Wert auf Aspekte der Nachhaltigkeit gelegt. Die Verwendung nachhaltiger Materialien, der langfristige Einsatz und die dafür erforderliche, flexible Anpassung an wechselnde Exponate und Ausstellungsorte sowie platzsparender und kostengünstiger Transport standen für die Gestaltung hierbei im Vordergrund. 
+          
+          Seit 2013 ist die Ausstellung jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.`,
+          textEng: `For the concept and design of the travelling exhibition special emphasis was placed on sustainability aspects. A long-term use of the exhibition using sustainable materials and the possibility to adapt the exhibition to changing exhibits and exhibition venues as well as space-saving and cost-efficient transport are the most important features of the design. 
+            
+            Since 2013, the exhibition has been on the move every year with the award winners and nominees of the award and has been exhibited at numerous trade fairs and museums, such as the Munich Creative Business Week in Munich, the Ecostyle in Frankfurt am Main , the Museum of Arts and Crafts in Hamburg and the Grassi Museum for Applied Arts in Leipzig.`,
           img: require("@/assets/img/ECO_Darmstadt_01.jpg"),
           img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
           img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
@@ -396,16 +402,35 @@ export default {
           nameDe: "Design Deutschland",
           nameEng: "Design Deutschland",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe:
+            "Internationale Wanderausstellung Design Deutschland Case Study 08",
+          subtitleEng:
+            "International travelling exhibition Design Deutschland Case Study 08",
           description: "",
           descriptionDe:
             "DESIGN DEUTSCHLAND ist eine internationale Wanderausstellung des Rat für Formgebung, die jährlich eine aktuelle, exemplarische Auswahl von jeweils 120 bis 150 Produkten renommierter deutscher Unternehmen und Designer umfasst. Parallel zur Wanderausstellung konnten sich deutsche Unternehmen an einzelnen internationalen Veranstaltungsorten im Rahmen eines Gemeinschaftsstands präsentieren.",
           descriptionEng:
             "DESIGN DEUTSCHLAND is an international travelling exhibition of the German Design Council, that annually presents a current, exemplary selection of 120 to 150 products of renowned German companies and designers. In addition to the travelling exhibition German design brands had the opportunity to present themselves within a joint fair stand at single international venues.",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `IMM COLOGNE 2008
+          Internationale Möbelmesse in Köln
+          
+          NEUES MUSEUM NÜRNBERG
+          in Kooperation mit Die Neue Sammlung München
+          ICFF INTERNATIONAL CONTEMPORARY FURNITURE FAIR 2009
+          Internationale Möbelmesse in New York
+          
+          Im Rahmenprogramm zur Ausstellung fanden Empfänge, Pressekonferenzen und Vortragsveranstaltungen statt. Darüberhinaus wurden das begleitende Magazin DESIGN DEUTSCHLAND CASE STUDY 08 anlässlich der Ausstellung in Kooperation mit der Neuen Sammlung veröffentlicht. `,
+          textEng: `IMM COLOGNE 2008
+          International Furniture Fair in Cologne
+          
+          NEUES MUSEUM NÜRNBERG
+          in cooperation with Die Neue Sammlung München—The International Design Museum in Munich
+          
+          ICFF INTERNATIONAL CONTEMPORARY FURNITURE FAIR 2009
+          International Furniture Fair in New York
+          
+          Parallel to the exhibitions, receptions, press conferences and lectures took place. In addition the accompanying magazine DESIGN DEUTSCHLAND CASE STUDY 08 was published on the occasion of the presentation in cooperation with Die Neue Sammlung. `,
           img: require("@/assets/img/dd_nb_01.jpg"),
           img1: "",
           img2: "",
@@ -416,11 +441,21 @@ export default {
           img7: "",
           img8: "",
           img9: "",
-          client: "",
+          client:
+            "Rat für Formgebung/German Design Council, Frankfurt am Main ",
           services: [],
-          servicesDe: [],
-          servicesEng: [],
-          copyright: ["", ""],
+          servicesDe: [
+            "Projektleitung",
+            "Kuratierung und Inszenierung der Exponate",
+          ],
+          servicesEng: [
+            "Head of project",
+            "Curating and staging of the exhibits ",
+          ],
+          copyright: [
+            "",
+            "© Bilder Köln: Rat für Formgebung/German Design Council / Constantin Meyer ",
+          ],
         },
         {
           id: "07",
@@ -628,56 +663,36 @@ export default {
       ],
       designDtld: [
         {
-          id: "06-01",
-          category: "exhibitions",
-          name: "",
-          nameDe: "Design Deutschland",
-          nameEng: "Design Deutschland",
-          subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
-          description: "",
-          descriptionDe:
-            "DESIGN DEUTSCHLAND ist eine internationale Wanderausstellung des Rat für Formgebung, die jährlich eine aktuelle, exemplarische Auswahl von jeweils 120 bis 150 Produkten renommierter deutscher Unternehmen und Designer umfasst. Parallel zur Wanderausstellung konnten sich deutsche Unternehmen an einzelnen internationalen Veranstaltungsorten im Rahmen eines Gemeinschaftsstands präsentieren.",
-          descriptionEng:
-            "DESIGN DEUTSCHLAND is an international travelling exhibition of the German Design Council, that annually presents a current, exemplary selection of 120 to 150 products of renowned German companies and designers. In addition to the travelling exhibition German design brands had the opportunity to present themselves within a joint fair stand at single international venues.",
-          text: "",
-          textDe: "",
-          textEng: "",
-          img: require("@/assets/img/dd_nb_01.jpg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
-          img8: "",
-          img9: "",
-          client: "",
-          services: [],
-          servicesDe: [],
-          servicesEng: [],
-          copyright: ["", ""],
-        },
-
-        {
           id: "06-02",
           category: "exhibitions",
           name: "",
           nameDe: "Design Deutschland",
           nameEng: "Design Deutschland",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe:
+            "Internationale Wanderausstellung Design Deutschland 2010 und Gemeinschaftsstand deutscher Unternehmen",
+          subtitleEng:
+            "International travelling exhibition Design Deutschland 2010 and joint fair stand of German design brands",
           description: "",
           descriptionDe:
             "DESIGN DEUTSCHLAND ist eine internationale Wanderausstellung des Rat für Formgebung, die jährlich eine aktuelle, exemplarische Auswahl von jeweils 120 bis 150 Produkten renommierter deutscher Unternehmen und Designer umfasst. Parallel zur Wanderausstellung konnten sich deutsche Unternehmen an einzelnen internationalen Veranstaltungsorten im Rahmen eines Gemeinschaftsstands präsentieren.",
           descriptionEng:
             "DESIGN DEUTSCHLAND is an international travelling exhibition of the German Design Council, that annually presents a current, exemplary selection of 120 to 150 products of renowned German companies and designers. In addition to the travelling exhibition German design brands had the opportunity to present themselves within a joint fair stand at single international venues.",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `SALONE DEL MOBILE 2010
+          in der Zona Tortona parallel zur Internationalen Möbelmesse in Mailand
+          
+          ICFF INTERNATIONAL CONTEMPORARY FURNITURE FAIR 2010
+          Internationale Möbelmesse in New York
+          
+          Im Rahmenprogramm zur Ausstellung fanden Empfänge, Pressekonferenzen und Vortragsveranstaltungen statt. `,
+          textEng: `SALONE DEL MOBILE 2010
+          at Zona Tortona parallel to the International Furniture Fair in Milan
+          
+          ICFF INTERNATIONAL CONTEMPORARY FURNITURE FAIR 2010
+          International Furniture Fair in New York
+          
+          Parallel to the exhibitions, receptions, press conferences and lectures took place. `,
           img: require("@/assets/img/dd_nb_01.jpg"),
           img1: "",
           img2: "",
@@ -692,46 +707,12 @@ export default {
           services: [],
           servicesDe: [],
           servicesEng: [],
-          copyright: ["", ""],
+          copyright: ["", "© Rat für Formgebung/German Design Council"],
         },
       ],
       immCologne: [
         {
           id: "07-01",
-          category: "exhibitions",
-          name: "",
-          nameDe: "Imm Cologne",
-          nameEng: "Imm Cologne",
-          subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
-          description: "",
-          descriptionDe:
-            "Im Rahmen der Internationalen Möbelmesse IMM COLOGNE werden jedes Jahr zahlreiche Designaktivitäten und Sonderschauen präsentiert. In den vergangenen Jahren zählten hierzu unter anderen die Trendshow INFORMED BY COLOGNE und der BOULEVARD OF INNOVATIONS.",
-          descriptionEng:
-            "Each year numerous design activities and special shows are being presented during the international furniture fair IMM COLOGNE including INFORMED BY COLOGNE and the BOULEVARD OF INNOVATIONS in 2007, 2009 and 2010.",
-          text: "",
-          textDe: "",
-          textEng: "",
-          img: require("@/assets/img/imm_09_10.jpg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
-          img8: "",
-          img9: "",
-          client: "",
-          services: [],
-          servicesDe: [],
-          servicesEng: [],
-          copyright: ["© Koelnmesse / Constantin Meyer", ""],
-        },
-
-        {
-          id: "07-02",
           category: "exhibitions",
           name: "",
           nameDe: "Imm Cologne",
@@ -791,7 +772,7 @@ export default {
           img3: require("@/assets/img/som_05.jpg"),
           img4: require("@/assets/img/som_10.jpg"),
           img5: require("@/assets/img/som_12.jpg"),
-          img6: "",
+          img6: require("@/assets/img/som_logo.jpg"),
           img7: "",
           img8: "",
           img9: "",
@@ -812,7 +793,7 @@ export default {
           ],
           copyright: [
             "",
-            "Bilder 5, 7, 8 © IDZ Internationales Design Zentrum Berlin e.V. / Saskia Nagel ",
+            "Photos: © IDZ Internationales Design Zentrum Berlin e.V. / Saskia Nagel ",
           ],
         },
         {
@@ -839,7 +820,7 @@ export default {
           img2: require("@/assets/img/gg_tai_03.jpg"),
           img3: require("@/assets/img/gg_tai_09.jpg"),
           img4: require("@/assets/img/gg_tai_04.jpg"),
-          img5: "",
+          img5: require("@/assets/img/gg_tai_10_2.jpg"),
           img6: "",
           img7: "",
           img8: "",
@@ -860,8 +841,8 @@ export default {
             "Project management",
           ],
           copyright: [
-            "© IDZ Internationales Design Zentrum Berlin e.V.",
-            "© IDZ Internationales Design Zentrum Berlin e.V.",
+            "",
+            "Photos: © IDZ Internationales Design Zentrum Berlin e.V.",
           ],
         },
         {
@@ -916,11 +897,11 @@ export default {
             "Die Ausstellung ACCESS BERLIN DESIGN stellte den Standort Berlin als wichtige Schnittstelle zwischen Industrie und Design vor und präsentierte designorientierte Unternehmen sowie Agenturen aus Berlin.",
           textEng:
             "The exhibition ACCESS BERLIN DESIGN introduced the city of Berlin as an important business location at the interface between industry and design and presented design oriented companies as well as design agencies from Berlin.",
-          img: require("@/assets/img/abd_Logo2.jpg"),
+          img: require("@/assets/img/abd_Logo2a.jpg"),
           img1: require("@/assets/img/abd_08_01.jpg"),
           img2: require("@/assets/img/abd_08_08.jpg"),
           img3: require("@/assets/img/abd_08_02.jpg"),
-          img4: "",
+          img4: require("@/assets/img/abd_Logo2a.jpg"),
           img5: "",
           img6: "",
           img7: "",
@@ -939,7 +920,7 @@ export default {
             "Concept and design of the logo and the display graphics",
             "Project management",
           ],
-          copyright: ["© Antonia Roth", "© Antonia Roth"],
+          copyright: ["", ""],
         },
         {
           id: "17",
@@ -1017,66 +998,87 @@ export default {
           nameDe: "Bundespreis Ecodesign",
           nameEng: "German Ecodesign Award",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe: "Preisverleihung am 22. November 2012 in Berlin",
+          subtitleEng: "Award ceremony on November 22, 2012 in Berlin",
           description: "",
           descriptionDe:
             "Der BUNDESPREIS ECODESIGN wurde 2012 erstmals vom Bundesumweltministerium und dem Umweltbundesamt ausgelobt und zeichnet innovative Produkte und Konzepte aus, die gleichermaßen ästhetischen als auch ökologischen Ansprüchen genügen. Der Preis bietet Unternehmen sowie Designerinnen und Designern eine Plattform, um ihre Produkte und Ideen von herausragender ökologischer und gestalterischer Qualität zu präsentieren.",
           descriptionEng:
             "In 2012 the GERMAN ECODESIGN AWARD was awarded for the first time by the Federal Minister of the Environment and the Federal Environmental Agency and honors innovative products and concepts, that meet aesthetic as well as ecological demands. The prize offers companies as well as designers a platform to present their products and ideas of exceptional ecological and artistic quality. ",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe:
+            "Die Preisverleihung zum Bundespreis Ecodesign fand am 22. November 2012 in festlichem Rahmen in den Lichthöfen des Bundesumweltministeriums statt. Begrüßt wurden die geladenen Gäste von Bundesumweltminister Peter Altmaier und dem Juryvorsitzenden Prof. Günter Horntrich. Ausgezeichnet wurden 14 Preisträger in den Kategorien Produkt, Konzept und Nachwuchs. ",
+          textEng:
+            "The award ceremony for the German Ecodesign Award took place on the 22nd of November 2012 in a festive frame at the German Federal Ministry of the Environment. The invited guests were welcomed by Peter Altmaier, the Federal Minister of the Environment and the jury chairman Prof. Günter Horntrich. 14 prize winners were awarded in the categories product, concept and young talent. ",
           img: require("@/assets/img/eco1.jpg"),
-          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
-          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
-          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
-          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
-          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
-          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
-          img7: "",
+          img1: require("@/assets/img/eco2.jpg"),
+          img2: require("@/assets/img/eco5.jpg"),
+          img3: require("@/assets/img/eco3.jpg"),
+          img4: require("@/assets/img/eco6.jpg"),
+          img5: require("@/assets/img/eco7.jpg"),
+          img6: require("@/assets/img/eco8.jpg"),
+          img7: require("@/assets/img/eco9.jpg"),
           img8: "",
           img9: "",
-          client: "",
+          client: "IDZ Internationales Design Zentrum Berlin e.V. ",
           services: [],
-          servicesDe: [],
-          servicesEng: [],
+          servicesDe: [
+            "Projektleitung für die Preisverleihung",
+            "Gestaltung des Bühnenbilds und der Grafiken vor Ort",
+          ],
+          servicesEng: [
+            "Head of project for the award ceremony",
+            "Stage design and graphics for the ceremony",
+          ],
           copyright: [
             "© IDZ Internationales Design Zentrum Berlin e.V. / Sandra Kühnapfel",
-            "",
+            "© IDZ Internationales Design Zentrum Berlin e.V. / Sandra Kühnapfel",
           ],
         },
         {
           id: "20",
           category: "management",
           name: "",
-          nameDe: "Deutscher Marken- und Designkongress",
-          nameEng: "German Brand and Design Congress",
+          nameDe: "Deutscher Marken- und Designkongress 2011",
+          nameEng: "German Brand and Design Congress 2011",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe: "Establishing High-Value Brands",
+          subtitleEng: "Establishing High-Value Brands",
           description: "",
           descriptionDe:
             "Auf dem DEUTSCHE MARKEN- UND DESIGNKONGRESS diskutieren hochrangige Experten verschiedener Gestaltungsbereiche über Brandmanagementprozesse. Unter dem Titel Establishing High-Value Brands beschäftigte sich der Kongress in 2011 mit der Implementierung von Marken, wobei die Markenkommunikation nach innen und außen im Mittelpunkt stand.",
           descriptionEng:
             "At the GERMAN BRAND AND DESIGN CONGRESS experts from different design areas discuss brand management processes. Under the title Establishing High-Value Brands in 2011 the congress dealt with the implementation of brands focussing on the inward and outward communication of brands.",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `Am ersten Kongresstag fanden Vorträge in der Alten Brüderkirche statt. 
+            Die Referenten waren u.a. Lareena Hilton/Deutsche Bank AG, Prof. Uli Mayer-Johanssen/MetaDesign AG und Margarete Wies/Mercedes-Benz Cars Development Daimler AG. 
+            
+            Am zweiten Kongresstag konnten die Teilnehmer im Rahmen eines Besuchsprogramms designorientierte Unternehmen in der Region besichtigen.
+            Partner des Rahmenprogramms waren u.a. dOCUMENTA (13), SMA Solar Technology AG und THONET GmbH. 
+            
+            Der Kongress wurde aus Mitteln des Europäischen Fonds für regionale Entwicklung gefördert und durch das Bundesministerium für Wirtschaft und Technologie sowie das Hessische Ministerium für Wirtschaft, Verkehr und Landesentwicklung unterstützt.`,
+          textEng: `On the first congress day lectures took place at Alte Brüderkirche.
+          Lecturers were amongst others Lareena Hilton/Deutsche Bank AG, Prof. Uli Mayer-Johanssen/MetaDesign AG and Margarete Wies/Mercedes-Benz Cars Development Daimler AG. 
+          
+          On the second day, the congress participants were able to visit design oriented companies of the region. 
+          Partners of the visit programme were amongst others dOCUMENTA (13), SMA Solar Technology AG and THONET GmbH. 
+          
+          The congress was promoted by the European Regional Development Fund (ERDF) and was supported by the Federal Ministry for Economy and Technology as well as the Hesse Ministry for Economics, Transport and Regional Development.`,
           img: require("@/assets/img/dmdk_11_06.jpg"),
-          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
-          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
-          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
-          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
-          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
-          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
-          img7: "",
-          img8: "",
-          img9: "",
-          client: "",
+          img1: require("@/assets/img/dmdk_11_03.jpg"),
+          img2: require("@/assets/img/dmdk_11_04.jpg"),
+          img3: require("@/assets/img/dmdk_11_08.jpg"),
+          img4: require("@/assets/img/dmdk_11_02.jpg"),
+          img5: require("@/assets/img/dmdk_11_07.jpg"),
+          img6: require("@/assets/img/dmdk_Thonet_02.jpg"),
+          img7: require("@/assets/img/dmdk_Thonet_05.jpg"),
+          img8: require("@/assets/img/dmdk_Thonet_07.jpg"),
+          img9: require("@/assets/img/dmdk_Thonet_06.jpg"),
+          client:
+            "Rat für Formgebung/German Design Council, Frankfurt am Main ",
           services: [],
-          servicesDe: [],
-          servicesEng: [],
+          servicesDe: ["Projektleitung"],
+          servicesEng: ["Head of project"],
           copyright: [
             "© Rat für Formgebung/German Design Council / Sandra Kühnapfel",
             "",
@@ -1089,33 +1091,44 @@ export default {
           nameDe: "Deutsches Design Museum",
           nameEng: "German Design Museum",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe: "Roundtable-Veranstaltung in Berlin",
+          subtitleEng: "Round-table discussion in Berlin",
           description: "",
           descriptionDe:
             "Über die Relevanz und Aufgabe eines DEUTSCHEN DESIGN MUSEUMS diskutierten renommierte Designer, Künstler und Pressevertreter im Rahmen einer Roundtable-Veranstaltung in Berlin. Der folgende öffentlichen Diskurs eröffnete der deutschen Designszene die Möglichkeit, sich an der Diskussion zu beteiligen. ",
           descriptionEng:
             "Renowned designers, artists and press representatives discussed the relevance and intention of a GERMAN DESIGN MUSEUM in the course of a round-table event in Berlin. The following public discourse offered the German design scene the possibility to be involved in the discussion. ",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe:
+            "Zum Thema diskutierten am 11. Juli 2011 im Direktorenhaus Berlin u.a. Christian Boros, Holger Liebs, Andreas Murkudis, Prof. Dr. Bazon Brock, Prof. Tobias Rehberger und Konstantin Grcic. ",
+          textEng:
+            "Discussants on 11th of July 2011 at Direktorenhaus Berlin were amongst others Christian Boros, Holger Liebs, Andreas Murkudis, Prof. Dr. Bazon Brock, Prof. Tobias Rehberger und Konstantin Grcic. ",
           img: require("@/assets/img/ddm_03.jpg"),
-          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
-          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
-          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
-          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
-          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
-          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
+          img1: require("@/assets/img/ddm_04.jpg"),
+          img2: require("@/assets/img/ddm_06.jpg"),
+          img3: require("@/assets/img/ddm_01.jpg"),
+          img4: require("@/assets/img/ddm_05.jpg"),
+          img5: require("@/assets/img/ddm_02.jpg"),
+          img6: "",
           img7: "",
           img8: "",
           img9: "",
-          client: "",
+          client:
+            "Rat für Formgebung/German Design Council, Frankfurt am Main ",
           services: [],
-          servicesDe: [],
-          servicesEng: [],
+          servicesDe: [
+            "Inhaltliche Vorbereitung der Diskussion",
+            "Aufbereitung der Ergebnisse für den weiteren Diskurs",
+            "Projektmanagement",
+          ],
+          servicesEng: [
+            "Content preparation for the discussion",
+            "Editing of the results for the further public discourse",
+            "Project management",
+          ],
           copyright: [
             "© Rat für Formgebung/German Design Council / Sandra Kühnapfel",
-            "",
+            "© Rat für Formgebung/German Design Council / Sandra Kühnapfel",
           ],
         },
         {
@@ -1125,31 +1138,53 @@ export default {
           nameDe: "Brand New Germany",
           nameEng: "Brand New Germany",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe:
+            "Perspektiven für die deutsche Kreativwirtschaft, Konferenz und Vortragsreihe",
+          subtitleEng:
+            "Perspectives for the German creative Industry in Asia, Conference and series of lectures ",
           description: "",
           descriptionDe:
             "Die BRAND NEW GERMANY KONFERENZ UND VORTRAGSREIHE bot Designagenturen, Designern und Unternehmen der deutschen Kreativwirtschaft die Möglichkeit, sich über Chancen und Risiken des asiatischen Markts, dem sie sich häufig nicht länger entziehen können, zu informieren. Bereits in Asien vertretene Unternehmen und Dienstleister berichteten über ihre Erfahrungen.",
           descriptionEng:
             "The BRAND NEW GERMANY CONFERENCE AND SERIES OF LECTURES offered design agencies, designers and companies from the German creative industry the opportunity to catch up on the chances and risks of the Asian market, from which they can often no longer evade. Companies and service providers already represented in Asia reported on their experiences. ",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `KONFERENZ
+          am 1. Juni 2011 am Flughafen Tempelhof in Berlin und
+
+          VORTRAGSREIHE
+          am 15. September 2011 bei designaffairs GmbH in München,
+          am 19. September 2011 bei Factor Design AG in Hamburg und
+          am 27. September 2011 beim Rat für Formgebung/German Design Council in Frankfurt. \n\
+
+          Referenten waren unter anderem Stefanie Diers/MetaDesign AG, Michael Lanz/designaffairs GmbH, Detlef Mika/interlübke Gebr. Lübke GmbH & Co. KG, Robert Sachon/Robert Bosch Hausgeräte GmbH und Olaf Stein/Factor Design AG.`,
+          textEng: `CONFERENCE
+            on 1st of June 2011 at Tempelhof airport in Berlin and
+
+            SERIES OF LECTURES
+            on 15th of September 2011 at designaffairs GmbH in Munich,
+            on 19th of September 2011 at Factor Design AG in Hamburg and
+            on 27th of September 2011 at the German Design Council in Frankfurt.
+
+            Speakers were amongst others Stefanie Diers/MetaDesign AG, Michael Lanz/designaffairs GmbH, Detlef Mika/interlübke Gebr. Lübke GmbH & Co. KG, Robert Sachon/Robert Bosch Hausgeräte GmbH and Olaf Stein/Factor Design AG.`,
           img: require("@/assets/img/bng_01.jpg"),
-          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
-          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
-          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
-          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
-          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
-          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
+          img1: require("@/assets/img/bng_mue_01_2.jpg"),
+          img2: require("@/assets/img/bng_mue_02.jpg"),
+          img3: require("@/assets/img/bng_mue_03.jpg"),
+          img4: "",
+          img5: "",
+          img6: "",
           img7: "",
           img8: "",
           img9: "",
-          client: "",
+          client:
+            "Rat für Formgebung/German Design Council, Frankfurt am Main ",
           services: [],
-          servicesDe: [],
-          servicesEng: [],
-          copyright: ["© Rat für Formgebung/German Design Council", ""],
+          servicesDe: ["Projektmanagement"],
+          servicesEng: ["Project management"],
+          copyright: [
+            "© Rat für Formgebung/German Design Council",
+            "© Rat für Formgebung/German Design Council",
+          ],
         },
         {
           id: "23",
@@ -1158,33 +1193,42 @@ export default {
           nameDe: "Material Vision Konferenz",
           nameEng: "Material Vision Conference",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe: "Designing the Weightless World",
+          subtitleEng: "Designing the Weightless World",
           description: "",
           descriptionDe:
             "Auf der MATERIAL VISION KONFERENZ mit dem Titel Designing the Weightless World erhielten Produktentwickler, Designer und Architekten parallel zur Fachmesse Material Vision 2011 einen exklusiven Ausblick in die Materialtrends von morgen.",
           descriptionEng:
             "Parallel to the trade fair Material Vision 2011, product developers, designers and architects got an exclusive outlook on the material trends of tomorrow at the MATERIAL VISION CONFERENCE under the title Designing the Weightless World. ",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `Die Konferenz am 25. Mai 2011 bei der Messe Frankfurt widmete sich der Fragestellung, welche Veränderungen in der Entwicklung von Produkten angesichts des Trends zur Digitalisierung und Minimalisierung im Produktdesign zu erwarten sind.
+          
+          Die Referenten waren u.a. Prof. Achim Menges/Institut für Computational Design Universität Stuttgart, Caroline Seifert/Deutsche Telekom AG und Dr. Sascha Peters/Haute Innovation.
+          
+          Die Konferenz wurde aus Mitteln des Europäischen Fonds für regionale Entwicklung gefördert und durch das Bundesministerium für Wirtschaft und Technologie sowie das Hessische Ministerium für Wirtschaft, Verkehr und Landesentwicklung unterstützt.`,
+          textEng: `The conference on 25th of May 2011 at Frankfurt fair (Messe Frankfurt) was dedicated to the question what changes are to be expected for the development and design of products regarding the trend of digitising and minimising.
+          
+          The speakers were amongst others Prof. Achim Menges/Institute for Computational Design University Stuttgart, Caroline Seifert/Deutsche Telekom AG and Dr. Sascha Peters/Haute Innovation.
+          
+          The conference was promoted by the European Regional Development Fund (ERDF) and was supported by the Federal Ministry for Economy and Technology as well as the Hesse Ministry for Economics, Transport and Regional Development. `,
           img: require("@/assets/img/mv_11_02.jpg"),
-          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
-          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
-          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
-          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
-          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
-          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
+          img1: require("@/assets/img/mv_11_03.jpg"),
+          img2: require("@/assets/img/mv_11_04.jpg"),
+          img3: require("@/assets/img/mv_11_05.jpg"),
+          img4: require("@/assets/img/mv_11_06.jpg"),
+          img5: "",
+          img6: "",
           img7: "",
           img8: "",
           img9: "",
-          client: "",
+          client:
+            "Rat für Formgebung/German Design Council, Frankfurt am Main, Messe Frankfurt GmbH ",
           services: [],
-          servicesDe: [],
-          servicesEng: [],
+          servicesDe: ["Projektleitung"],
+          servicesEng: ["Head of project"],
           copyright: [
             "© Rat für Formgebung/German Design Council / Lutz Sternstein",
-            "",
+            "© Rat für Formgebung/German Design Council / Lutz Sternstein",
           ],
         },
         {
@@ -1194,33 +1238,48 @@ export default {
           nameDe: "YDMI–Young Designers Meet the Industry",
           nameEng: "YDMI–Young Designers Meet the Industry",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe: "Recruiting- und Akquiseplattform",
+          subtitleEng: "Recruiting- and acquisition platform",
           description: "",
           descriptionDe:
             "YDMI – YOUNG DESIGNERS MEET THE INDUSTRY ist die Recruiting- und Akquiseplattform des Rat für Formgebung für die Designszene, auf der ausgewählte Young Professionals aus den Bereichen Kommunikations-, Produkt- sowie Industriedesign auf Unternehmen mit ausgewiesener Design-Kompetenz treffen. ",
           descriptionEng:
             "YDMI—YOUNG DESIGNERS MEET THE INDUSTRY is the recruiting and acquisition platform for the design scene organised by the German Design Council, on which selected Young Professionals from the fields of communication design, product design and industrial design meet up with companies with outstanding design expertise.",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `YDMI 2007
+          im Postbahnhof am Gleisdreieck in Berlin
+          
+          YDMI 2008
+          in der Villa Elisabeth in Berlin
+          YDMI 2009
+          im Städelmuseum parallel zur Tendence 2009 in Frankfurt
+          
+          Die YDMI Days beinhalten neben den YDMI Workshops mit Referenten aus der Praxis die YDMI Portfolioshow, bei der sich die teilnehmenden Young Professionals dem interessierten Publikum präsentieren können sowie eine kuratierte Ausstellung mit Arbeiten der Nachwuchsdesigner. Darüberhinaus bietet das YDMI Dinner den Young Professionals und den Unternehmensvertretern die Möglichkeit, sich auszutauschen und Kontakte zu knüpfen. Im Rahmen des Dinners findet zudem die Wahl zum Young Professional des Jahres statt. YDMI wurde im Jahr 2007 initiiert und findet seitdem im jährlichen Turnus statt. `,
+          textEng: `YDMI 2007
+          at Postbahnhof am Gleisdreieck in Berlin
+          YDMI 2008
+          at Villa Elisabeth in Berlin
+          YDMI 2009
+          at Städelmuseum parallel to the trade fair Tendence 2009 in Frankfurt
+          
+          The YDMI Days include workshops with experts from experience, a portfolio show, within which the participating Young Professionals have the opportunity to present themselves to the interested audience as well as an exhibition showcasing works from the young designer. In addition the YDMI Dinner offers the Young Professionals and the company representatives the possibility to exchange ideas and to establish contact. Furthermore the Young Professional of the year is elected during the dinner. YDMI was initiated in 2007 and has since then been taking place on a yearly basis. `,
           img: require("@/assets/img/YDMI_08_09_2.jpg"),
-          img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
-          img2: require("@/assets/img/ECO_Darmstadt_02.jpg"),
-          img3: require("@/assets/img/ECO_Dessau_01.jpg"),
-          img4: require("@/assets/img/ECO_Dessau_02.jpg"),
-          img5: require("@/assets/img/ECO_Berlin_01.jpeg"),
-          img6: require("@/assets/img/ECO_FFM_01.jpeg"),
-          img7: "",
-          img8: "",
-          img9: "",
-          client: "",
+          img1: require("@/assets/img/YDMI_08_11.jpg"),
+          img2: require("@/assets/img/YDMI_07_01.jpg"),
+          img3: require("@/assets/img/YDMI_07_04.jpg"),
+          img4: require("@/assets/img/YDMI_08_03.jpg"),
+          img5: require("@/assets/img/YDMI_08_15.jpg"),
+          img6: require("@/assets/img/YDMI_08_06.jpg"),
+          img7: require("@/assets/img/YDMI_09_10.jpg"),
+          img8: require("@/assets/img/YDMI_09_05.jpg"),
+          img9: require("@/assets/img/YDMI_09_11.jpg"),
+          client: "Rat für Formgebung/German Design Council, Frankfurt am Main",
           services: [],
-          servicesDe: [],
-          servicesEng: [],
+          servicesDe: ["Projektmanagement"],
+          servicesEng: ["Project management"],
           copyright: [
             "© Rat für Formgebung/German Design Council / Lutz Sternstein",
-            "",
+            "© Rat für Formgebung/German Design Council / Lutz Sternstein",
           ],
         },
       ],

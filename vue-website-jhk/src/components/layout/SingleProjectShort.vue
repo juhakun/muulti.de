@@ -5,8 +5,10 @@
     </tr>
     <tr>
       <td>
-        <div class="table" @click="selectProject(this.selectedProject)">
-          <img :src="project.img" />
+        <div class="table">
+          <section>
+            <img :src="project.img" />
+          </section>
         </div>
       </td>
       <td style="vertical-align: top">
@@ -79,5 +81,9 @@ td {
 .copyright {
   font-size: 7pt;
   color: #7f7f7f;
+}
+
+section {
+  height: 233px;
 }
 </style>
