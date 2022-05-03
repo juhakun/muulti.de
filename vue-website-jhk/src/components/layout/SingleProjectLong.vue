@@ -1,8 +1,8 @@
 <template>
   <div id="content">
-    <section v-if="selectedLanguage === 'de'">
+    <section style="padding-top: 1rem" v-if="selectedLanguage === 'de'">
       <h2>
-        {{ selectedProject.name.toUpperCase() }}<br />
+        {{ selectedProject.nameDe.toUpperCase() }}<br />
         {{ selectedProject.subtitleDe }}
       </h2>
       <image-change :selectedProject="selectedProject"></image-change>
@@ -13,9 +13,9 @@
         </p>
       </div>
     </section>
-    <section v-if="selectedLanguage === 'eng'">
+    <section style="padding-top: 1rem" v-if="selectedLanguage === 'eng'">
       <h2>
-        {{ selectedProject.name.toUpperCase() }}<br />
+        {{ selectedProject.nameEng.toUpperCase() }}<br />
         {{ selectedProject.subtitleEng }}
       </h2>
       <image-change :selectedProject="selectedProject"></image-change>
@@ -28,7 +28,7 @@
     </section>
     <section v-if="selectedLanguage === 'de' && selectedProject.client !== ''">
       <div id="detailedText">
-        <p style="margin-bottom: 0rem">
+        <p>
           AUFTRAGEBER<br />
           {{ selectedProject.client }}<br /><br />
           LEISTUNGEN
@@ -41,7 +41,7 @@
     </section>
     <section v-if="selectedLanguage === 'eng' && selectedProject.client !== ''">
       <div id="detailedText">
-        <p style="margin-bottom: 0rem">
+        <p>
           CLIENT<br />
           {{ selectedProject.client }}<br /><br />
           SERVICES
@@ -70,14 +70,16 @@ export default {
 h2 {
   padding-left: 0.25rem;
 }
-section {
-  padding-top: 1rem;
-}
 
 li {
   font-family: "Arial";
   font-size: 11pt;
   text-align: left;
   list-style-type: "// ";
+}
+
+p {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
 }
 </style>

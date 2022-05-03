@@ -5,7 +5,7 @@
     </tr>
     <tr>
       <td>
-        <div class="table">
+        <div class="table" @click="selectProject(this.selectedProject)">
           <img :src="project.img" />
         </div>
       </td>
@@ -16,19 +16,27 @@
     </tr>
     <tr>
       <td>
-        <p class="copyright">{{ project.copyright }}</p>
+        <p class="copyright">{{ project.copyright[0] }}</p>
       </td>
       <td>
         <base-button
           @click="selectProject(this.selectedProject)"
-          v-if="selectedLanguage === 'de'"
+          v-if="
+            selectedLanguage === 'de' &&
+            selectedProject.name !== 'Hotel Weisshaar' &&
+            selectedProject.name !== 'Berliner Republik'
+          "
           style="float: right"
           mode="de-eng"
           >mehr</base-button
         >
         <base-button
           @click="selectProject(this.selectedProject)"
-          v-else-if="selectedLanguage === 'eng'"
+          v-else-if="
+            selectedLanguage === 'eng' &&
+            selectedProject.name !== 'Hotel Weisshaar' &&
+            selectedProject.name !== 'Berliner Republik'
+          "
           style="float: right"
           mode="de-eng"
           >more</base-button
@@ -54,6 +62,7 @@ export default {
 <style scoped>
 img {
   max-width: 350px;
+  max-height: 233px;
 }
 
 td {
@@ -62,7 +71,6 @@ td {
 
 .table {
   max-width: 100%;
-  min-width: 300px;
   margin-left: 0rem;
   margin-right: 1rem;
   float: left;

@@ -2,11 +2,19 @@
   <table style="vertical-align: top; padding-top: 0.5rem">
     <tr>
       <td>
-        <tr>
+        <tr v-if="selectedProject.copyright[1] !== ''">
+          <img
+            :src="img"
+            style="width: 450px; padding-top: 0rem; padding-bottom: 0rem"
+          />
+          <p class="copyright">{{ selectedProject.copyright[1] }}</p>
+        </tr>
+        <tr v-else-if="selectedProject.copyright[1] === ''">
           <img
             :src="img"
             style="width: 450px; padding-top: 0rem; padding-bottom: 1rem"
           />
+          <p class="copyright">{{ selectedProject.copyright[1] }}</p>
         </tr>
       </td>
       <td style="vertical-align: top; padding-top: 0rem">
@@ -88,9 +96,6 @@
           </td>
         </tr>
       </td>
-    </tr>
-    <tr>
-      <p class="copyright">{{ selectedProject.copyright }}</p>
     </tr>
   </table>
 </template>
