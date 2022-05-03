@@ -1,9 +1,10 @@
 <template>
   <div id="content">
     <section>
-      <img :src="me.portrait" style="width: 220px; margin-top: 3rem" />
+      <img :src="me.portrait" style="width: 220px; margin-top: 1.7rem" />
       <h2 style="margin-top: 2rem">{{ me.headline.toUpperCase() }}</h2>
       <p
+        v-if="selectedLanguage === 'de'"
         style="
           padding-bottom: 1.75rem;
           margin-right: 6rem;
@@ -23,6 +24,26 @@
         eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin,
         die sie im Sommer 2022 abschloss. <br />Julia Häusler lebt und arbeitet
         in Berlin.
+      </p>
+      <p
+        v-else-if="selectedLanguage === 'eng'"
+        style="
+          padding-bottom: 1.75rem;
+          margin-right: 6rem;
+          border-bottom: 1px dashed;
+          border-color: gray;
+        "
+      >
+        offers a wide range of services in the areas of programming, design and
+        communication. The combination of different disciplines is a central
+        part of her work and enables the development of extraordinary, holistic
+        concepts. Since 2004 she has worked for numerous well-known clients.
+        <br />Born in Constance, she first studied architecture at the Technical
+        University of Karlsruhe and then completed her design studies with a
+        focus on product design at the Postdam University of Applied Sciences.
+        <br />In addition to her training in design, she completed a one-year
+        training course to become a certified software developer, which she
+        completed in summer 2022. <br />Julia Häusler lives and works in Berlin.
       </p>
       <!-- <table style="padding-top: 0rem">
       <tr>

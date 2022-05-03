@@ -6,17 +6,17 @@
     <tr>
       <td>
         <div class="table">
-          <img :src="projectImgSrc" />
+          <img :src="project.img" />
         </div>
       </td>
       <td style="vertical-align: top">
-        <h2>{{ projectName.toUpperCase() }}</h2>
-        <p>{{ projectDes }}</p>
+        <h2>{{ project.name.toUpperCase() }}</h2>
+        <p>{{ project.description }}</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class="copyright">{{ projectCopyright }}</p>
+        <p class="copyright">{{ project.copyright }}</p>
       </td>
       <td>
         <base-button
@@ -41,49 +41,10 @@
 <script>
 export default {
   inject: ["selectProject"],
-  props: [
-    "id",
-    "projectName",
-    "projectCategory",
-    "projectDes",
-    "projectText",
-    "projectTextDe",
-    "projectTextEng",
-    "projectImgSrc",
-    "projectImgSrc1",
-    "projectImgSrc2",
-    "projectImgSrc3",
-    "projectImgSrc4",
-    "projectImgSrc5",
-    "projectImgSrc6",
-    "projectImgSrc7",
-    "projectImgSrc8",
-    "projectImgSrc9",
-    "projectCopyright",
-    "selectedLanguage",
-  ],
+  props: ["project", "selectedLanguage"],
   data() {
     return {
-      selectedProject: {
-        id: this.id,
-        category: this.cathegory,
-        name: this.projectName,
-        description: this.projectDes,
-        text: this.projectText,
-        textDe: this.projectTextDe,
-        textEng: this.projectTextEng,
-        img: this.projectImgSrc,
-        img1: this.projectImgSrc1,
-        img2: this.projectImgSrc2,
-        img3: this.projectImgSrc3,
-        img4: this.projectImgSrc4,
-        img5: this.projectImgSrc5,
-        img6: this.projectImgSrc6,
-        img7: this.projectImgSrc7,
-        img8: this.projectImgSrc8,
-        img9: this.projectImgSrc9,
-        copyright: this.projectCopyright,
-      },
+      selectedProject: this.project,
     };
   },
   methods: {},

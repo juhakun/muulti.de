@@ -61,7 +61,7 @@ div {
 
 #detailedText {
   margin-right: 9rem;
-  padding-top: 1.5rem;
+  padding-top: 0.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px dashed;
   border-color: gray;

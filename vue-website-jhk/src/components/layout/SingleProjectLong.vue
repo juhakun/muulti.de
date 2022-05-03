@@ -1,39 +1,56 @@
 <template>
   <div id="content">
-    <image-change :selectedProject="selectedProject"></image-change>
+    <section v-if="selectedLanguage === 'de'">
+      <h2>
+        {{ selectedProject.name.toUpperCase() }}<br />
+        {{ selectedProject.subtitleDe }}
+      </h2>
+      <image-change :selectedProject="selectedProject"></image-change>
 
-    <div id="detailedText" v-if="selectedLanguage === 'de'">
-      <p>
-        {{ selectedProject.textDe }}
-      </p>
-    </div>
-    <div id="detailedText" v-else-if="selectedLanguage === 'eng'">
-      <p>
-        {{ selectedProject.textEng }}
-      </p>
-    </div>
-    <div id="detailedText" v-if="selectedLanguage === 'de'">
-      <p>
-        AUFTRAGEBER<br />
-        {{ selectedProject.name }}
-      </p>
-      <p>
-        LEISTUNGEN<br />
-        {{ selectedProject.name }}<br />
-        {{ selectedProject.name }}
-      </p>
-    </div>
-    <div id="detailedText" v-if="selectedLanguage === 'eng'">
-      <p>
-        CLIENT<br />
-        {{ selectedProject.name }}
-      </p>
-      <p>
-        SERVICES<br />
-        {{ selectedProject.name }}<br />
-        {{ selectedProject.name }}
-      </p>
-    </div>
+      <div id="detailedText">
+        <p>
+          {{ selectedProject.textDe }}
+        </p>
+      </div>
+    </section>
+    <section v-if="selectedLanguage === 'eng'">
+      <h2>
+        {{ selectedProject.name.toUpperCase() }}<br />
+        {{ selectedProject.subtitleEng }}
+      </h2>
+      <image-change :selectedProject="selectedProject"></image-change>
+
+      <div id="detailedText">
+        <p>
+          {{ selectedProject.textEng }}
+        </p>
+      </div>
+    </section>
+    <section v-if="selectedLanguage === 'de' && selectedProject.client !== ''">
+      <div id="detailedText">
+        <p style="margin-bottom: 0rem">
+          AUFTRAGEBER<br />
+          {{ selectedProject.client }}<br /><br />
+          LEISTUNGEN
+        </p>
+
+        <li v-for="service in selectedProject.servicesDe" :key="service.id">
+          {{ service }}<br />
+        </li>
+      </div>
+    </section>
+    <section v-if="selectedLanguage === 'eng' && selectedProject.client !== ''">
+      <div id="detailedText">
+        <p style="margin-bottom: 0rem">
+          CLIENT<br />
+          {{ selectedProject.client }}<br /><br />
+          SERVICES
+        </p>
+        <li v-for="service in selectedProject.servicesEng" :key="service.id">
+          {{ service }}<br />
+        </li>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -41,10 +58,26 @@
 import ImageChange from "./ImageChange.vue";
 export default {
   components: { ImageChange },
-  props: ["selectedProject", "me", "selectedLanguage"],
+  props: ["selectedProject", "me", "selectedLanguage", "servicesDe"],
   data() {
     return {};
   },
   methods: {},
 };
 </script>
+
+<style scoped>
+h2 {
+  padding-left: 0.25rem;
+}
+section {
+  padding-top: 1rem;
+}
+
+li {
+  font-family: "Arial";
+  font-size: 11pt;
+  text-align: left;
+  list-style-type: "// ";
+}
+</style>

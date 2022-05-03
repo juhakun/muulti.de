@@ -1,21 +1,15 @@
 <template>
   <table style="vertical-align: top; padding-top: 0.5rem">
     <tr>
-      <h2>
-        {{ selectedProject.name.toUpperCase() }}<br />
-        {{ selectedProject.name }}
-      </h2>
-    </tr>
-    <tr>
       <td>
         <tr>
           <img
             :src="img"
-            style="width: 450px; padding-top: 1rem; padding-bottom: 1rem"
+            style="width: 450px; padding-top: 0rem; padding-bottom: 1rem"
           />
         </tr>
       </td>
-      <td style="vertical-align: top; padding-top: 1rem">
+      <td style="vertical-align: top; padding-top: 0rem">
         <tr>
           <td>
             <img

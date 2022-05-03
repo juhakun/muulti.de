@@ -21,6 +21,7 @@
       v-if="detailsWanted === true"
       :selectedLanguage="selectedLanguage"
       :selectedProject="selectedProject"
+      :servicesDe="selectedProject.servicesDe"
     ></single-project-long>
     <personal-details
       v-if="me.detailsWanted === true"
@@ -86,18 +87,9 @@ export default {
       me: {
         detailsWanted: false,
         portrait: require("@/assets/img/jh2.jpg"),
-        headline: "Julia Haeusler-Kun",
+        headline: "Julia Häusler-Kun",
         mail: "mail@juliahaeusler.com",
         title: "Diplom Designer (FH)",
-        cv:
-          "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
-          " Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.",
-        cvDe:
-          "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
-          " Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.",
-        cvEng:
-          "offers a wide range of services in the areas of programming, design and communication. The combination of different disciplines is a central part of her work and enables the development of extraordinary, holistic concepts. Since 2004 she has worked for numerous well-known clients. Born in Constance, she first studied architecture at the Technical University of Karlsruhe and then completed her design studies with a focus on product design at the Postdam University of Applied Sciences. In addition to her training in design, she completed a one-year training course to become a certified software developer, which she completed in summer 2022. Julia Häusler lives and works in Berlin.",
-        imprint: "",
       },
       filteredProjects: [
         {
@@ -125,6 +117,8 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
           copyright: "",
         },
       ],
@@ -135,6 +129,9 @@ export default {
           name: "Webseite mit Vue.JS und JavaScript",
           nameDe: "Webseite mit Vue.JS und JavaScript",
           nameEng: "Website with Vue.JS and JavaScript",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Webseite www.juliahaeusler.com, die vor fast 10 Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
@@ -153,6 +150,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "",
         },
       ],
@@ -164,6 +165,9 @@ export default {
           name: "Webseite mit Vue.JS und JavaScript",
           nameDe: "Webseite mit Vue.JS und JavaScript",
           nameEng: "Website with Vue.JS and JavaScript",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Webseite www.juliahaeusler.com, die vor fast 10 Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
@@ -182,6 +186,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "",
         },
       ],
@@ -192,7 +200,11 @@ export default {
           category: "exhibitions",
           name: "",
           nameDe: "Bundespreis Ecodesign",
-          nameEng: "GERMAN ECODESIGN AWARD",
+          nameEng: "German Ecodesign Award",
+          subtitle: "",
+          subtitleDe: "Wanderausstellung zum Bundespreis Ecodesign",
+          subtitleEng:
+            "Traveling exhibition for the German Federal Ecodesign Award",
           description: "",
           descriptionDe:
             "Seit 2013 ist die Ausstellung zum BUNDESPREIS ECODESIGN jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.",
@@ -213,6 +225,19 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "IDZ Internationales Design Zentrum Berlin e.V.",
+          services: [
+            "Konzeption und Gestaltung der Ausstellungsarchitektur",
+            "Gestaltung der Ausstellungsgrafik im Rahmen des CI des Bundespreises",
+          ],
+          servicesDe: [
+            "Konzeption und Gestaltung der Ausstellungsarchitektur",
+            "Gestaltung der Ausstellungsgrafik im Rahmen des CI des Bundespreises",
+          ],
+          servicesEng: [
+            "Concept and design of the display architecture",
+            "Concept and design of the the display graphics according to the CI of the award",
+          ],
           copyright: "",
         },
         {
@@ -221,6 +246,9 @@ export default {
           name: "",
           nameDe: "Spot on Materials",
           nameEng: "Spot on Materials",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Ausstellung SPOT ON MATERIALS präsentierte innovative Materialen und veranschaulichte diese anhand bereits umgesetzter Produkte. Die Produkte und Materialien verdeutlichen, welchen Stellenwert Materialien als Generator für Kreativität, für neue Ideen und ungewöhnliche Lösungen haben. ",
@@ -241,6 +269,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "",
         },
         {
@@ -249,6 +281,9 @@ export default {
           name: "Woher kommt das Neue?",
           nameDe: "Woher kommt das Neue?",
           nameEng: "Where does the New come from?",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Ausstellung WOHER KOMMT DAS NEUE – KREATIVITÄT UND EINFALLSREICHTUM IM DESIGN stellte nicht das fertige Produkte, sondern den kreativen Prozess in den Mittelpunkt: Sensibilität, Leidenschaft, Aufgeschlossenheit für Neues und Unerwartetes und der Mut über Grenzen zu gehen prägen diesen Prozess und die Arbeit der Kreativen und ermöglichen die Entwicklung einzigartiger Ideen. ",
@@ -267,6 +302,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© Hessen Design e.V. / Britta Büning",
         },
         {
@@ -275,6 +314,9 @@ export default {
           name: "",
           nameDe: "German Shades of Green",
           nameEng: "German Shades of Green",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Ausstellung GERMAN SHADES OF GREEN – SUSTAINABLE DESIGN FROM GERMANY stellte Beispiele nachhaltiger Gestaltung vor. Sie zeigte anhand von Produkten, Konzepten und Ideen aus Deutschland, wie Nachhaltigkeit im Design umgesetzt werden kann und wie Gestaltung entscheidend zum Erfolg nachhaltiger Entwicklung beiträgt. Auch die Ausstellungsgestaltung und die grafische Präsentation der Exponate orientierte sich an diesem Nachhaltigkeitsanspruch.",
@@ -293,6 +335,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© IDZ Internationales Design Zentrum Berlin e.V.",
         },
         {
@@ -301,6 +347,9 @@ export default {
           name: "",
           nameDe: "Design Deutschland",
           nameEng: "Design Deutschland",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "DESIGN DEUTSCHLAND ist eine internationale Wanderausstellung des Rat für Formgebung, die jährlich eine aktuelle, exemplarische Auswahl von jeweils 120 bis 150 Produkten renommierter deutscher Unternehmen und Designer umfasst. Parallel zur Wanderausstellung konnten sich deutsche Unternehmen an einzelnen internationalen Veranstaltungsorten im Rahmen eines Gemeinschaftsstands präsentieren.",
@@ -319,6 +368,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "",
         },
         {
@@ -327,6 +380,9 @@ export default {
           name: "",
           nameDe: "Imm Cologne",
           nameEng: "Imm Cologne",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Im Rahmen der Internationalen Möbelmesse IMM COLOGNE werden jedes Jahr zahlreiche Designaktivitäten und Sonderschauen präsentiert. In den vergangenen Jahren zählten hierzu unter anderen die Trendshow INFORMED BY COLOGNE und der BOULEVARD OF INNOVATIONS.",
@@ -345,6 +401,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© Koelnmesse / Constantin Meyer",
         },
         {
@@ -353,6 +413,9 @@ export default {
           name: "",
           nameDe: "Nominee selection",
           nameEng: "Nominee selection",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Ausstellungsreihe NOMINEE SELECTION zeigte neben den Preisträgern des vom Bundesministerium für Wirtschaft und Technologie ausgelobten Designpreises der Bundesrepublik Deutschland eine Reihe von Produkten, die zum Designpreis 2009 und 2010 nominiert waren.",
@@ -371,6 +434,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© Rat für Formgebung/German Design Council / Guido Mieth",
         },
         {
@@ -379,6 +446,9 @@ export default {
           name: "",
           nameDe: "usability park",
           nameEng: "usability park",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Ausstellung USABILITY PARK präsentierte Produkte, die sowohl dem Anspruch an hohe Benutzerfreundlichkeit als auch ästhetischen Ansprüchen der Verbraucher gerecht werden.",
@@ -396,6 +466,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© Frank Nickerl",
         },
         {
@@ -404,6 +478,9 @@ export default {
           name: "",
           nameDe: "Access Berlin Design",
           nameEng: "Access Berlin Design",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Ausstellung ACCESS BERLIN DESIGN stellte den Standort Berlin als wichtige Schnittstelle zwischen Industrie und Design vor und präsentierte designorientierte Unternehmen sowie Agenturen aus Berlin.",
@@ -422,6 +499,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© Antonia Roth",
         },
         {
@@ -430,6 +511,9 @@ export default {
           name: "",
           nameDe: "Ideal Standard",
           nameEng: "Ideal Standard",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Das Projekt IDEAL STANDARD – DER CHARME DER DINGE befasste sich mit Produkten des täglichen Lebens. Kernstücke des Projekts waren ein Katalog und eine Ausstellung bei DMY zum Designmai 2006 in Berlin.",
@@ -448,6 +532,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "",
         },
         {
@@ -456,6 +544,9 @@ export default {
           name: "",
           nameDe: "Bundespressestrand",
           nameEng: "Bundespressestrand",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die bekannte Berliner Sommer-Gastronomie BUNDESPRESSESTRAND eröffnete während der Wintermonate 2004/2005 erstmals eine Winterpräsenz für Abendveranstaltungen in einem zur Sommerlocation nahegelegen Bürogebäude. Die leerstehende Büroetage wurde in eine Winterlandschaft verwandelt, um auch den Berlinern einen kleinen Skiurlaub zu ermöglichen.",
@@ -474,6 +565,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "",
         },
       ],
@@ -485,6 +580,9 @@ export default {
           name: "",
           nameDe: "Spot on Materials",
           nameEng: "Spot on Materials",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Ausstellung SPOT ON MATERIALS präsentierte innovative Materialen und veranschaulichte diese anhand bereits umgesetzter Produkte. Die Produkte und Materialien verdeutlichen, welchen Stellenwert Materialien als Generator für Kreativität, für neue Ideen und ungewöhnliche Lösungen haben. ",
@@ -503,6 +601,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "",
         },
         {
@@ -511,6 +613,9 @@ export default {
           name: "",
           nameDe: "German Shades of Green",
           nameEng: "German Shades of Green",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Ausstellung GERMAN SHADES OF GREEN – SUSTAINABLE DESIGN FROM GERMANY stellte Beispiele nachhaltiger Gestaltung vor. Sie zeigte anhand von Produkten, Konzepten und Ideen aus Deutschland, wie Nachhaltigkeit im Design umgesetzt werden kann und wie Gestaltung entscheidend zum Erfolg nachhaltiger Entwicklung beiträgt. Auch die Ausstellungsgestaltung und die grafische Präsentation der Exponate orientierte sich an diesem Nachhaltigkeitsanspruch.",
@@ -529,6 +634,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© IDZ Internationales Design Zentrum Berlin e.V.",
         },
         {
@@ -537,6 +646,9 @@ export default {
           name: "",
           nameDe: "Hotel Weisshaar",
           nameEng: "Hotel Weisshaar",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Logo-Redesign für das traditionsreiche HOTEL WEISSHAAR in Meersburg am Bodensee sowie Entwicklung und Gestaltung diverser Druckerzeugnisse und Werbemittel. ",
@@ -555,6 +667,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "",
         },
         {
@@ -563,6 +679,9 @@ export default {
           name: "",
           nameDe: "Access Berlin Design",
           nameEng: "Access Berlin Design",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die Ausstellung ACCESS BERLIN DESIGN stellte den Standort Berlin als wichtige Schnittstelle zwischen Industrie und Design vor und präsentierte designorientierte Unternehmen sowie Agenturen aus Berlin.",
@@ -581,6 +700,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© Antonia Roth",
         },
         {
@@ -589,6 +712,9 @@ export default {
           name: "",
           nameDe: "Berliner Republik",
           nameEng: "Berliner Republik",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Gestaltung des Covers für die Jubiläumsausgabe der Zeitschrift BERLINER REPUBLIK anlässlich ihres fünfjährigen Bestehens.",
@@ -607,6 +733,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© Antonia Roth",
         },
         {
@@ -615,6 +745,9 @@ export default {
           name: "",
           nameDe: "Marquardt lässt grüssen",
           nameEng: "Marquardt says Hello",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Eine Kleiderkollektion mit Illustrationen zum Ort Marquardt bei Potsdam. ",
@@ -633,6 +766,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "",
         },
       ],
@@ -644,6 +781,9 @@ export default {
           name: "",
           nameDe: "Bundespreis Ecodesign",
           nameEng: "German Ecodesign Award",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Der BUNDESPREIS ECODESIGN wurde 2012 erstmals vom Bundesumweltministerium und dem Umweltbundesamt ausgelobt und zeichnet innovative Produkte und Konzepte aus, die gleichermaßen ästhetischen als auch ökologischen Ansprüchen genügen. Der Preis bietet Unternehmen sowie Designerinnen und Designern eine Plattform, um ihre Produkte und Ideen von herausragender ökologischer und gestalterischer Qualität zu präsentieren.",
@@ -662,6 +802,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright:
             "© IDZ Internationales Design Zentrum Berlin e.V. / Sandra Kühnapfel",
         },
@@ -671,6 +815,9 @@ export default {
           name: "",
           nameDe: "Deutscher Marken- und Designkongress",
           nameEng: "German Brand and Design Congress",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Auf dem DEUTSCHE MARKEN- UND DESIGNKONGRESS diskutieren hochrangige Experten verschiedener Gestaltungsbereiche über Brandmanagementprozesse. Unter dem Titel Establishing High-Value Brands beschäftigte sich der Kongress in 2011 mit der Implementierung von Marken, wobei die Markenkommunikation nach innen und außen im Mittelpunkt stand.",
@@ -689,6 +836,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright:
             "© Rat für Formgebung/German Design Council / Sandra Kühnapfel",
         },
@@ -698,6 +849,9 @@ export default {
           name: "",
           nameDe: "Deutsches Design Museum",
           nameEng: "German Design Museum",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Über die Relevanz und Aufgabe eines DEUTSCHEN DESIGN MUSEUMS diskutierten renommierte Designer, Künstler und Pressevertreter im Rahmen einer Roundtable-Veranstaltung in Berlin. Der folgende öffentlichen Diskurs eröffnete der deutschen Designszene die Möglichkeit, sich an der Diskussion zu beteiligen. ",
@@ -716,6 +870,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright:
             "© Rat für Formgebung/German Design Council / Sandra Kühnapfel",
         },
@@ -725,6 +883,9 @@ export default {
           name: "",
           nameDe: "Brand New Germany",
           nameEng: "Brand New Germany",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Die BRAND NEW GERMANY KONFERENZ UND VORTRAGSREIHE bot Designagenturen, Designern und Unternehmen der deutschen Kreativwirtschaft die Möglichkeit, sich über Chancen und Risiken des asiatischen Markts, dem sie sich häufig nicht länger entziehen können, zu informieren. Bereits in Asien vertretene Unternehmen und Dienstleister berichteten über ihre Erfahrungen.",
@@ -743,6 +904,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright: "© Rat für Formgebung/German Design Council",
         },
         {
@@ -751,6 +916,9 @@ export default {
           name: "",
           nameDe: "Material Vision Konferenz",
           nameEng: "Material Vision Conference",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "Auf der MATERIAL VISION KONFERENZ mit dem Titel Designing the Weightless World erhielten Produktentwickler, Designer und Architekten parallel zur Fachmesse Material Vision 2011 einen exklusiven Ausblick in die Materialtrends von morgen.",
@@ -769,6 +937,10 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright:
             "© Rat für Formgebung/German Design Council / Lutz Sternstein",
         },
@@ -778,6 +950,9 @@ export default {
           name: "",
           nameDe: "YDMI–Young Designers Meet the Industry",
           nameEng: "YDMI–Young Designers Meet the Industry",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
           description: "",
           descriptionDe:
             "YDMI – YOUNG DESIGNERS MEET THE INDUSTRY ist die Recruiting- und Akquiseplattform des Rat für Formgebung für die Designszene, auf der ausgewählte Young Professionals aus den Bereichen Kommunikations-, Produkt- sowie Industriedesign auf Unternehmen mit ausgewiesener Design-Kompetenz treffen. ",
@@ -796,37 +971,12 @@ export default {
           img7: "",
           img8: "",
           img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
           copyright:
             "© Rat für Formgebung/German Design Council / Lutz Sternstein",
-        },
-      ],
-
-      about: [
-        {
-          id: "12",
-          category: "management",
-          name: "",
-          nameDe: "Julia Haeusler-Kun",
-          nameEng: "Julia Haeusler-Kun",
-          description: "",
-          descriptionDe:
-            "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig. Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.",
-          descriptionEng:
-            "born in Constance, studied architecture at the Technical University Karlsruhe before she finished her design studies at the University of Applied Sciences in Potsdam with her diploma. Since 2004 she works for clients such as the German Design Council—the German competence center for design in Frankfurt—, the IDZ International Design Center Berlin and the Goethe Institute in Taipei. Her knowledge—both in architecture and design—, her interest in present developments and trends in the design sector as well as best contacts into the national and international design scene serve as a basis of inspiration to her in order to develop unique concepts. Julia Häusler lives and works in Berlin and Mannheim. ",
-          text: "",
-          textDe: "",
-          textEng: "",
-          img: require("@/assets/img/bps_06.jpg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
-          img8: "",
-          img9: "",
-          copyright: "",
         },
       ],
     };
