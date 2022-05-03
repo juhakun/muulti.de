@@ -41,8 +41,9 @@ div {
 }
 
 #nav {
+  width: 850px;
   padding-top: 3rem;
-  margin: 1rem;
+  margin-top: 1rem;
   white-space: nowrap;
   border-bottom: 1px dashed;
   border-color: gray;
@@ -50,9 +51,10 @@ div {
 }
 
 #content {
-  padding-left: 5rem;
-  padding-right: rem;
-  max-width: 90%;
+  padding-left: 3rem;
+  padding-right: 0rem;
+  margin-top: 1rem;
+  max-width: 850px;
   min-width: 700px;
   float: left;
 }
@@ -86,9 +88,17 @@ p {
   /* text-align: justify; */
 }
 
+pre {
+  font-family: "Arial";
+  font-size: 11pt;
+  text-align: left;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
 table {
   min-width: 760px;
-  max-width: 900px;
+  max-width: 850px;
   padding-bottom: 0.5rem;
   padding-top: 2rem;
   margin-right: 8rem;

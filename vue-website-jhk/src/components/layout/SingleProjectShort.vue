@@ -100,9 +100,9 @@ td {
 }
 
 .table {
-  max-width: 90%;
+  max-width: 100%;
   min-width: 300px;
-  margin-left: rem;
+  margin-left: 0rem;
   margin-right: 1rem;
   float: left;
 }

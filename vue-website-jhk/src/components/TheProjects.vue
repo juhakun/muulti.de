@@ -8,14 +8,9 @@
     <base-navigation
       @filter-category="filterProjects"
       @show-about="showDetailsAbout"
-      @show-contact="showContactInfo"
       :buttonsClicked="buttonsClicked"
     ></base-navigation>
-    <personal-details
-      v-if="me.detailsWanted === true"
-      :selectedLanguage="selectedLanguage"
-      :me="me"
-    ></personal-details>
+
     <overview-projects
       v-if="detailsWanted === false"
       :filteredProjects="filteredProjects"
@@ -26,23 +21,30 @@
       v-if="detailsWanted === true"
       :selectedLanguage="selectedLanguage"
       :selectedProject="selectedProject"
-    ></single-project-long
+    ></single-project-long>
+    <personal-details
+      v-if="me.detailsWanted === true"
+      :selectedLanguage="selectedLanguage"
+      :me="me"
+    ></personal-details
     ><contact-details
       v-if="contactInfoWanted === true"
       :me="me"
     ></contact-details>
     <the-footer
       @go-back="filterProjects"
+      @show-contact="showContactInfo"
       v-if="selectedLanguage === 'de'"
       :footer1="'zurück'"
-      :footer2="'Impressum'"
+      :footer2="'Impressum / Kontakt'"
       :selectedProject="selectedProject"
     ></the-footer>
     <the-footer
       @go-back="filterProjects"
+      @show-contact="showContactInfo"
       v-else-if="selectedLanguage === 'eng'"
       :footer1="'back'"
-      :footer2="'Imprint'"
+      :footer2="'Imprint / Contact'"
       :selectedProject="selectedProject"
     ></the-footer>
   </header>
@@ -58,7 +60,13 @@ import ContactDetails from "./layout/ContactDetails.vue";
 import TheFooter from "./layout/TheFooter.vue";
 
 export default {
-  emits: ["filter-category", "filter-language", "go-back"],
+  emits: [
+    "filter-category",
+    "filter-language",
+    "go-back",
+    "show-about",
+    "show-contact",
+  ],
   components: {
     OverviewProjects,
     BaseNavigation,
@@ -77,13 +85,18 @@ export default {
       contactInfoWanted: false,
       me: {
         detailsWanted: false,
-        portrait: "",
-        headline: "",
-        cv: "",
-        cvDe: "",
-        cvEng: "",
-        title: "",
-        mail: "",
+        portrait: require("@/assets/img/jh2.jpg"),
+        headline: "Julia Haeusler-Kun",
+        mail: "mail@juliahaeusler.com",
+        title: "Diplom Designer (FH)",
+        cv:
+          "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
+          " Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.",
+        cvDe:
+          "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
+          " Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.",
+        cvEng:
+          "offers a wide range of services in the areas of programming, design and communication. The combination of different disciplines is a central part of her work and enables the development of extraordinary, holistic concepts. Since 2004 she has worked for numerous well-known clients. Born in Constance, she first studied architecture at the Technical University of Karlsruhe and then completed her design studies with a focus on product design at the Postdam University of Applied Sciences. In addition to her training in design, she completed a one-year training course to become a certified software developer, which she completed in summer 2022. Julia Häusler lives and works in Berlin.",
         imprint: "",
       },
       filteredProjects: [
@@ -816,8 +829,6 @@ export default {
           copyright: "",
         },
       ],
-
-      contact: [],
     };
   },
 
@@ -835,12 +846,9 @@ export default {
         this.filterLanguage(this.selectedLanguage);
       }
       if (this.me.detailsWanted === true && language === "de") {
-        this.me.cv =
-          "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
-          "Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.";
+        this.me.cv = this.me.cvDe;
       } else if (this.me.detailsWanted === true && language === "eng") {
-        this.me.cv =
-          "offers a wide range of services in the areas of programming, design and communication. The combination of different disciplines is a central part of her work and enables the development of extraordinary, holistic concepts. Since 2004 she has worked for numerous well-known clients. Born in Constance, she first studied architecture at the Technical University of Karlsruhe and then completed her design studies with a focus on product design at the Postdam University of Applied Sciences. In addition to her training in design, she completed a one-year training course to become a certified software developer, which she completed in summer 2022. Julia Häusler lives and works in Berlin.";
+        this.me.cv = this.me.cvEng;
       }
     },
 
@@ -886,6 +894,7 @@ export default {
       }
       this.filterLanguage(this.selectedLanguage);
     },
+
     setSelectedProject(project) {
       this.detailsWanted = true;
       console.log(this.detailsWanted);
@@ -893,33 +902,21 @@ export default {
       this.filterLanguage(this.selectedLanguage);
       console.log(this.selectedProject.name);
     },
+
     showDetailsAbout() {
+      this.selectedProject = undefined;
       this.filteredProjects = undefined;
       this.detailsWanted = false;
       this.contactInfoWanted = false;
       this.me.detailsWanted = true;
-      this.me.portrait = require("@/assets/img/jh2.jpg");
-      this.me.headline = "Julia Haeusler-Kun";
-      this.me.mail = "mail@juliahaeusler.com";
-      this.title = "Diplom Designer (FH)";
-      this.me.imprint = "";
-      if (this.selectedLanguage === "de") {
-        this.me.cv =
-          "bietet vielfältige Dienstleistungen in den Bereichen Programmierung, Design und Kommunikation. Die Verbindung unterschiedlicher Disziplinen ist zentraler Bestandteil ihrer Arbeit und ermöglicht die Entwicklung außergewöhnlicher, ganzheitlicher Konzepte. Seit 2004 ist sie für zahlreiche namhafte Kunden tätig.\n" +
-          " Geboren in Konstanz, studierte sie zunächst Architektur an der Technischen Hochschule Karlsruhe und schloss ihr anschließendes Design-Studium mit dem Schwerpunkt Produktdesign an der Fachhochschule Postdam mit dem Diplom ab. Ergänzend zu ihrer Ausbildung im Designbereich absolvierte sie eine einjährige Weiterbildung zur zertifizierten Softwareentwicklerin, die sie im Sommer 2022 abschloss. Julia Häusler lebt und arbeitet in Berlin.";
-      } else if (this.selectedLanguage === "eng") {
-        this.me.cv =
-          "offers a wide range of services in the areas of programming, design and communication. The combination of different disciplines is a central part of her work and enables the development of extraordinary, holistic concepts. Since 2004 she has worked for numerous well-known clients. Born in Constance, she first studied architecture at the Technical University of Karlsruhe and then completed her design studies with a focus on product design at the Postdam University of Applied Sciences. In addition to her training in design, she completed a one-year training course to become a certified software developer, which she completed in summer 2022. Julia Häusler lives and works in Berlin.";
-      }
     },
+
     showContactInfo() {
+      this.selectedProject = undefined;
       this.filteredProjects = undefined;
       this.me.detailsWanted = false;
       this.detailsWanted = false;
       this.contactInfoWanted = true;
-      this.me.title = "Diplom Designer (FH)";
-      this.me.mail = "mail@juliahaeusler.com";
-      this.me.imprint = "Impressum";
     },
   },
 };

@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 button {
-  padding: 0.2rem 1.5rem;
+  padding: 0.2rem 1.7rem;
   font-family: arial;
   font-size: 12pt;
   color: gray;

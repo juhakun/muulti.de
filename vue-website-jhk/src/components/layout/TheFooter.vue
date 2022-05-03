@@ -13,7 +13,7 @@
         </td>
         <td>
           <base-button
-            @click="$emit('filter-language', 'de')"
+            @click="$emit('show-contact', 'contact')"
             mode="de-eng"
             style="float: right"
             >{{ footer2 }}
