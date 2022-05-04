@@ -185,7 +185,7 @@
 
 <script>
 export default {
-  props: ["me"],
+  props: ["me", "selectedLanguage"],
 };
 </script>
 

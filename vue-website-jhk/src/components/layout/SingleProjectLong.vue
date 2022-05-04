@@ -57,7 +57,7 @@
       </section>
     </div>
     <div v-if="selectedProject.name === 'Imm Cologne'">
-      <section style="padding-top: 1rem" v-if="selectedLanguage === 'de'">
+      <section style="padding-top: 2rem" v-if="selectedLanguage === 'de'">
         <h2>
           {{ imm.nameDe.toUpperCase() }}<br />
           {{ imm.subtitleDe }}
@@ -70,7 +70,7 @@
           </p>
         </div>
       </section>
-      <section style="padding-top: 1rem" v-if="selectedLanguage === 'eng'">
+      <section style="padding-top: 2rem" v-if="selectedLanguage === 'eng'">
         <h2>
           {{ imm.nameEng.toUpperCase() }}<br />
           {{ imm.subtitleEng }}

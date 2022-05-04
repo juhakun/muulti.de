@@ -28,6 +28,7 @@
               :src="this.selectedProject.img1"
               style="width: 80px"
               @mouseover="this.img = this.selectedProject.img1"
+              @mouseout="this.img = this.selectedProject.img"
             />
           </td>
           <td></td>
@@ -36,6 +37,7 @@
               :src="this.selectedProject.img2"
               style="width: 80px"
               @mouseover="this.img = this.selectedProject.img2"
+              @mouseout="this.img = this.selectedProject.img"
             />
           </td>
           <td></td>
@@ -44,6 +46,7 @@
               :src="this.selectedProject.img3"
               style="width: 80px"
               @mouseover="this.img = this.selectedProject.img3"
+              @mouseout="this.img = this.selectedProject.img"
             />
           </td>
         </tr>
@@ -54,6 +57,7 @@
               :src="this.selectedProject.img4"
               style="width: 80px"
               @mouseover="this.img = this.selectedProject.img4"
+              @mouseout="this.img = this.selectedProject.img"
             />
           </td>
           <td></td>
@@ -62,6 +66,7 @@
               :src="this.selectedProject.img5"
               style="width: 80px"
               @mouseover="this.img = this.selectedProject.img5"
+              @mouseout="this.img = this.selectedProject.img"
             />
           </td>
           <td></td>
@@ -70,6 +75,7 @@
               :src="this.selectedProject.img6"
               style="width: 80px"
               @mouseover="this.img = this.selectedProject.img6"
+              @mouseout="this.img = this.selectedProject.img"
             />
           </td>
         </tr>
@@ -80,6 +86,7 @@
               :src="this.selectedProject.img7"
               style="width: 80px"
               @mouseover="this.img = this.selectedProject.img7"
+              @mouseout="this.img = this.selectedProject.img"
             />
           </td>
           <td></td>
@@ -88,6 +95,7 @@
               :src="this.selectedProject.img8"
               style="width: 80px"
               @mouseover="this.img = this.selectedProject.img8"
+              @mouseout="this.img = this.selectedProject.img"
             />
           </td>
           <td></td>
@@ -96,6 +104,7 @@
               :src="this.selectedProject.img9"
               style="width: 80px"
               @mouseover="this.img = this.selectedProject.img9"
+              @mouseout="this.img = this.selectedProject.img"
             />
           </td>
         </tr>

@@ -31,6 +31,7 @@
     ><contact-details
       v-if="contactInfoWanted === true"
       :me="me"
+      :selectedLanguage="selectedLanguage"
     ></contact-details>
     <the-footer
       @go-back="filterProjects"
@@ -95,21 +96,25 @@ export default {
         {
           id: "01",
           category: "software",
-          name: "Webseite mit Vue.JS und JavaScript",
-          nameDe: "Webseite mit Vue.JS und JavaScript",
-          nameEng: "Website with Vue.JS and JavaScript",
+          name: "Vue.JS und JavaScript",
+          nameDe: "Vue.JS und JavaScript",
+          nameEng: "Vue.JS and JavaScript",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe: "Redesign einer Webseite",
+          subtitleEng: "Redesign of website",
           description:
-            "Die Webseite www.juliahaeusler.com, die vor fast 10 Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
+            "Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
           descriptionDe:
-            "Die Webseite www.juliahaeusler.com, die vor fast 10 Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
+            "Die Webseite www.juliahaeusler.com, die vor mehreren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
           descriptionEng:
-            "The Website, that has been written in HTML almost 10 years ago, has now been redone with Vue.Js and JavaScript.",
+            "The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.
+            
+            Für die Erstellung der Webseite wurden verwendet: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
+          textEng: `The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.
+            
+            The following were used to create the website: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
           img: require("@/assets/img/vuejs.png"),
           img1: "",
           img2: "",
@@ -120,9 +125,15 @@ export default {
           img7: "",
           img8: "",
           img9: "",
-          client: "",
-          services: [],
-          servicesDe: [],
+          client: "-",
+          services: [
+            "Gestaltung der Webseite",
+            "Programmierung in Vue.js und Javascript",
+          ],
+          servicesDe: [
+            "Design of the website",
+            "Programming in Vue.js and Javascript",
+          ],
           servicesEng: [],
           copyright: ["", ""],
         },
@@ -131,20 +142,25 @@ export default {
         {
           id: "01",
           category: "software",
-          name: "Webseite mit Vue.JS und JavaScript",
-          nameDe: "Webseite mit Vue.JS und JavaScript",
-          nameEng: "Website with Vue.JS and JavaScript",
+          name: "Vue.JS und JavaScript",
+          nameDe: "Vue.JS und JavaScript",
+          nameEng: "Vue.JS and JavaScript",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
-          description: "",
+          subtitleDe: "Redesign einer Webseite",
+          subtitleEng: "Redesign of website",
+          description:
+            "Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
           descriptionDe:
-            "Die Webseite www.juliahaeusler.com, die vor fast 10 Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
+            "Die Webseite www.juliahaeusler.com, die vor mehreren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
           descriptionEng:
-            "The Website, that has been written in HTML almost 10 years ago, has now been redone with Vue.Js and JavaScript.",
+            "The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.
+            
+            Für die Erstellung der Webseite wurden verwendet: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
+          textEng: `The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.
+            
+            The following were used to create the website: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
           img: require("@/assets/img/vuejs.png"),
           img1: "",
           img2: "",
@@ -155,9 +171,15 @@ export default {
           img7: "",
           img8: "",
           img9: "",
-          client: "",
-          services: [],
-          servicesDe: [],
+          client: "-",
+          services: [
+            "Gestaltung der Webseite",
+            "Programmierung in Vue.js und Javascript",
+          ],
+          servicesDe: [
+            "Design of the website",
+            "Programming in Vue.js and Javascript",
+          ],
           servicesEng: [],
           copyright: ["", ""],
         },
@@ -167,20 +189,25 @@ export default {
         {
           id: "01",
           category: "software",
-          name: "Webseite mit Vue.JS und JavaScript",
-          nameDe: "Webseite mit Vue.JS und JavaScript",
-          nameEng: "Website with Vue.JS and JavaScript",
+          name: "Vue.JS und JavaScript",
+          nameDe: "Vue.JS und JavaScript",
+          nameEng: "Vue.JS and JavaScript",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
-          description: "",
+          subtitleDe: "Redesign einer Webseite",
+          subtitleEng: "Redesign of website",
+          description:
+            "Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
           descriptionDe:
-            "Die Webseite www.juliahaeusler.com, die vor fast 10 Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
+            "Die Webseite www.juliahaeusler.com, die vor mehreren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
           descriptionEng:
-            "The Website, that has been written in HTML almost 10 years ago, has now been redone with Vue.Js and JavaScript.",
+            "The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.
+            
+            Für die Erstellung der Webseite wurden verwendet: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
+          textEng: `The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.
+            
+            The following were used to create the website: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
           img: require("@/assets/img/vuejs.png"),
           img1: "",
           img2: "",
@@ -191,9 +218,15 @@ export default {
           img7: "",
           img8: "",
           img9: "",
-          client: "",
-          services: [],
-          servicesDe: [],
+          client: "-",
+          services: [
+            "Gestaltung der Webseite",
+            "Programmierung in Vue.js und Javascript",
+          ],
+          servicesDe: [
+            "Design of the website",
+            "Programming in Vue.js and Javascript",
+          ],
           servicesEng: [],
           copyright: ["", ""],
         },
@@ -425,7 +458,7 @@ export default {
 
           NEUES MUSEUM NÜRNBERG
           in cooperation with Die Neue Sammlung München—The International Design Museum in Munich
-          
+
           ICFF INTERNATIONAL CONTEMPORARY FURNITURE FAIR 2009
           International Furniture Fair in New York
 
@@ -453,7 +486,7 @@ export default {
           ],
           copyright: [
             "",
-            "© Bilder Köln: Rat für Formgebung/German Design Council / Constantin Meyer ",
+            "© Photos 1-3: Rat für Formgebung/German Design Council / Constantin Meyer ",
           ],
         },
         {
@@ -463,31 +496,45 @@ export default {
           nameDe: "Imm Cologne",
           nameEng: "Imm Cologne",
           subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
+          subtitleDe: "Trendshow der imm cologne 2007 und 2009",
+          subtitleEng: "Trend show at imm cologne 2007 and 2009",
           description: "",
           descriptionDe:
             "Im Rahmen der Internationalen Möbelmesse IMM COLOGNE werden jedes Jahr zahlreiche Designaktivitäten und Sonderschauen präsentiert. In den vergangenen Jahren zählten hierzu unter anderen die Trendshow INFORMED BY COLOGNE und der BOULEVARD OF INNOVATIONS.",
           descriptionEng:
             "Each year numerous design activities and special shows are being presented during the international furniture fair IMM COLOGNE including INFORMED BY COLOGNE and the BOULEVARD OF INNOVATIONS in 2007, 2009 and 2010.",
           text: "",
-          textDe: "",
-          textEng: "",
+          textDe: `Die Trendshow INFORMED BY COLOGNE präsentierte jährlich zur imm cologne die Einrichtungstrends des kommenden Jahres, welche vorab im Trendbuch Interior Trends von internationalen Experten definiert wurden. Für jeden der vier vordefinierten Interior Trends 2007 und 2009 wurden Themenwelten erarbeitet und in Form einer Ausstellung dem Messepublikum präsentiert.
+          Parallel zur Ausstellung fanden Vorträge von renommierten Designern, Architekten und Pressevertretern im INFORMED BY COLOGNE Trendforum statt. Zu ihnen zählten u.a. Jaime Hayon, Nipa Doshi und Jonathan Levien, Marcus Fairs, Giulio Ridolfo und Bertjan Pot. `,
+          textEng: `The trend show INFORMED BY COLOGNE of the imm cologne annually presented the interior trends of the coming year which were predefined in a trend book by a board of international experts. For each of the four predefined Interior Trends 2007 and 2009 theme worlds were created and showcased in a special show.
+          Parallel to the show, lectures of renowned designers, architects and press representatives were held in the INFORMED BY COLOGNE trend forum. Speakers were amongst others Jaime Hayon, Nipa Doshi und Jonathan Levien, Marcus Fairs, Giulio Ridolfo and Bertjan Pot. `,
           img: require("@/assets/img/imm_09_10.jpg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
+          img1: require("@/assets/img/imm_07_04.jpg"),
+          img2: require("@/assets/img/imm_07_07.jpg"),
+          img3: require("@/assets/img/imm_07_11.jpg"),
+          img4: require("@/assets/img/imm_09_11.jpg"),
+          img5: require("@/assets/img/imm_09_20.jpg"),
+          img6: require("@/assets/img/imm_09_05.jpg"),
+          img7: require("@/assets/img/imm_09_18.jpg"),
           img8: "",
           img9: "",
-          client: "",
+          client:
+            "Rat für Formgebung/German Design Council, Frankfurt am Main, Koelnmesse GmbH ",
           services: [],
-          servicesDe: [],
-          servicesEng: [],
-          copyright: ["© Koelnmesse / Constantin Meyer", ""],
+          servicesDe: [
+            "Konzeption und Gestaltung der Austellung INFORMED BY COLOGNE (2009 mit Natalie Weis / 2007 mit Barbara Glasner)",
+            "Kuratierung und Inszenierung der Exponate",
+            "Projektmanagement",
+          ],
+          servicesEng: [
+            "Concept and design of the exhibition INFORMED BY COLOGNE (2009 with Natalie Weis / 2007 with Barbara Glasner)",
+            "Curating and staging of the exhibits",
+            "Project management",
+          ],
+          copyright: [
+            "© Koelnmesse / Constantin Meyer",
+            "© Koelnmesse / Constantin Meyer (2009) / Dieter Schwer (2007)",
+          ],
         },
         // {
         //   id: "08",
@@ -711,27 +758,27 @@ export default {
       immCologne: {
         id: "07-01",
         category: "exhibitions",
-        name: "",
-        nameDe: "Imm Cologne",
-        nameEng: "Imm Cologne",
+        name: "Boulevard of Innovations 2010",
+        nameDe: "Boulevard of Innovations 2010",
+        nameEng: "Boulevard of Innovations 2010",
         subtitle: "",
-        subtitleDe: "",
-        subtitleEng: "",
+        subtitleDe: "Neuheitenschau der imm cologne 2010",
+        subtitleEng: "Innovation show at imm cologne 2010",
         description: "",
         descriptionDe:
           "Im Rahmen der Internationalen Möbelmesse IMM COLOGNE werden jedes Jahr zahlreiche Designaktivitäten und Sonderschauen präsentiert. In den vergangenen Jahren zählten hierzu unter anderen die Trendshow INFORMED BY COLOGNE und der BOULEVARD OF INNOVATIONS.",
         descriptionEng:
           "Each year numerous design activities and special shows are being presented during the international furniture fair IMM COLOGNE including INFORMED BY COLOGNE and the BOULEVARD OF INNOVATIONS in 2007, 2009 and 2010.",
         text: "",
-        textDe: "",
-        textEng: "",
-        img: require("@/assets/img/imm_09_10.jpg"),
-        img1: "",
-        img2: "",
-        img3: "",
-        img4: "",
-        img5: "",
-        img6: "",
+        textDe: `Der BOULEVARD OF INNOVATIONS präsentierte Neuheiten und Innovationen von Ausstellern der imm cologne 2010. Erstmals wurden sowohl alle für den Hitguide 2010 ausgewählten Produkte als auch alle für den interior innovation award cologne 2010 nominierten Produkte gezeigt sowie die mit dem Preis ausgezeichneten Entwürfe.`,
+        textEng: `The BOULEVARD OF INNOVATIONS presented new and innovative products from exhibitors of the imm cologne 2010. For the first time products selected for the Hitguide 2010 and products nominated for the interior innovations award cologne 2010 as well as the award winners were showcased in this exhibition. `,
+        img: require("@/assets/img/imm_10_01.jpg"),
+        img1: require("@/assets/img/imm_10_02.jpg"),
+        img2: require("@/assets/img/imm_10_03.jpg"),
+        img3: require("@/assets/img/imm_10_01.jpg"),
+        img4: require("@/assets/img/imm_10_04.jpg"),
+        img5: require("@/assets/img/imm_10_05.jpg"),
+        img6: require("@/assets/img/imm_10_06.jpg"),
         img7: "",
         img8: "",
         img9: "",
@@ -739,7 +786,7 @@ export default {
         services: [],
         servicesDe: [],
         servicesEng: [],
-        copyright: ["© Koelnmesse / Constantin Meyer", ""],
+        copyright: ["", "© Koelnmesse / Constantin Meyer"],
       },
 
       graphics: [
@@ -1292,13 +1339,18 @@ export default {
     setLanguage(language) {
       this.selectedLanguage = language;
       this.buttonsClicked = true;
-      if (this.detailsWanted === false && this.me.detailsWanted === false) {
+      if (
+        this.detailsWanted === false &&
+        this.me.detailsWanted === false &&
+        this.contactInfoWanted === false
+      ) {
         this.filterLanguage(this.selectedLanguage);
       }
-      if (this.me.detailsWanted === true && language === "de") {
-        this.me.cv = this.me.cvDe;
-      } else if (this.me.detailsWanted === true && language === "eng") {
-        this.me.cv = this.me.cvEng;
+      if (this.me.detailsWanted === true) {
+        return;
+      }
+      if (this.contactInfoWanted === true) {
+        return;
       }
     },
 

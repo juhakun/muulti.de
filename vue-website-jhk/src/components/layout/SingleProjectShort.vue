@@ -7,7 +7,15 @@
       <td>
         <div class="table">
           <section>
-            <img :src="project.img" />
+            <img
+              v-if="
+                selectedProject.name !== 'Hotel Weisshaar' &&
+                selectedProject.name !== 'Berliner Republik'
+              "
+              :src="project.img"
+              @click="selectProject(this.selectedProject)"
+            />
+            <img v-else :src="project.img" />
           </section>
         </div>
       </td>
