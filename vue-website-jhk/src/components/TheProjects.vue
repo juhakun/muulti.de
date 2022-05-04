@@ -20,7 +20,6 @@
       v-if="detailsWanted === true"
       :selectedLanguage="selectedLanguage"
       :selectedProject="selectedProject"
-      :servicesDe="selectedProject.servicesDe"
       :designDtld="designDtld"
       :imm="immCologne"
     ></single-project-long>
@@ -216,14 +215,14 @@ export default {
             "Seit 2013 ist die Ausstellung zum BUNDESPREIS ECODESIGN jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.",
           descriptionEng:
             "Since 2013, the exhibition has been on the move every year with the award winners and nominees of the award and has been exhibited at numerous trade fairs and museums, such as the Munich Creative Business Week in Munich, the Ecostyle in Frankfurt am Main , the Museum of Arts and Crafts in Hamburg and the Grassi Museum for Applied Arts in Leipzig.",
-          text: `Bei der Konzeption und Gestaltung der Wanderausstellung wurde besonderen Wert auf Aspekte der Nachhaltigkeit gelegt. Die Verwendung nachhaltiger Materialien, der langfristige Einsatz und die dafür erforderliche, flexible Anpassung an wechselnde Exponate und Ausstellungsorte sowie platzsparender und kostengünstiger Transport standen für die Gestaltung hierbei im Vordergrund. 
-          
+          text: `Bei der Konzeption und Gestaltung der Wanderausstellung wurde besonderen Wert auf Aspekte der Nachhaltigkeit gelegt. Die Verwendung nachhaltiger Materialien, der langfristige Einsatz und die dafür erforderliche, flexible Anpassung an wechselnde Exponate und Ausstellungsorte sowie platzsparender und kostengünstiger Transport standen für die Gestaltung hierbei im Vordergrund.
+
           Seit 2013 ist die Ausstellung jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.`,
-          textDe: `Bei der Konzeption und Gestaltung der Wanderausstellung wurde besonderen Wert auf Aspekte der Nachhaltigkeit gelegt. Die Verwendung nachhaltiger Materialien, der langfristige Einsatz und die dafür erforderliche, flexible Anpassung an wechselnde Exponate und Ausstellungsorte sowie platzsparender und kostengünstiger Transport standen für die Gestaltung hierbei im Vordergrund. 
-          
+          textDe: `Bei der Konzeption und Gestaltung der Wanderausstellung wurde besonderen Wert auf Aspekte der Nachhaltigkeit gelegt. Die Verwendung nachhaltiger Materialien, der langfristige Einsatz und die dafür erforderliche, flexible Anpassung an wechselnde Exponate und Ausstellungsorte sowie platzsparender und kostengünstiger Transport standen für die Gestaltung hierbei im Vordergrund.
+
           Seit 2013 ist die Ausstellung jährlich mit den Preisträgern und Nominierten des Bundespreises auf Wanderschaft und war bisher an zahlreichen Stationen auf Messen und in Museen zu sehen, wie der Munich Creative Business Week in München, der Ecostyle in Frankfurt am Main, dem Museum für Kunst und Gewerbe in Hamburg und dem Grassi Museum für Angewandte Kunst in Leipzig.`,
-          textEng: `For the concept and design of the travelling exhibition special emphasis was placed on sustainability aspects. A long-term use of the exhibition using sustainable materials and the possibility to adapt the exhibition to changing exhibits and exhibition venues as well as space-saving and cost-efficient transport are the most important features of the design. 
-            
+          textEng: `For the concept and design of the travelling exhibition special emphasis was placed on sustainability aspects. A long-term use of the exhibition using sustainable materials and the possibility to adapt the exhibition to changing exhibits and exhibition venues as well as space-saving and cost-efficient transport are the most important features of the design.
+
             Since 2013, the exhibition has been on the move every year with the award winners and nominees of the award and has been exhibited at numerous trade fairs and museums, such as the Munich Creative Business Week in Munich, the Ecostyle in Frankfurt am Main , the Museum of Arts and Crafts in Hamburg and the Grassi Museum for Applied Arts in Leipzig.`,
           img: require("@/assets/img/ECO_Darmstadt_01.jpg"),
           img1: require("@/assets/img/ECO_Darmstadt_01.jpg"),
@@ -414,33 +413,33 @@ export default {
           text: "",
           textDe: `IMM COLOGNE 2008
           Internationale Möbelmesse in Köln
-          
+
           NEUES MUSEUM NÜRNBERG
           in Kooperation mit Die Neue Sammlung München
           ICFF INTERNATIONAL CONTEMPORARY FURNITURE FAIR 2009
           Internationale Möbelmesse in New York
-          
+
           Im Rahmenprogramm zur Ausstellung fanden Empfänge, Pressekonferenzen und Vortragsveranstaltungen statt. Darüberhinaus wurden das begleitende Magazin DESIGN DEUTSCHLAND CASE STUDY 08 anlässlich der Ausstellung in Kooperation mit der Neuen Sammlung veröffentlicht. `,
           textEng: `IMM COLOGNE 2008
           International Furniture Fair in Cologne
-          
+
           NEUES MUSEUM NÜRNBERG
           in cooperation with Die Neue Sammlung München—The International Design Museum in Munich
           
           ICFF INTERNATIONAL CONTEMPORARY FURNITURE FAIR 2009
           International Furniture Fair in New York
-          
+
           Parallel to the exhibitions, receptions, press conferences and lectures took place. In addition the accompanying magazine DESIGN DEUTSCHLAND CASE STUDY 08 was published on the occasion of the presentation in cooperation with Die Neue Sammlung. `,
           img: require("@/assets/img/dd_nb_01.jpg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
-          img8: "",
-          img9: "",
+          img1: require("@/assets/img/dd_imm_03.jpg"),
+          img2: require("@/assets/img/dd_imm_02.jpg"),
+          img3: require("@/assets/img/dd_imm_01.jpg"),
+          img4: require("@/assets/img/dd_nb_04.jpg"),
+          img5: require("@/assets/img/dd_nb_06.jpg"),
+          img6: require("@/assets/img/dd_nb_03.jpg"),
+          img7: require("@/assets/img/dd_nb_05.jpg"),
+          img8: require("@/assets/img/dd_mag_2.jpg"),
+          img9: require("@/assets/img/dd_mag_3.jpg"),
           client:
             "Rat für Formgebung/German Design Council, Frankfurt am Main ",
           services: [],
@@ -661,90 +660,87 @@ export default {
         //   copyright: ["", ""],
         // },
       ],
-      designDtld: [
-        {
-          id: "06-02",
-          category: "exhibitions",
-          name: "",
-          nameDe: "Design Deutschland",
-          nameEng: "Design Deutschland",
-          subtitle: "",
-          subtitleDe:
-            "Internationale Wanderausstellung Design Deutschland 2010 und Gemeinschaftsstand deutscher Unternehmen",
-          subtitleEng:
-            "International travelling exhibition Design Deutschland 2010 and joint fair stand of German design brands",
-          description: "",
-          descriptionDe:
-            "DESIGN DEUTSCHLAND ist eine internationale Wanderausstellung des Rat für Formgebung, die jährlich eine aktuelle, exemplarische Auswahl von jeweils 120 bis 150 Produkten renommierter deutscher Unternehmen und Designer umfasst. Parallel zur Wanderausstellung konnten sich deutsche Unternehmen an einzelnen internationalen Veranstaltungsorten im Rahmen eines Gemeinschaftsstands präsentieren.",
-          descriptionEng:
-            "DESIGN DEUTSCHLAND is an international travelling exhibition of the German Design Council, that annually presents a current, exemplary selection of 120 to 150 products of renowned German companies and designers. In addition to the travelling exhibition German design brands had the opportunity to present themselves within a joint fair stand at single international venues.",
-          text: "",
-          textDe: `SALONE DEL MOBILE 2010
+      designDtld: {
+        id: "06-02",
+        category: "exhibitions",
+        name: "Design Deutschland 2010",
+        nameDe: "Design Deutschland 2010",
+        nameEng: "Design Deutschland 2010",
+        subtitle: "",
+        subtitleDe:
+          "Internationale Wanderausstellung Design Deutschland 2010 und Gemeinschaftsstand deutscher Unternehmen",
+        subtitleEng:
+          "International travelling exhibition Design Deutschland 2010 and joint fair stand of German design brands",
+        description: "",
+        descriptionDe:
+          "DESIGN DEUTSCHLAND ist eine internationale Wanderausstellung des Rat für Formgebung, die jährlich eine aktuelle, exemplarische Auswahl von jeweils 120 bis 150 Produkten renommierter deutscher Unternehmen und Designer umfasst. Parallel zur Wanderausstellung konnten sich deutsche Unternehmen an einzelnen internationalen Veranstaltungsorten im Rahmen eines Gemeinschaftsstands präsentieren.",
+        descriptionEng:
+          "DESIGN DEUTSCHLAND is an international travelling exhibition of the German Design Council, that annually presents a current, exemplary selection of 120 to 150 products of renowned German companies and designers. In addition to the travelling exhibition German design brands had the opportunity to present themselves within a joint fair stand at single international venues.",
+        text: "",
+        textDe: `SALONE DEL MOBILE 2010
           in der Zona Tortona parallel zur Internationalen Möbelmesse in Mailand
-          
+
           ICFF INTERNATIONAL CONTEMPORARY FURNITURE FAIR 2010
           Internationale Möbelmesse in New York
-          
+
           Im Rahmenprogramm zur Ausstellung fanden Empfänge, Pressekonferenzen und Vortragsveranstaltungen statt. `,
-          textEng: `SALONE DEL MOBILE 2010
+        textEng: `SALONE DEL MOBILE 2010
           at Zona Tortona parallel to the International Furniture Fair in Milan
-          
+
           ICFF INTERNATIONAL CONTEMPORARY FURNITURE FAIR 2010
           International Furniture Fair in New York
-          
+
           Parallel to the exhibitions, receptions, press conferences and lectures took place. `,
-          img: require("@/assets/img/dd_nb_01.jpg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
-          img8: "",
-          img9: "",
-          client: "",
-          services: [],
-          servicesDe: [],
-          servicesEng: [],
-          copyright: ["", "© Rat für Formgebung/German Design Council"],
-        },
-      ],
-      immCologne: [
-        {
-          id: "07-01",
-          category: "exhibitions",
-          name: "",
-          nameDe: "Imm Cologne",
-          nameEng: "Imm Cologne",
-          subtitle: "",
-          subtitleDe: "",
-          subtitleEng: "",
-          description: "",
-          descriptionDe:
-            "Im Rahmen der Internationalen Möbelmesse IMM COLOGNE werden jedes Jahr zahlreiche Designaktivitäten und Sonderschauen präsentiert. In den vergangenen Jahren zählten hierzu unter anderen die Trendshow INFORMED BY COLOGNE und der BOULEVARD OF INNOVATIONS.",
-          descriptionEng:
-            "Each year numerous design activities and special shows are being presented during the international furniture fair IMM COLOGNE including INFORMED BY COLOGNE and the BOULEVARD OF INNOVATIONS in 2007, 2009 and 2010.",
-          text: "",
-          textDe: "",
-          textEng: "",
-          img: require("@/assets/img/imm_09_10.jpg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
-          img8: "",
-          img9: "",
-          client: "",
-          services: [],
-          servicesDe: [],
-          servicesEng: [],
-          copyright: ["© Koelnmesse / Constantin Meyer", ""],
-        },
-      ],
+        img: require("@/assets/img/dd_ma_07.jpg"),
+        img1: require("@/assets/img/dd_ma_02.jpg"),
+        img2: require("@/assets/img/dd_ma_03.jpg"),
+        img3: require("@/assets/img/dd_ma_04.jpg"),
+        img4: require("@/assets/img/dd_ma_05.jpg"),
+        img5: require("@/assets/img/dd_ma_06.jpg"),
+        img6: require("@/assets/img/dd_ny_03_2.jpg"),
+        img7: "",
+        img8: "",
+        img9: "",
+        client: "",
+        services: [],
+        servicesDe: [],
+        servicesEng: [],
+        copyright: ["", "© Rat für Formgebung/German Design Council"],
+      },
+
+      immCologne: {
+        id: "07-01",
+        category: "exhibitions",
+        name: "",
+        nameDe: "Imm Cologne",
+        nameEng: "Imm Cologne",
+        subtitle: "",
+        subtitleDe: "",
+        subtitleEng: "",
+        description: "",
+        descriptionDe:
+          "Im Rahmen der Internationalen Möbelmesse IMM COLOGNE werden jedes Jahr zahlreiche Designaktivitäten und Sonderschauen präsentiert. In den vergangenen Jahren zählten hierzu unter anderen die Trendshow INFORMED BY COLOGNE und der BOULEVARD OF INNOVATIONS.",
+        descriptionEng:
+          "Each year numerous design activities and special shows are being presented during the international furniture fair IMM COLOGNE including INFORMED BY COLOGNE and the BOULEVARD OF INNOVATIONS in 2007, 2009 and 2010.",
+        text: "",
+        textDe: "",
+        textEng: "",
+        img: require("@/assets/img/imm_09_10.jpg"),
+        img1: "",
+        img2: "",
+        img3: "",
+        img4: "",
+        img5: "",
+        img6: "",
+        img7: "",
+        img8: "",
+        img9: "",
+        client: "",
+        services: [],
+        servicesDe: [],
+        servicesEng: [],
+        copyright: ["© Koelnmesse / Constantin Meyer", ""],
+      },
 
       graphics: [
         {
@@ -1050,19 +1046,19 @@ export default {
           descriptionEng:
             "At the GERMAN BRAND AND DESIGN CONGRESS experts from different design areas discuss brand management processes. Under the title Establishing High-Value Brands in 2011 the congress dealt with the implementation of brands focussing on the inward and outward communication of brands.",
           text: "",
-          textDe: `Am ersten Kongresstag fanden Vorträge in der Alten Brüderkirche statt. 
-            Die Referenten waren u.a. Lareena Hilton/Deutsche Bank AG, Prof. Uli Mayer-Johanssen/MetaDesign AG und Margarete Wies/Mercedes-Benz Cars Development Daimler AG. 
-            
+          textDe: `Am ersten Kongresstag fanden Vorträge in der Alten Brüderkirche statt.
+            Die Referenten waren u.a. Lareena Hilton/Deutsche Bank AG, Prof. Uli Mayer-Johanssen/MetaDesign AG und Margarete Wies/Mercedes-Benz Cars Development Daimler AG.
+
             Am zweiten Kongresstag konnten die Teilnehmer im Rahmen eines Besuchsprogramms designorientierte Unternehmen in der Region besichtigen.
-            Partner des Rahmenprogramms waren u.a. dOCUMENTA (13), SMA Solar Technology AG und THONET GmbH. 
-            
+            Partner des Rahmenprogramms waren u.a. dOCUMENTA (13), SMA Solar Technology AG und THONET GmbH.
+
             Der Kongress wurde aus Mitteln des Europäischen Fonds für regionale Entwicklung gefördert und durch das Bundesministerium für Wirtschaft und Technologie sowie das Hessische Ministerium für Wirtschaft, Verkehr und Landesentwicklung unterstützt.`,
           textEng: `On the first congress day lectures took place at Alte Brüderkirche.
-          Lecturers were amongst others Lareena Hilton/Deutsche Bank AG, Prof. Uli Mayer-Johanssen/MetaDesign AG and Margarete Wies/Mercedes-Benz Cars Development Daimler AG. 
-          
-          On the second day, the congress participants were able to visit design oriented companies of the region. 
-          Partners of the visit programme were amongst others dOCUMENTA (13), SMA Solar Technology AG and THONET GmbH. 
-          
+          Lecturers were amongst others Lareena Hilton/Deutsche Bank AG, Prof. Uli Mayer-Johanssen/MetaDesign AG and Margarete Wies/Mercedes-Benz Cars Development Daimler AG.
+
+          On the second day, the congress participants were able to visit design oriented companies of the region.
+          Partners of the visit programme were amongst others dOCUMENTA (13), SMA Solar Technology AG and THONET GmbH.
+
           The congress was promoted by the European Regional Development Fund (ERDF) and was supported by the Federal Ministry for Economy and Technology as well as the Hesse Ministry for Economics, Transport and Regional Development.`,
           img: require("@/assets/img/dmdk_11_06.jpg"),
           img1: require("@/assets/img/dmdk_11_03.jpg"),
@@ -1202,14 +1198,14 @@ export default {
             "Parallel to the trade fair Material Vision 2011, product developers, designers and architects got an exclusive outlook on the material trends of tomorrow at the MATERIAL VISION CONFERENCE under the title Designing the Weightless World. ",
           text: "",
           textDe: `Die Konferenz am 25. Mai 2011 bei der Messe Frankfurt widmete sich der Fragestellung, welche Veränderungen in der Entwicklung von Produkten angesichts des Trends zur Digitalisierung und Minimalisierung im Produktdesign zu erwarten sind.
-          
+
           Die Referenten waren u.a. Prof. Achim Menges/Institut für Computational Design Universität Stuttgart, Caroline Seifert/Deutsche Telekom AG und Dr. Sascha Peters/Haute Innovation.
-          
+
           Die Konferenz wurde aus Mitteln des Europäischen Fonds für regionale Entwicklung gefördert und durch das Bundesministerium für Wirtschaft und Technologie sowie das Hessische Ministerium für Wirtschaft, Verkehr und Landesentwicklung unterstützt.`,
           textEng: `The conference on 25th of May 2011 at Frankfurt fair (Messe Frankfurt) was dedicated to the question what changes are to be expected for the development and design of products regarding the trend of digitising and minimising.
-          
+
           The speakers were amongst others Prof. Achim Menges/Institute for Computational Design University Stuttgart, Caroline Seifert/Deutsche Telekom AG and Dr. Sascha Peters/Haute Innovation.
-          
+
           The conference was promoted by the European Regional Development Fund (ERDF) and was supported by the Federal Ministry for Economy and Technology as well as the Hesse Ministry for Economics, Transport and Regional Development. `,
           img: require("@/assets/img/mv_11_02.jpg"),
           img1: require("@/assets/img/mv_11_03.jpg"),
@@ -1248,12 +1244,12 @@ export default {
           text: "",
           textDe: `YDMI 2007
           im Postbahnhof am Gleisdreieck in Berlin
-          
+
           YDMI 2008
           in der Villa Elisabeth in Berlin
           YDMI 2009
           im Städelmuseum parallel zur Tendence 2009 in Frankfurt
-          
+
           Die YDMI Days beinhalten neben den YDMI Workshops mit Referenten aus der Praxis die YDMI Portfolioshow, bei der sich die teilnehmenden Young Professionals dem interessierten Publikum präsentieren können sowie eine kuratierte Ausstellung mit Arbeiten der Nachwuchsdesigner. Darüberhinaus bietet das YDMI Dinner den Young Professionals und den Unternehmensvertretern die Möglichkeit, sich auszutauschen und Kontakte zu knüpfen. Im Rahmen des Dinners findet zudem die Wahl zum Young Professional des Jahres statt. YDMI wurde im Jahr 2007 initiiert und findet seitdem im jährlichen Turnus statt. `,
           textEng: `YDMI 2007
           at Postbahnhof am Gleisdreieck in Berlin
@@ -1261,7 +1257,7 @@ export default {
           at Villa Elisabeth in Berlin
           YDMI 2009
           at Städelmuseum parallel to the trade fair Tendence 2009 in Frankfurt
-          
+
           The YDMI Days include workshops with experts from experience, a portfolio show, within which the participating Young Professionals have the opportunity to present themselves to the interested audience as well as an exhibition showcasing works from the young designer. In addition the YDMI Dinner offers the Young Professionals and the company representatives the possibility to exchange ideas and to establish contact. Furthermore the Young Professional of the year is elected during the dinner. YDMI was initiated in 2007 and has since then been taking place on a yearly basis. `,
           img: require("@/assets/img/YDMI_08_09_2.jpg"),
           img1: require("@/assets/img/YDMI_08_11.jpg"),
