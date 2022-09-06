@@ -30,10 +30,22 @@ a:visited {
 
 div {
   padding: 0rem;
-  padding-top: 0.75rem;
+  padding-top: 0.5rem;
+  margin-top: 0rem;
   margin: auto;
   max-width: 1000px;
-  min-width: 760px;
+  float: center;
+}
+
+#header {
+  width: 1200px;
+  margin-top: -2rem;
+  margin-left: -0.5rem;
+  position: fixed;
+  background: white;
+  border-bottom: 0px dotted;
+  border-color: gray;
+  float: center;
 }
 
 #right {
@@ -41,34 +53,40 @@ div {
 }
 
 #nav {
-  width: 850px;
-  padding-top: 3rem;
-  margin-top: 1rem;
+  width: 200px;
+  padding-left: 2rem;
+
   white-space: nowrap;
-  border-bottom: 1px dashed;
-  border-color: gray;
+  border-bottom: 0px dashed;
+  border-color: black;
   float: left;
+  position: fixed;
 }
 
 #content {
-  padding-left: 3rem;
-  padding-right: 0rem;
-  margin-top: 1rem;
+  margin-top: 11rem;
+  padding-left: 12rem;
   max-width: 850px;
   min-width: 700px;
   float: left;
+  position: static;
 }
 
 #detailedText {
-  margin-right: 9rem;
+  margin-right: 5.5rem;
   padding-top: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px dashed;
+  border-bottom: 1.5px dotted;
   border-color: gray;
 }
 
+#start {
+  margin-top: 2rem;
+}
 body {
-  background-color: white;
+  background: white;
 }
 
 h1 {
@@ -100,10 +118,23 @@ table {
   min-width: 760px;
   max-width: 850px;
   padding-bottom: 0.5rem;
-  padding-top: 2rem;
+  margin-top: 2rem;
   margin-right: 8rem;
-  border-bottom: 1px dashed;
+  border-bottom: 1.5px dotted;
   border-color: gray;
   vertical-align: top;
+}
+
+td {
+  vertical-align: top;
+}
+
+li {
+  font-family: "Arial";
+  font-size: 11pt;
+  text-align: left;
+  list-style-type: "* ";
+
+  list-style-position: inside;
 }
 </style>

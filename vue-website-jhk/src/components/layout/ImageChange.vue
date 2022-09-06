@@ -1,5 +1,5 @@
 <template>
-  <table style="vertical-align: top; padding-top: 0.5rem">
+  <table style="vertical-align: top; margin-top: 1.25rem">
     <tr>
       <td>
         <tr v-if="selectedProject.copyright[1] !== ''">

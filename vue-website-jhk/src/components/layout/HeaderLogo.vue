@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <img src="@/assets/img/Header.jpg" />
+  <div style="height: 200px">
+    <img src="@/assets/img/Header_muulti3.png" style="width: 600px" />
   </div>
 </template>
 

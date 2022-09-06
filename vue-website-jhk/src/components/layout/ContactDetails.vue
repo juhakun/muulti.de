@@ -1,9 +1,9 @@
 <template>
-  <div id="content">
+  <div style="margin-top: 1.3rem">
     <p>
-      {{ me.headline }}<br />
+      {{ me.name }}<br />
       {{ me.title }} <br /><br />
-      <a href="mailto:mail@juliahaeusler.com">{{ me.mail }}</a>
+      <a href="mailto:mail@muulti.de">{{ me.mail }}</a>
     </p>
     <h2 style="margin-top: 2rem">IMPRESSUM / IMPRINT</h2>
     <p>

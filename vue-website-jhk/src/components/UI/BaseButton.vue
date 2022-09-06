@@ -16,7 +16,8 @@ export default {
 
 <style scoped>
 button {
-  padding: 0.2rem 1.7rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.2rem;
   font-family: arial;
   font-size: 12pt;
   color: gray;
@@ -24,13 +25,13 @@ button {
   border: 1px solid #3a0061;
   border: 0px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: regular;
 }
 
 button:hover,
 button:active,
 button:focus {
-  color: black;
+  color: gray;
   text-decoration: none;
   font-weight: bold;
 }

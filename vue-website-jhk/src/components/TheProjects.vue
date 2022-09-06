@@ -1,54 +1,62 @@
 <template>
   <header>
-    <header-de-eng
-      @filter-language="setLanguage"
-      :selectedLanguage="selectedLanguage"
-    ></header-de-eng>
-    <header-logo></header-logo>
-    <base-navigation
-      @filter-category="filterProjects"
-      @show-about="showDetailsAbout"
-      :buttonsClicked="buttonsClicked"
-    ></base-navigation>
-    <overview-projects
-      v-if="detailsWanted === false"
-      :filteredProjects="filteredProjects"
-      :selectedLanguage="selectedLanguage"
-      :me="me"
-    ></overview-projects>
-    <single-project-long
-      v-if="detailsWanted === true"
-      :selectedLanguage="selectedLanguage"
-      :selectedProject="selectedProject"
-      :designDtld="designDtld"
-      :imm="immCologne"
-    ></single-project-long>
-    <personal-details
-      v-if="me.detailsWanted === true"
-      :selectedLanguage="selectedLanguage"
-      :me="me"
-    ></personal-details
-    ><contact-details
-      v-if="contactInfoWanted === true"
-      :me="me"
-      :selectedLanguage="selectedLanguage"
-    ></contact-details>
-    <the-footer
-      @go-back="filterProjects"
-      @show-contact="showContactInfo"
-      v-if="selectedLanguage === 'de'"
-      :footer1="'zurück'"
-      :footer2="'Impressum / Kontakt'"
-      :selectedProject="selectedProject"
-    ></the-footer>
-    <the-footer
-      @go-back="filterProjects"
-      @show-contact="showContactInfo"
-      v-else-if="selectedLanguage === 'eng'"
-      :footer1="'back'"
-      :footer2="'Imprint / Contact'"
-      :selectedProject="selectedProject"
-    ></the-footer>
+    <section>
+      <div id="header">
+        <header-de-eng
+          @filter-language="setLanguage"
+          :selectedLanguage="selectedLanguage"
+        ></header-de-eng>
+        <header-logo></header-logo>
+        <base-navigation
+          :selectedCategory="selectedCategory"
+          @filter-category="filterProjects"
+          @show-about="showDetailsAbout"
+        ></base-navigation>
+      </div>
+
+      <div id="content">
+        <overview-projects
+          v-if="detailsWanted === false"
+          :filteredProjects="filteredProjects"
+          :selectedLanguage="selectedLanguage"
+          :me="me"
+        ></overview-projects>
+        <single-project-long
+          v-if="detailsWanted === true"
+          :selectedLanguage="selectedLanguage"
+          :selectedProject="selectedProject"
+          :designDtld="designDtld"
+          :imm="immCologne"
+        ></single-project-long>
+        <personal-details
+          v-if="me.detailsWanted === true"
+          :selectedLanguage="selectedLanguage"
+          :me="me"
+        ></personal-details
+        ><contact-details
+          v-if="contactInfoWanted === true"
+          :me="me"
+          :selectedLanguage="selectedLanguage"
+        ></contact-details>
+
+        <the-footer
+          @go-back="filterProjects"
+          @show-contact="showContactInfo"
+          v-if="selectedLanguage === 'de'"
+          :footer1="'zurück'"
+          :footer2="'Impressum / Kontakt'"
+          :selectedProject="selectedProject"
+        ></the-footer>
+        <the-footer
+          @go-back="filterProjects"
+          @show-contact="showContactInfo"
+          v-else-if="selectedLanguage === 'eng'"
+          :footer1="'back'"
+          :footer2="'Imprint / Contact'"
+          :selectedProject="selectedProject"
+        ></the-footer>
+      </div>
+    </section>
   </header>
 </template>
 
@@ -62,6 +70,9 @@ import ContactDetails from "./layout/ContactDetails.vue";
 import TheFooter from "./layout/TheFooter.vue";
 
 export default {
+  created() {
+    this.buttonsClicked = false;
+  },
   emits: [
     "filter-category",
     "filter-language",
@@ -82,86 +93,38 @@ export default {
     return {
       detailsWanted: false,
       buttonsClicked: false,
+      selectedCategory: "",
       selectedLanguage: "de",
       selectedProject: undefined,
       contactInfoWanted: false,
       me: {
         detailsWanted: false,
         portrait: require("@/assets/img/jh2.jpg"),
-        headline: "Julia Häusler-Kun",
-        mail: "mail@juliahaeusler.com",
+        headline: "muulti.de",
+        name: "Julia Häusler-Kun",
+        mail: "mail@muulti.de",
         title: "Diplom Designer (FH)",
       },
-      filteredProjects: [
-        {
-          id: "01",
-          category: "software",
-          name: "Vue.JS und JavaScript",
-          nameDe: "Vue.JS und JavaScript",
-          nameEng: "Vue.JS and JavaScript",
-          subtitle: "",
-          subtitleDe: "Redesign einer Webseite",
-          subtitleEng: "Redesign of website",
-          description:
-            "Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
-          descriptionDe:
-            "Die Webseite www.juliahaeusler.com, die vor mehreren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
-          descriptionEng:
-            "The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.",
-          text: "",
-          textDe: `Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.
-            
-            Für die Erstellung der Webseite wurden verwendet: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
-          textEng: `The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.
-            
-            The following were used to create the website: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
-          img: require("@/assets/img/vuejs.png"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
-          img8: "",
-          img9: "",
-          client: "-",
-          services: [
-            "Gestaltung der Webseite",
-            "Programmierung in Vue.js und Javascript",
-          ],
-          servicesDe: [
-            "Design of the website",
-            "Programming in Vue.js and Javascript",
-          ],
-          servicesEng: [],
-          copyright: ["", ""],
-        },
-      ],
+
+      filteredProjects: this.news,
       news: [
         {
-          id: "01",
-          category: "software",
-          name: "Vue.JS und JavaScript",
-          nameDe: "Vue.JS und JavaScript",
-          nameEng: "Vue.JS and JavaScript",
+          id: "N1",
+          category: "news",
+          name: "",
+          nameDe: "Oracle Certified Associate (OCA) <br> Java SE 8 Programmer",
+          nameEng: "Oracle Certified Associate (OCA) <br> Java SE 8 Programmer",
           subtitle: "",
-          subtitleDe: "Redesign einer Webseite",
-          subtitleEng: "Redesign of website",
-          description:
-            "Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
+          subtitleDe: "Zertifizierung an der Oracle University",
+          subtitleEng: "Certification at Oracle University",
+          description: "",
           descriptionDe:
-            "Die Webseite www.juliahaeusler.com, die vor mehreren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
-          descriptionEng:
-            "The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.",
+            "Zertifizierung an der Oracle University, August 2022.",
+          descriptionEng: "Certification at Oracle University, August 2022.",
           text: "",
-          textDe: `Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.
-            
-            Für die Erstellung der Webseite wurden verwendet: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
-          textEng: `The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.
-            
-            The following were used to create the website: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
-          img: require("@/assets/img/vuejs.png"),
+          textDe: "",
+          textEng: "",
+          img: require("@/assets/img/OCAJSE8.jpg"),
           img1: "",
           img2: "",
           img3: "",
@@ -172,14 +135,8 @@ export default {
           img8: "",
           img9: "",
           client: "-",
-          services: [
-            "Gestaltung der Webseite",
-            "Programmierung in Vue.js und Javascript",
-          ],
-          servicesDe: [
-            "Design of the website",
-            "Programming in Vue.js and Javascript",
-          ],
+          services: [""],
+          servicesDe: [""],
           servicesEng: [],
           copyright: ["", ""],
         },
@@ -187,28 +144,37 @@ export default {
 
       software: [
         {
-          id: "01",
+          id: "S1",
           category: "software",
-          name: "Vue.JS und JavaScript",
-          nameDe: "Vue.JS und JavaScript",
-          nameEng: "Vue.JS and JavaScript",
+          name: "",
+          nameDe:
+            "Fullstack-Entwicklung einer WebApp mit Java, Spring, MySQL und Hibernate",
+          nameEng:
+            "Full stack development of a WebApp with Java, Spring, MySQL and Hibernate",
           subtitle: "",
-          subtitleDe: "Redesign einer Webseite",
-          subtitleEng: "Redesign of website",
-          description:
-            "Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
+          subtitleDe: "Anwendung zur Verwaltung kleinerer Immobilienobjekte",
+          subtitleEng:
+            "Solution for property management of smaller real estate objects",
+          description: "",
           descriptionDe:
-            "Die Webseite www.juliahaeusler.com, die vor mehreren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.",
+            "Die WebApp wird für der Verwaltung und Nebenkostenabrechung kleinerer Immobilienobjekte entwickelt. ",
           descriptionEng:
-            "The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.",
+            "The WebApp is being developed for the administration and ancillary cost accounting of smaller real estate objects.",
           text: "",
-          textDe: `Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde nun mit VueJS und JavaScript neu umgesetzt.
-            
-            Für die Erstellung der Webseite wurden verwendet: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
-          textEng: `The Website, that has been written in HTML a couple of years ago, has now been redone with Vue.Js and JavaScript.
-            
-            The following were used to create the website: Vue.js 3, Vue Cli, Javascript, HTML, CSS, Git.`,
-          img: require("@/assets/img/vuejs.png"),
+          textDe: `Im Backend der Anwendung kommen Java, Spring, MySQL und Hibernate zum Einsatz. Die Frontend-Entwicklung erfolgt mit Spring MVC. Zur Versionsverwaltung wird Git verwendet. 
+          
+          In der WebApp, die zur Erstellung der Nebenkostenabrechnungen für die Mieter konzipiert wurde, können alle relevanten Daten zu den zu verwaltenden Immobilien erfasst werden. Hierzu zählen u.a. Adresse, 
+          Eigentümer, Größe des Objekts, Wohneinheiten, Mieter und Nebenkosten. Alle Daten werden in einer MySQL-Datenbank gespeichert. 
+          
+          Die WebApp ist noch in Entwicklung. Der aktuelle Entwicklungsstand kann dazugehörigen Git-Repository unter <a href='https://github.com/juhakun' target='_blank'>GitHub</a> angesehen werden.`,
+          textEng: `Java, Spring, MySQL and Hibernate are used in the backend of the application. Frontend development is done with Spring MVC. Git is used for version management.
+          
+          All relevant data on the properties to be managed can be recorded in the web app, which was designed to create utility bills for tenants. These include address, owner, size of the property, residential units, tenants and additional costs. All data is stored in a MySQL database.
+          
+          The web app is still under development. The current development status can be viewed in the associated Git repository at <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.
+
+`,
+          img: require("@/assets/img/Housing.png"),
           img1: "",
           img2: "",
           img3: "",
@@ -218,7 +184,7 @@ export default {
           img7: "",
           img8: "",
           img9: "",
-          client: "-",
+          client: "",
           services: [
             "Gestaltung der Webseite",
             "Programmierung in Vue.js und Javascript",
@@ -230,11 +196,150 @@ export default {
           servicesEng: [],
           copyright: ["", ""],
         },
+        {
+          id: "S2",
+          category: "software",
+          name: "",
+          nameDe:
+            "Frontend-Entwicklung einer Webseite mit Vue.JS und JavaScript",
+          nameEng:
+            "Frontend development of a website with Vue.JS and JavaScript",
+          subtitle: "",
+          subtitleDe: "Redesign und Programmierung",
+          subtitleEng: "Redesign and programming",
+          description: "",
+          descriptionDe:
+            "Die Webseite <a href='https://www.juliahaeusler.com' target='_blank'>www.juliahaeusler.com</a>, die vor mehreren Jahren in HTML geschrieben wurde, wurde in Design und Programmierung überarbeitet. Die neue Seite, die mit VueJS und JavaScript umgesetzt wurde, findet man jetzt unter <a href='https://www.muulti.de' target='_blank'>www.muulti.de</a>.",
+          descriptionEng:
+            "The website www.juliahaeusler.com, which was written in HTML several years ago, has had its design and programming revised. The new website, which has been implemented with VueJS and JavaScript, can now be found at www.muulti.de.",
+          text: "",
+          textDe: `Die neu umgesetzte Webseite wurde unter Verwendung von Vue.js 3, Vue Cli, Javascript, HTML, CSS und Git in Visual Studio Code erstellt. Sie besteht aus nur 13 Layout- und UI-Komponenten, während die ursprüngliche Webseite aus 62 unterschiedlichen HTML-Seiten bestand, die miteinander verknüpft waren.
+
+Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target='_blank'>GitHub</a> zu finden.`,
+          textEng: `The revised website was built in Visual Studio Code using Vue.js 3, Vue Cli, Javascript, HTML, CSS and Git. It consists of only 13 layout and UI components where as the original website consisted of 62 different HTML pages that were linked together.
+
+          More details about the project can be found on <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.`,
+          img: require("@/assets/img/vuejs.png"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "",
+          services: [
+            "Gestaltung der Webseite",
+            "Programmierung in Vue.js und Javascript",
+          ],
+          servicesDe: [
+            "Design of the website",
+            "Programming in Vue.js and Javascript",
+          ],
+          servicesEng: [],
+          copyright: ["", ""],
+        },
+        {
+          id: "S3",
+          category: "software",
+          name: "",
+          nameDe: "Kinderspiel *Catch the Balloons* mit Java und Swing",
+          nameEng: "Children´s game *Catch the Balloons* with Java and Swing",
+          subtitle: "",
+          subtitleDe:
+            "Ein kleines Desktop-Spiel für Kinder mit Java und GUI Swing",
+          subtitleEng:
+            "A little desktop childrens game with Java and GUI Swing",
+          description: "",
+          descriptionDe:
+            "CATCH THE BALLOONS ist ein Desktop-Spiel für Kinder im Alter von  5 bis 10 Jahren. Es wurde in Java und GUI Swing programmiert.",
+          descriptionEng:
+            "CATCH THE BALLOONS is a desktop game for children at the age of 5 to 10 years. It was programmed in Java and GUI Swing.",
+          text: "",
+          textDe: `Das Spiel ist ein Übungsprojekt zur Implementierung multipler Threads (mehrere sich gleichzeitig bewegende Elemente) und zur Einbettung von Sound- und Grafikelementen als Teile des Spiels.
+          
+          Bevor das Spiel beginnt, kann eines von zwei Leveln ausgewählt werden. Dann müssen die roten Ballons gefangen werden, die an zufälligen Positionen am Himmel erscheinen. Der Spieler wird von zwei Wolken abgelenkt, die von links nach rechts und umgekehrt über den Bildschirm ziehen.
+Wird ein Ballon angeklickt, explodiert er mit einem lauten Knall. Nur wenn dann ein Stern erscheint, bekommt der Spieler 1 Punkt. Ob ein Stern erscheint, ist ebenfalls zufällig.
+Das Spiel endet nach 20 Ballons. Die erreichten Punkte werden angezeigt und man kann neu beginnen, wenn man möchte.
+
+Das Spiel könnte um viele tolle Funktionen erweitert und die Umsetzung verfeinert werden. Da es allerdings nur ein Übungsprojekt für Multiple Threading ist, wurden es so belassen, wie es ist.
+
+Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target='_blank'>GitHub</a> zu finden.`,
+          textEng: `The game is a practice project for implementing multiple threads (multiple moving elements at the same time) and embedding sound and graphic elements as parts of the game.
+          
+          Before the game starts, one of two levels can be selected. Then you have to catch the red balloons that appear at random positions in the sky. The player is distracted by two clouds moving across the screen from left to right and vice versa.
+When a balloon is clicked, it explodes with a loud bang. If a star then appears, the player gets 1 point. Whether a star appears is also random.
+The game ends after 20 balloons. The points achieved are displayed and you can start over if you want.
+
+The game could be expanded with many great functions and the implementation could be refined. However, since it is only a practice project for multiple threading, it has been left as it is.
+
+More details about the project can be found on <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.`,
+          img: require("@/assets/img/Balloons.jpeg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "",
+          services: [""],
+          servicesDe: [""],
+          servicesEng: [],
+          copyright: ["", ""],
+        },
+        {
+          id: "S4",
+          category: "software",
+          name: "",
+          nameDe: "Gestaltung und Umsetzung einer Webseite in HTML und CSS",
+          nameEng: "Design and implementation of a website in HTML and CSS",
+          subtitle: "",
+          subtitleDe: "www.wonder-wood.de",
+          subtitleEng: "www.wonder-wood.de",
+          description: "",
+          descriptionDe:
+            "www.wonder-wood.de erschien 2013 begleitend zur Veröffentlichung des Buches *Wonder Wood*.",
+          descriptionEng:
+            "www.wonder-wood.de was published in 2013 to accompany the publication of the book *Wonder Wood*.",
+          text: "",
+          textDe:
+            "Die minimalistische Webseite mit Blog-Charakter wurde in HTML und CSS umgesetzt, und zeigte Stationen des Buches *Wonder Wood* von Barbara Glasner und Stephan Ott beim Birkhäuser Verlag. ",
+          textEng:
+            "The minimalist website with blog character was implemented in HTML and CSS, and showed stations of the book *Wonder Wood* by Barbara Glasner and Stephan Ott at Birkhäuser Verlag..",
+          img: require("@/assets/img/WonderWood.png"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "Barbara Glasner",
+          services: [],
+          servicesDe: [
+            "Webdesign",
+            "Erstellung von Animationen",
+            "Umsetzung in HTML und CSS",
+          ],
+          servicesEng: [
+            "Web design",
+            "Creation of animations",
+            "Implementation in HTML and CSS",
+          ],
+          copyright: ["", ""],
+        },
       ],
 
       exhibitions: [
         {
-          id: "02",
+          id: "E1",
           category: "exhibitions",
           name: "",
           nameDe: "Bundespreis Ecodesign",
@@ -286,7 +391,7 @@ export default {
           ],
         },
         {
-          id: "03",
+          id: "E2",
           category: "exhibitions",
           name: "",
           nameDe: "Spot on Materials",
@@ -335,7 +440,7 @@ export default {
           ],
         },
         {
-          id: "04",
+          id: "E3",
           category: "exhibitions",
           name: "Woher kommt das Neue?",
           nameDe: "Woher kommt das Neue?",
@@ -380,7 +485,7 @@ export default {
           ],
         },
         {
-          id: "05",
+          id: "E4",
           category: "exhibitions",
           name: "",
           nameDe: "German Shades of Green—SUSTAINABLE DESIGN FROM GERMANY",
@@ -428,7 +533,7 @@ export default {
           ],
         },
         {
-          id: "06",
+          id: "E5",
           category: "exhibitions",
           name: "",
           nameDe: "Design Deutschland",
@@ -490,7 +595,7 @@ export default {
           ],
         },
         {
-          id: "07",
+          id: "E6",
           category: "exhibitions",
           name: "",
           nameDe: "Imm Cologne",
@@ -537,7 +642,7 @@ export default {
           ],
         },
         // {
-        //   id: "08",
+        //   id: "E7",
         //   category: "exhibitions",
         //   name: "",
         //   nameDe: "Nominee selection",
@@ -576,7 +681,7 @@ export default {
         //   ],
         // },
         // {
-        //   id: "09",
+        //   id: "E8",
         //   category: "exhibitions",
         //   name: "",
         //   nameDe: "usability park",
@@ -608,7 +713,7 @@ export default {
         //   copyright: ["© Frank Nickerl", ""],
         // },
         // {
-        //   id: "10",
+        //   id: "E9",
         //   category: "exhibitions",
         //   name: "",
         //   nameDe: "Access Berlin Design",
@@ -641,7 +746,7 @@ export default {
         //   copyright: ["© Antonia Roth", ""],
         // },
         // {
-        //   id: "11",
+        //   id: "E10",
         //   category: "exhibitions",
         //   name: "",
         //   nameDe: "Ideal Standard",
@@ -674,7 +779,7 @@ export default {
         //   copyright: ["", ""],
         // },
         // {
-        //   id: "12",
+        //   id: "E11",
         //   category: "exhibitions",
         //   name: "",
         //   nameDe: "Bundespressestrand",
@@ -708,7 +813,7 @@ export default {
         // },
       ],
       designDtld: {
-        id: "06-02",
+        id: "E6-02",
         category: "exhibitions",
         name: "Design Deutschland 2010",
         nameDe: "Design Deutschland 2010",
@@ -756,7 +861,7 @@ export default {
       },
 
       immCologne: {
-        id: "07-01",
+        id: "E7-01",
         category: "exhibitions",
         name: "Boulevard of Innovations 2010",
         nameDe: "Boulevard of Innovations 2010",
@@ -791,7 +896,50 @@ export default {
 
       graphics: [
         {
-          id: "13",
+          id: "G1",
+          category: "graphics",
+          name: "Wonder Wood",
+          nameDe: "Wonder Wood",
+          nameEng: "Wonder Wood",
+          subtitle: "",
+          subtitleDe: "Gestaltung und Umsetzung einer Webseite in HTML und CSS",
+          subtitleEng: "Design and implementation of a website in HTML and CSS",
+          description: "",
+          descriptionDe:
+            "www.wonder-wood.de erschien 2013 begleitend zur Veröffentlichung des Buches 'Wonder Wood'.",
+          descriptionEng:
+            "www.wonder-wood.de appeared in 2013 to accompany the publication of the book 'Wonder Wood'.",
+          text: "",
+          textDe:
+            "Die minimalistische Webseite mit Blog-Charakter wurde in HTML und CSS umgesetzt, und zeigte Station des dazugehörigen Buches 'Wonder Wood' von Barbara Glasner und Stephan Ott beim Birkhäuser Verlag. ",
+          textEng:
+            "The minimalist website with blog character was implemented in HTML and CSS, and showed stations of the accompanying book 'Wonder Wood' by Barbara Glasner and Stephan Ott at Birkhäuser Verlag..",
+          img: require("@/assets/img/WonderWood.png"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "Barbara Glasner",
+          services: [],
+          servicesDe: [
+            "Webdesign",
+            "Erstellung von Animationen",
+            "Umsetzung in HTML und CSS",
+          ],
+          servicesEng: [
+            "Web design",
+            "Creation of animations",
+            "Implementation in HTML and CSS",
+          ],
+          copyright: ["", ""],
+        },
+        {
+          id: "G2",
           category: "graphics",
           name: "",
           nameDe: "Spot on Materials",
@@ -840,7 +988,7 @@ export default {
           ],
         },
         {
-          id: "14",
+          id: "G3",
           category: "graphics",
           name: "",
           nameDe: "German Shades of Green—SUSTAINABLE DESIGN FROM GERMANY",
@@ -889,7 +1037,7 @@ export default {
           ],
         },
         {
-          id: "15",
+          id: "G4",
           category: "graphics",
           name: "Hotel Weisshaar",
           nameDe: "Hotel Weisshaar",
@@ -922,7 +1070,7 @@ export default {
           copyright: ["", ""],
         },
         {
-          id: "16",
+          id: "G5",
           category: "graphics",
           name: "",
           nameDe: "Access Berlin Design",
@@ -966,7 +1114,7 @@ export default {
           copyright: ["", ""],
         },
         {
-          id: "17",
+          id: "G6",
           category: "graphics",
           name: "",
           nameDe: "Berliner Republik",
@@ -999,7 +1147,7 @@ export default {
           copyright: ["", ""],
         },
         // {
-        //   id: "18",
+        //   id: "G7",
         //   category: "graphics",
         //   name: "",
         //   nameDe: "Marquardt lässt grüssen",
@@ -1035,7 +1183,7 @@ export default {
 
       management: [
         {
-          id: "19",
+          id: "M1",
           category: "management",
           name: "",
           nameDe: "Bundespreis Ecodesign",
@@ -1079,7 +1227,7 @@ export default {
           ],
         },
         {
-          id: "20",
+          id: "M2",
           category: "management",
           name: "",
           nameDe: "Deutscher Marken- und Designkongress 2011",
@@ -1128,7 +1276,7 @@ export default {
           ],
         },
         {
-          id: "21",
+          id: "M3",
           category: "management",
           name: "",
           nameDe: "Deutsches Design Museum",
@@ -1175,7 +1323,7 @@ export default {
           ],
         },
         {
-          id: "22",
+          id: "M4",
           category: "management",
           name: "",
           nameDe: "Brand New Germany",
@@ -1230,7 +1378,7 @@ export default {
           ],
         },
         {
-          id: "23",
+          id: "M5",
           category: "management",
           name: "",
           nameDe: "Material Vision Konferenz",
@@ -1275,7 +1423,7 @@ export default {
           ],
         },
         {
-          id: "24",
+          id: "M6",
           category: "management",
           name: "",
           nameDe: "YDMI–Young Designers Meet the Industry",
@@ -1358,8 +1506,10 @@ export default {
 
     filterLanguage(language) {
       console.log(this.selectedLanguage);
+
       if (language === "de") {
         for (let i = 0; i < this.filteredProjects.length; i++) {
+          this.selectedCategory = this.filteredProjects[i].category;
           this.filteredProjects[i].name = this.filteredProjects[i].nameDe;
           this.filteredProjects[i].description =
             this.filteredProjects[i].descriptionDe;
@@ -1367,6 +1517,7 @@ export default {
         }
       } else if (language === "eng") {
         for (let i = 0; i < this.filteredProjects.length; i++) {
+          this.selectedCategory = this.filteredProjects[i].category;
           this.filteredProjects[i].name = this.filteredProjects[i].nameEng;
           this.filteredProjects[i].description =
             this.filteredProjects[i].descriptionEng;
@@ -1394,6 +1545,7 @@ export default {
           this.filteredProjects = this.management;
         }
       }
+      this.selectedCategory = this.filteredProjects[0].category;
       this.filterLanguage(this.selectedLanguage);
     },
 
@@ -1402,10 +1554,12 @@ export default {
       console.log(this.detailsWanted);
       this.selectedProject = project;
       this.filterLanguage(this.selectedLanguage);
+      this.selectedCategory = this.selectedProject.category;
       console.log(this.selectedProject.name);
     },
 
     showDetailsAbout() {
+      this.selectedCategory = "about";
       this.selectedProject = undefined;
       this.filteredProjects = undefined;
       this.detailsWanted = false;
@@ -1414,6 +1568,7 @@ export default {
     },
 
     showContactInfo() {
+      this.selectedCategory = "";
       this.selectedProject = undefined;
       this.filteredProjects = undefined;
       this.me.detailsWanted = false;

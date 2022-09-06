@@ -1,6 +1,6 @@
 <template>
-  <div id="content">
-    <table style="border-bottom: 0px; padding-top: 0rem">
+  <div style="padding-top: 0rem">
+    <table style="border-bottom: 0px">
       <tr>
         <td>
           <base-button
@@ -8,7 +8,7 @@
             @click="$emit('go-back', this.selectedProject.category)"
             mode="de-eng"
           >
-            {{ footer1 }}
+            <a href="#">{{ footer1 }}</a>
           </base-button>
         </td>
         <td>
@@ -16,7 +16,7 @@
             @click="$emit('show-contact', 'contact')"
             mode="de-eng"
             style="float: right"
-            >{{ footer2 }}
+            ><a href="#">{{ footer2 }}</a>
           </base-button>
         </td>
       </tr>

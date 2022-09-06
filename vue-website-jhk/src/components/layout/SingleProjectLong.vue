@@ -1,35 +1,39 @@
 <template>
-  <div id="content">
+  <div>
     <div>
-      <section style="padding-top: 1rem" v-if="selectedLanguage === 'de'">
+      <section style="margin-top: 2.5rem" v-if="selectedLanguage === 'de'">
         <h2>
           {{ selectedProject.nameDe.toUpperCase() }}<br />
           {{ selectedProject.subtitleDe }}
         </h2>
-        <image-change :selectedProject="selectedProject"></image-change>
+        <image-change
+          v-if="selectedProject.id !== 'S3'"
+          :selectedProject="selectedProject"
+        ></image-change>
+        <video-player v-else></video-player>
 
         <div id="detailedText">
-          <p>
-            {{ selectedProject.textDe }}
-          </p>
+          <p v-html="selectedProject.textDe"></p>
         </div>
       </section>
-      <section style="padding-top: 1rem" v-if="selectedLanguage === 'eng'">
+      <section style="margin-top: 2.5rem" v-if="selectedLanguage === 'eng'">
         <h2>
           {{ selectedProject.nameEng.toUpperCase() }}<br />
           {{ selectedProject.subtitleEng }}
         </h2>
-        <image-change :selectedProject="selectedProject"></image-change>
+        <image-change
+          v-if="selectedProject.id !== 'S3'"
+          :selectedProject="selectedProject"
+        ></image-change>
+        <video-player v-else></video-player>
 
         <div id="detailedText">
-          <p>
-            {{ selectedProject.textEng }}
-          </p>
+          <p v-html="selectedProject.textEng"></p>
         </div>
       </section>
     </div>
     <div v-if="selectedProject.name === 'Design Deutschland'">
-      <section style="padding-top: 1rem" v-if="selectedLanguage === 'de'">
+      <section style="padding-top: 2rem" v-if="selectedLanguage === 'de'">
         <h2>
           {{ designDtld.nameDe.toUpperCase() }}<br />
           {{ designDtld.subtitleDe }}
@@ -42,7 +46,7 @@
           </p>
         </div>
       </section>
-      <section style="padding-top: 1rem" v-if="selectedLanguage === 'eng'">
+      <section style="padding-top: 2rem" v-if="selectedLanguage === 'eng'">
         <h2>
           {{ designDtld.nameEng.toUpperCase() }}<br />
           {{ designDtld.subtitleEng }}
@@ -56,6 +60,7 @@
         </div>
       </section>
     </div>
+
     <div v-if="selectedProject.name === 'Imm Cologne'">
       <section style="padding-top: 2rem" v-if="selectedLanguage === 'de'">
         <h2>
@@ -114,8 +119,9 @@
 
 <script>
 import ImageChange from "./ImageChange.vue";
+import VideoPlayer from "./VideoPlayer.vue";
 export default {
-  components: { ImageChange },
+  components: { ImageChange, VideoPlayer },
   props: ["selectedProject", "selectedLanguage", "designDtld", "imm"],
   data() {
     return {};
@@ -127,13 +133,6 @@ export default {
 <style scoped>
 h2 {
   padding-left: 0.25rem;
-}
-
-li {
-  font-family: "Arial";
-  font-size: 11pt;
-  text-align: left;
-  list-style-type: "// ";
 }
 
 p {

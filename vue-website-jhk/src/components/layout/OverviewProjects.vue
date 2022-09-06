@@ -1,5 +1,5 @@
 <template>
-  <div id="content">
+  <div>
     <single-project-short
       v-for="project in filteredProjects"
       :key="project.id"

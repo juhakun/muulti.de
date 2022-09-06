@@ -7,21 +7,25 @@
       <td>
         <div class="table">
           <section>
-            <img
-              v-if="
-                selectedProject.name !== 'Hotel Weisshaar' &&
-                selectedProject.name !== 'Berliner Republik'
-              "
-              :src="project.img"
-              @click="selectProject(this.selectedProject)"
-            />
-            <img v-else :src="project.img" />
+            <a href="#">
+              <img
+                v-if="
+                  selectedProject.name !== 'Hotel Weisshaar' &&
+                  selectedProject.name !== 'Berliner Republik' &&
+                  selectedProject.name !==
+                    'Oracle Certified Associate, Java SE 8 Programmer (OCA)'
+                "
+                :src="project.img"
+                @click="selectProject(this.selectedProject)"
+              />
+              <img v-else :src="project.img" />
+            </a>
           </section>
         </div>
       </td>
       <td style="vertical-align: top">
-        <h2>{{ project.name.toUpperCase() }}</h2>
-        <p>{{ project.description }}</p>
+        <h2 v-html="project.name.toUpperCase()"></h2>
+        <p v-html="project.description"></p>
       </td>
     </tr>
     <tr>
@@ -30,26 +34,59 @@
       </td>
       <td>
         <base-button
+          v-if="
+            selectedLanguage === 'de' &&
+            (selectedProject.id === 'S1' ||
+              selectedProject.id === 'S2' ||
+              selectedProject.id === 'S3')
+          "
+          style="float: left; margin-left: 0px"
+          mode="de-eng"
+        >
+          <a href="https://github.com/juhakun" target="_blank"
+            >mehr auf GitHub</a
+          ></base-button
+        >
+        <base-button
           @click="selectProject(this.selectedProject)"
           v-if="
             selectedLanguage === 'de' &&
             selectedProject.name !== 'Hotel Weisshaar' &&
-            selectedProject.name !== 'Berliner Republik'
+            selectedProject.name !== 'Berliner Republik' &&
+            selectedProject.name !==
+              'Oracle Certified Associate, Java SE 8 Programmer (OCA)'
           "
           style="float: right"
           mode="de-eng"
-          >mehr</base-button
+          ><a href="#">mehr</a></base-button
         >
         <base-button
+          v-if="
+            selectedLanguage === 'eng' &&
+            (selectedProject.id === 'S1' ||
+              selectedProject.id === 'S2' ||
+              selectedProject.id === 'S3')
+          "
+          style="float: left; margin-left: 0px"
+          mode="de-eng"
+        >
+          <a href="https://github.com/juhakun" target="_blank"
+            >more on GitHub
+          </a></base-button
+        >
+
+        <base-button
           @click="selectProject(this.selectedProject)"
-          v-else-if="
+          v-if="
             selectedLanguage === 'eng' &&
             selectedProject.name !== 'Hotel Weisshaar' &&
-            selectedProject.name !== 'Berliner Republik'
+            selectedProject.name !== 'Berliner Republik' &&
+            selectedProject.name !==
+              'Oracle Certified Associate, Java SE 8 Programmer (OCA)'
           "
           style="float: right"
           mode="de-eng"
-          >more</base-button
+          ><a href="#">more</a></base-button
         >
       </td>
     </tr>
