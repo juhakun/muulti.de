@@ -29,8 +29,3 @@ The website will be updated continuously with new projects.
 Julia Häusler-Kun, mail@muulti.de
 
 
-## License
-
-This project is licensed - see the LICENSE.md file for details
-
-
