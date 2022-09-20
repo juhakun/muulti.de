@@ -29,7 +29,6 @@
           :imm="immCologne"
         ></single-project-long>
         <personal-details
-          v-if="me.detailsWanted === true"
           :selectedLanguage="selectedLanguage"
           :me="me"
         ></personal-details
@@ -104,13 +103,17 @@ export default {
         name: "Julia Häusler-Kun",
         mail: "mail@muulti.de",
         title: "Diplom Designer (FH)",
+        softwareSkills: false,
+        designSkills: false,
       },
 
-      filteredProjects: this.news,
-      news: [
+      filteredProjects: this.software,
+
+      software: [
         {
-          id: "N1",
-          category: "news",
+          id: "S1",
+          status: "active",
+          category: "software",
           name: "",
           nameDe: "Oracle Certified Associate (OCA) <br> Java SE 8 Programmer",
           nameEng: "Oracle Certified Associate (OCA) <br> Java SE 8 Programmer",
@@ -142,10 +145,11 @@ export default {
         },
       ],
 
-      software: [
+      fullstack: [
         {
-          id: "S1",
-          category: "software",
+          id: "FS1",
+          status: "active",
+          category: "fullstack",
           name: "",
           nameDe:
             "Fullstack-Entwicklung einer WebApp mit Java, Spring, MySQL und Hibernate",
@@ -161,16 +165,17 @@ export default {
           descriptionEng:
             "The WebApp is being developed for the administration and ancillary cost accounting of smaller real estate objects.",
           text: "",
-          textDe: `Im Backend der Anwendung kommen Java, Spring, MySQL und Hibernate zum Einsatz. Die Frontend-Entwicklung erfolgt mit Spring MVC. Zur Versionsverwaltung wird Git verwendet. 
-          
-          In der WebApp, die zur Erstellung der Nebenkostenabrechnungen für die Mieter konzipiert wurde, können alle relevanten Daten zu den zu verwaltenden Immobilien erfasst werden. Hierzu zählen u.a. Adresse, 
-          Eigentümer, Größe des Objekts, Wohneinheiten, Mieter und Nebenkosten. Alle Daten werden in einer MySQL-Datenbank gespeichert. 
-          
-          Die WebApp ist noch in Entwicklung. Der aktuelle Entwicklungsstand kann dazugehörigen Git-Repository unter <a href='https://github.com/juhakun' target='_blank'>GitHub</a> angesehen werden.`,
-          textEng: `Java, Spring, MySQL and Hibernate are used in the backend of the application. Frontend development is done with Spring MVC. Git is used for version management.
-          
-          All relevant data on the properties to be managed can be recorded in the web app, which was designed to create utility bills for tenants. These include address, owner, size of the property, residential units, tenants and additional costs. All data is stored in a MySQL database.
-          
+          textDe: `Bei der Programmierung der Anwendung kommen Java, Spring, Spring MVC, MySQL und Hibernate zum Einsatz. Zur Versionsverwaltung wird Git verwendet.
+
+          In der WebApp, die zur Erstellung der Nebenkostenabrechnungen für die Mieter konzipiert wurde, können alle relevanten Daten zu den zu verwaltenden Immobilien erfasst werden. Hierzu zählen u.a. Adresse,
+          Eigentümer, Größe des Objekts, Wohneinheiten, Mieter, Zähler und Zählerstände sowie Nebenkosten. Alle Daten werden in einer MySQL-Datenbank gespeichert.
+
+          Die WebApp ist noch in Entwicklung. Der aktuelle Entwicklungsstand kann im dazugehörigen Git-Repository unter <a href='https://github.com/juhakun' target='_blank'>GitHub</a> angesehen werden.`,
+          textEng: `Java, Spring, Spring MVC, MySQL and Hibernate are used for the programming of the application. Git is used for version management.
+
+          All relevant data on the properties to be managed can be registered in the web app. These include general property information such as address, owner, size of the property, residential units, tenants, counters and counter readings as well as yearly costs. All data is saved in a MySQL database. 
+The web app can then also be used to create annual invoices for extra costs for the tenants.
+
           The web app is still under development. The current development status can be viewed in the associated Git repository at <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.
 
 `,
@@ -196,9 +201,65 @@ export default {
           servicesEng: [],
           copyright: ["", ""],
         },
+
         {
-          id: "S2",
-          category: "software",
+          id: "FS2",
+          status: "active",
+          category: "fullstack",
+          name: "",
+          nameDe: "Kinderspiel *Catch the Balloons* mit Java und Swing",
+          nameEng: "Children´s game *Catch the Balloons* with Java and Swing",
+          subtitle: "",
+          subtitleDe:
+            "Ein kleines Desktop-Spiel für Kinder mit Java und GUI Swing",
+          subtitleEng:
+            "A little desktop childrens game with Java and GUI Swing",
+          description: "",
+          descriptionDe:
+            "CATCH THE BALLOONS ist ein Desktop-Spiel für Kinder im Alter von  5 bis 10 Jahren. Es wurde in Java und GUI Swing programmiert.",
+          descriptionEng:
+            "CATCH THE BALLOONS is a desktop game for children at the age of 5 to 10 years. It was programmed in Java and GUI Swing.",
+          text: "",
+          textDe: `Das Spiel ist ein Übungsprojekt zur Implementierung multipler Threads (mehrere sich gleichzeitig bewegende Elemente) und zur Einbettung von Sound- und Grafikelementen als Teile des Spiels.
+
+          Bevor das Spiel beginnt, kann eines von zwei Leveln ausgewählt werden. Dann müssen die roten Ballons gefangen werden, die an zufälligen Positionen am Himmel erscheinen. Der Spieler wird von zwei Wolken abgelenkt, die von links nach rechts und umgekehrt über den Bildschirm ziehen.
+Wird ein Ballon angeklickt, explodiert er mit einem lauten Knall. Nur wenn dann ein Stern erscheint, bekommt der Spieler 1 Punkt. Ob ein Stern erscheint, ist ebenfalls zufällig.
+Das Spiel endet nach 20 Ballons. Die erreichten Punkte werden angezeigt und man kann neu beginnen, wenn man möchte.
+
+Das Spiel könnte um viele tolle Funktionen erweitert und die Umsetzung verfeinert werden. Da es allerdings nur ein Übungsprojekt für Multiple Threading ist, wurden es so belassen, wie es ist.
+
+Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target='_blank'>GitHub</a> zu finden.`,
+          textEng: `The game is a practice project for implementing multiple threads (multiple moving elements at the same time) and embedding sound and graphic elements as parts of the game.
+
+          Before the game starts, one of two levels can be selected. Then you have to catch the red balloons that appear at random positions in the sky. The player is distracted by two clouds moving across the screen from left to right and vice versa.
+When a balloon is clicked, it explodes with a loud bang. If a star then appears, the player gets 1 point. Whether a star appears is also random.
+The game ends after 20 balloons. The points achieved are displayed and you can start over if you want.
+
+The game could be expanded with many great functions and the implementation could be refined. However, since it is only a practice project for multiple threading, it has been left as it is.
+
+More details about the project can be found on <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.`,
+          img: require("@/assets/img/Balloons.jpeg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "",
+          services: [""],
+          servicesDe: [""],
+          servicesEng: [],
+          copyright: ["", ""],
+        },
+      ],
+      frontend: [
+        {
+          id: "FR1",
+          status: "active",
+          category: "frontend",
           name: "",
           nameDe:
             "Frontend-Entwicklung einer Webseite mit Vue.JS und JavaScript",
@@ -213,10 +274,10 @@ export default {
           descriptionEng:
             "The website www.juliahaeusler.com, which was written in HTML several years ago, has had its design and programming revised. The new website, which has been implemented with VueJS and JavaScript, can now be found at www.muulti.de.",
           text: "",
-          textDe: `Die neu umgesetzte Webseite wurde unter Verwendung von Vue.js 3, Vue Cli, Javascript, HTML, CSS und Git in Visual Studio Code erstellt. Sie besteht aus nur 13 Layout- und UI-Komponenten, während die ursprüngliche Webseite aus 62 unterschiedlichen HTML-Seiten bestand, die miteinander verknüpft waren.
+          textDe: `Die neu umgesetzte Webseite <a href='https://www.muulti.de' target='_blank'>www.muulti.de</a> wurde unter Verwendung von Vue.js 3, Vue Cli, Javascript, HTML, CSS und Git in Visual Studio Code erstellt. Sie besteht aus nur 13 Layout- und UI-Komponenten, während die ursprüngliche Webseite aus 62 unterschiedlichen HTML-Seiten bestand, die miteinander verknüpft waren.
 
 Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target='_blank'>GitHub</a> zu finden.`,
-          textEng: `The revised website was built in Visual Studio Code using Vue.js 3, Vue Cli, Javascript, HTML, CSS and Git. It consists of only 13 layout and UI components where as the original website consisted of 62 different HTML pages that were linked together.
+          textEng: `The revised website <a href='https://www.muulti.de' target='_blank'>www.muulti.de</a> was built in Visual Studio Code using Vue.js 3, Vue Cli, Javascript, HTML, CSS and Git. It consists of only 13 layout and UI components where as the original website consisted of 62 different HTML pages that were linked together.
 
           More details about the project can be found on <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.`,
           img: require("@/assets/img/vuejs.png"),
@@ -241,60 +302,11 @@ Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target
           servicesEng: [],
           copyright: ["", ""],
         },
+
         {
-          id: "S3",
-          category: "software",
-          name: "",
-          nameDe: "Kinderspiel *Catch the Balloons* mit Java und Swing",
-          nameEng: "Children´s game *Catch the Balloons* with Java and Swing",
-          subtitle: "",
-          subtitleDe:
-            "Ein kleines Desktop-Spiel für Kinder mit Java und GUI Swing",
-          subtitleEng:
-            "A little desktop childrens game with Java and GUI Swing",
-          description: "",
-          descriptionDe:
-            "CATCH THE BALLOONS ist ein Desktop-Spiel für Kinder im Alter von  5 bis 10 Jahren. Es wurde in Java und GUI Swing programmiert.",
-          descriptionEng:
-            "CATCH THE BALLOONS is a desktop game for children at the age of 5 to 10 years. It was programmed in Java and GUI Swing.",
-          text: "",
-          textDe: `Das Spiel ist ein Übungsprojekt zur Implementierung multipler Threads (mehrere sich gleichzeitig bewegende Elemente) und zur Einbettung von Sound- und Grafikelementen als Teile des Spiels.
-          
-          Bevor das Spiel beginnt, kann eines von zwei Leveln ausgewählt werden. Dann müssen die roten Ballons gefangen werden, die an zufälligen Positionen am Himmel erscheinen. Der Spieler wird von zwei Wolken abgelenkt, die von links nach rechts und umgekehrt über den Bildschirm ziehen.
-Wird ein Ballon angeklickt, explodiert er mit einem lauten Knall. Nur wenn dann ein Stern erscheint, bekommt der Spieler 1 Punkt. Ob ein Stern erscheint, ist ebenfalls zufällig.
-Das Spiel endet nach 20 Ballons. Die erreichten Punkte werden angezeigt und man kann neu beginnen, wenn man möchte.
-
-Das Spiel könnte um viele tolle Funktionen erweitert und die Umsetzung verfeinert werden. Da es allerdings nur ein Übungsprojekt für Multiple Threading ist, wurden es so belassen, wie es ist.
-
-Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target='_blank'>GitHub</a> zu finden.`,
-          textEng: `The game is a practice project for implementing multiple threads (multiple moving elements at the same time) and embedding sound and graphic elements as parts of the game.
-          
-          Before the game starts, one of two levels can be selected. Then you have to catch the red balloons that appear at random positions in the sky. The player is distracted by two clouds moving across the screen from left to right and vice versa.
-When a balloon is clicked, it explodes with a loud bang. If a star then appears, the player gets 1 point. Whether a star appears is also random.
-The game ends after 20 balloons. The points achieved are displayed and you can start over if you want.
-
-The game could be expanded with many great functions and the implementation could be refined. However, since it is only a practice project for multiple threading, it has been left as it is.
-
-More details about the project can be found on <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.`,
-          img: require("@/assets/img/Balloons.jpeg"),
-          img1: "",
-          img2: "",
-          img3: "",
-          img4: "",
-          img5: "",
-          img6: "",
-          img7: "",
-          img8: "",
-          img9: "",
-          client: "",
-          services: [""],
-          servicesDe: [""],
-          servicesEng: [],
-          copyright: ["", ""],
-        },
-        {
-          id: "S4",
-          category: "software",
+          id: "FR2",
+          status: "active",
+          category: "frontend",
           name: "",
           nameDe: "Gestaltung und Umsetzung einer Webseite in HTML und CSS",
           nameEng: "Design and implementation of a website in HTML and CSS",
@@ -340,6 +352,7 @@ More details about the project can be found on <a href='https://github.com/juhak
       exhibitions: [
         {
           id: "E1",
+          status: "active",
           category: "exhibitions",
           name: "",
           nameDe: "Bundespreis Ecodesign",
@@ -392,6 +405,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "E2",
+          status: "not-active",
           category: "exhibitions",
           name: "",
           nameDe: "Spot on Materials",
@@ -441,6 +455,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "E3",
+          status: "not-active",
           category: "exhibitions",
           name: "Woher kommt das Neue?",
           nameDe: "Woher kommt das Neue?",
@@ -486,6 +501,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "E4",
+          status: "active",
           category: "exhibitions",
           name: "",
           nameDe: "German Shades of Green—SUSTAINABLE DESIGN FROM GERMANY",
@@ -534,6 +550,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "E5",
+          status: "active",
           category: "exhibitions",
           name: "",
           nameDe: "Design Deutschland",
@@ -596,6 +613,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "E6",
+          status: "active",
           category: "exhibitions",
           name: "",
           nameDe: "Imm Cologne",
@@ -641,179 +659,185 @@ More details about the project can be found on <a href='https://github.com/juhak
             "© Koelnmesse / Constantin Meyer (2009) / Dieter Schwer (2007)",
           ],
         },
-        // {
-        //   id: "E7",
-        //   category: "exhibitions",
-        //   name: "",
-        //   nameDe: "Nominee selection",
-        //   nameEng: "Nominee selection",
-        //   subtitle: "",
-        //   subtitleDe:
-        //     "Ausstellungsreihe zum Designpreis der Bundesrepublik Deutschland",
-        //   subtitleEng: "Series of exhibitions",
-        //   description: "",
-        //   descriptionDe:
-        //     "Die Ausstellungsreihe NOMINEE SELECTION zeigte neben den Preisträgern des vom Bundesministerium für Wirtschaft und Technologie ausgelobten Designpreises der Bundesrepublik Deutschland eine Reihe von Produkten, die zum Designpreis 2009 und 2010 nominiert waren.",
-        //   descriptionEng:
-        //     "The exhibition series NOMINEE SELECTION showed products that were nominated for the design prize of the Federal Republic of Germany—awarded by the Federal Ministry of Economy—in 2009 and 2010 in addition to the winners of the design prize.",
-        //   text: "",
-        //   textDe:
-        //     "Die Ausstellung mit den für den Designpreis nominierten Proukte wurde auf der IFA 2009 und 2010 – der internationalen Funkausstellung in Berlin und der AMBIENTE 2010 – der internationalen Konsumgütermesse in Frankfurt – präsentiert.",
-        //   textEng:
-        //     "The exhibition with the products nominated for the design award was presented at the IFA 2009 and 2010 - the international consumer goods exhibition in Berlin and the AMBIENTE 2010 - the international consumer goods fair in Frankfurt.",
-        //   img: require("@/assets/img/DPNS_09_03.jpg"),
-        //   img1: require("@/assets/img/DPNS_09_03.jpg"),
-        //   img2: require("@/assets/img/DPNS_09_02.jpg"),
-        //   img3: require("@/assets/img/DPNS_09_04.jpg"),
-        //   img4: require("@/assets/img/DPNS_10_IFA_01.jpg"),
-        //   img5: require("@/assets/img/DPNS_10_IFA_02.jpg"),
-        //   img6: require("@/assets/img/DPNS_10_IFA_03.jpg"),
-        //   img7: require("@/assets/img/DPNS_10_03.jpg"),
-        //   img8: require("@/assets/img/DPNS_10_04.jpg"),
-        //   img9: require("@/assets/img/DPNS_10_08.jpg"),
-        //   client: "Rat für Formgebung/German Design Council, Frankfurt am Main",
-        //   services: [],
-        //   servicesDe: ["Projektmanagement", "Inszenierung der Exponate"],
-        //   servicesEng: ["Project management", "Staging of the exhibits"],
-        //   copyright: [
-        //     "© Rat für Formgebung/German Design Council / Guido Mieth",
-        //     "© Rat für Formgebung/German Design Council / Guido Mieth (Bilder 1-3)",
-        //   ],
-        // },
-        // {
-        //   id: "E8",
-        //   category: "exhibitions",
-        //   name: "",
-        //   nameDe: "usability park",
-        //   nameEng: "usability park",
-        //   subtitle: "",
-        //   subtitleDe: "",
-        //   subtitleEng: "",
-        //   description: "",
-        //   descriptionDe:
-        //     "Die Ausstellung USABILITY PARK präsentierte Produkte, die sowohl dem Anspruch an hohe Benutzerfreundlichkeit als auch ästhetischen Ansprüchen der Verbraucher gerecht werden.",
-        //   descriptionEng: "",
-        //   text: "",
-        //   textDe: "",
-        //   textEng: "",
-        //   img: require("@/assets/img/up_08_03.jpg"),
-        //   img1: "",
-        //   img2: "",
-        //   img3: "",
-        //   img4: "",
-        //   img5: "",
-        //   img6: "",
-        //   img7: "",
-        //   img8: "",
-        //   img9: "",
-        //   client: "",
-        //   services: [],
-        //   servicesDe: [],
-        //   servicesEng: [],
-        //   copyright: ["© Frank Nickerl", ""],
-        // },
-        // {
-        //   id: "E9",
-        //   category: "exhibitions",
-        //   name: "",
-        //   nameDe: "Access Berlin Design",
-        //   nameEng: "Access Berlin Design",
-        //   subtitle: "",
-        //   subtitleDe: "",
-        //   subtitleEng: "",
-        //   description: "",
-        //   descriptionDe:
-        //     "Die Ausstellung ACCESS BERLIN DESIGN stellte den Standort Berlin als wichtige Schnittstelle zwischen Industrie und Design vor und präsentierte designorientierte Unternehmen sowie Agenturen aus Berlin.",
-        //   descriptionEng:
-        //     "The exhibition ACCESS BERLIN DESIGN introduced the city of Berlin as an important business location at the interface between industry and design and presented design oriented companies as well as design agencies from Berlin.",
-        //   text: "",
-        //   textDe: "",
-        //   textEng: "",
-        //   img: require("@/assets/img/abd_08_06.jpg"),
-        //   img1: "",
-        //   img2: "",
-        //   img3: "",
-        //   img4: "",
-        //   img5: "",
-        //   img6: "",
-        //   img7: "",
-        //   img8: "",
-        //   img9: "",
-        //   client: "",
-        //   services: [],
-        //   servicesDe: [],
-        //   servicesEng: [],
-        //   copyright: ["© Antonia Roth", ""],
-        // },
-        // {
-        //   id: "E10",
-        //   category: "exhibitions",
-        //   name: "",
-        //   nameDe: "Ideal Standard",
-        //   nameEng: "Ideal Standard",
-        //   subtitle: "",
-        //   subtitleDe: "",
-        //   subtitleEng: "",
-        //   description: "",
-        //   descriptionDe:
-        //     "Das Projekt IDEAL STANDARD – DER CHARME DER DINGE befasste sich mit Produkten des täglichen Lebens. Kernstücke des Projekts waren ein Katalog und eine Ausstellung bei DMY zum Designmai 2006 in Berlin.",
-        //   descriptionEng:
-        //     "The project IDEAL STANDARD—THE CHARM OF THINGS was concerned with products of our everyday life. A catalogue and an exhibition at DMY within the Designmai 2006 in Berlin were two central parts of the project.",
-        //   text: "",
-        //   textDe: "",
-        //   textEng: "",
-        //   img: require("@/assets/img/is_06.jpg"),
-        //   img1: "",
-        //   img2: "",
-        //   img3: "",
-        //   img4: "",
-        //   img5: "",
-        //   img6: "",
-        //   img7: "",
-        //   img8: "",
-        //   img9: "",
-        //   client: "",
-        //   services: [],
-        //   servicesDe: [],
-        //   servicesEng: [],
-        //   copyright: ["", ""],
-        // },
-        // {
-        //   id: "E11",
-        //   category: "exhibitions",
-        //   name: "",
-        //   nameDe: "Bundespressestrand",
-        //   nameEng: "Bundespressestrand",
-        //   subtitle: "",
-        //   subtitleDe: "",
-        //   subtitleEng: "",
-        //   description: "",
-        //   descriptionDe:
-        //     "Die bekannte Berliner Sommer-Gastronomie BUNDESPRESSESTRAND eröffnete während der Wintermonate 2004/2005 erstmals eine Winterpräsenz für Abendveranstaltungen in einem zur Sommerlocation nahegelegen Bürogebäude. Die leerstehende Büroetage wurde in eine Winterlandschaft verwandelt, um auch den Berlinern einen kleinen Skiurlaub zu ermöglichen.",
-        //   descriptionEng:
-        //     "In 2004/2005 the well known Berlin summer event location BUNDESPRESSESTRAND for the first time opened up a winter venue for evening events in an office buliding near to the summer site. The empty office floor was transformed into a winter landscape in order to allow the Berliners a small skiing vacation.",
-        //   text: "",
-        //   textDe: "",
-        //   textEng: "",
-        //   img: require("@/assets/img/bps_06.jpg"),
-        //   img1: "",
-        //   img2: "",
-        //   img3: "",
-        //   img4: "",
-        //   img5: "",
-        //   img6: "",
-        //   img7: "",
-        //   img8: "",
-        //   img9: "",
-        //   client: "",
-        //   services: [],
-        //   servicesDe: [],
-        //   servicesEng: [],
-        //   copyright: ["", ""],
-        // },
+        {
+          id: "E7",
+          status: "not-active",
+          category: "exhibitions",
+          name: "",
+          nameDe: "Nominee selection",
+          nameEng: "Nominee selection",
+          subtitle: "",
+          subtitleDe:
+            "Ausstellungsreihe zum Designpreis der Bundesrepublik Deutschland",
+          subtitleEng: "Series of exhibitions",
+          description: "",
+          descriptionDe:
+            "Die Ausstellungsreihe NOMINEE SELECTION zeigte neben den Preisträgern des vom Bundesministerium für Wirtschaft und Technologie ausgelobten Designpreises der Bundesrepublik Deutschland eine Reihe von Produkten, die zum Designpreis 2009 und 2010 nominiert waren.",
+          descriptionEng:
+            "The exhibition series NOMINEE SELECTION showed products that were nominated for the design prize of the Federal Republic of Germany—awarded by the Federal Ministry of Economy—in 2009 and 2010 in addition to the winners of the design prize.",
+          text: "",
+          textDe:
+            "Die Ausstellung mit den für den Designpreis nominierten Proukte wurde auf der IFA 2009 und 2010 – der internationalen Funkausstellung in Berlin und der AMBIENTE 2010 – der internationalen Konsumgütermesse in Frankfurt – präsentiert.",
+          textEng:
+            "The exhibition with the products nominated for the design award was presented at the IFA 2009 and 2010 - the international consumer goods exhibition in Berlin and the AMBIENTE 2010 - the international consumer goods fair in Frankfurt.",
+          img: require("@/assets/img/DPNS_09_03.jpg"),
+          img1: require("@/assets/img/DPNS_09_03.jpg"),
+          img2: require("@/assets/img/DPNS_09_02.jpg"),
+          img3: require("@/assets/img/DPNS_09_04.jpg"),
+          img4: require("@/assets/img/DPNS_10_IFA_01.jpg"),
+          img5: require("@/assets/img/DPNS_10_IFA_02.jpg"),
+          img6: require("@/assets/img/DPNS_10_IFA_03.jpg"),
+          img7: require("@/assets/img/DPNS_10_03.jpg"),
+          img8: require("@/assets/img/DPNS_10_04.jpg"),
+          img9: require("@/assets/img/DPNS_10_08.jpg"),
+          client: "Rat für Formgebung/German Design Council, Frankfurt am Main",
+          services: [],
+          servicesDe: ["Projektmanagement", "Inszenierung der Exponate"],
+          servicesEng: ["Project management", "Staging of the exhibits"],
+          copyright: [
+            "© Rat für Formgebung/German Design Council / Guido Mieth",
+            "© Rat für Formgebung/German Design Council / Guido Mieth (Bilder 1-3)",
+          ],
+        },
+        {
+          id: "E8",
+          status: "not-active",
+          category: "exhibitions",
+          name: "",
+          nameDe: "usability park",
+          nameEng: "usability park",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
+          description: "",
+          descriptionDe:
+            "Die Ausstellung USABILITY PARK präsentierte Produkte, die sowohl dem Anspruch an hohe Benutzerfreundlichkeit als auch ästhetischen Ansprüchen der Verbraucher gerecht werden.",
+          descriptionEng: "",
+          text: "",
+          textDe: "",
+          textEng: "",
+          img: require("@/assets/img/up_08_03.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
+          copyright: ["© Frank Nickerl", ""],
+        },
+        {
+          id: "E9",
+          status: "not-active",
+          category: "exhibitions",
+          name: "",
+          nameDe: "Access Berlin Design",
+          nameEng: "Access Berlin Design",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
+          description: "",
+          descriptionDe:
+            "Die Ausstellung ACCESS BERLIN DESIGN stellte den Standort Berlin als wichtige Schnittstelle zwischen Industrie und Design vor und präsentierte designorientierte Unternehmen sowie Agenturen aus Berlin.",
+          descriptionEng:
+            "The exhibition ACCESS BERLIN DESIGN introduced the city of Berlin as an important business location at the interface between industry and design and presented design oriented companies as well as design agencies from Berlin.",
+          text: "",
+          textDe: "",
+          textEng: "",
+          img: require("@/assets/img/abd_08_06.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
+          copyright: ["© Antonia Roth", ""],
+        },
+        {
+          id: "E10",
+          status: "not-active",
+          category: "exhibitions",
+          name: "",
+          nameDe: "Ideal Standard",
+          nameEng: "Ideal Standard",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
+          description: "",
+          descriptionDe:
+            "Das Projekt IDEAL STANDARD – DER CHARME DER DINGE befasste sich mit Produkten des täglichen Lebens. Kernstücke des Projekts waren ein Katalog und eine Ausstellung bei DMY zum Designmai 2006 in Berlin.",
+          descriptionEng:
+            "The project IDEAL STANDARD—THE CHARM OF THINGS was concerned with products of our everyday life. A catalogue and an exhibition at DMY within the Designmai 2006 in Berlin were two central parts of the project.",
+          text: "",
+          textDe: "",
+          textEng: "",
+          img: require("@/assets/img/is_06.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
+          copyright: ["", ""],
+        },
+        {
+          id: "E11",
+          status: "not-active",
+          category: "exhibitions",
+          name: "",
+          nameDe: "Bundespressestrand",
+          nameEng: "Bundespressestrand",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
+          description: "",
+          descriptionDe:
+            "Die bekannte Berliner Sommer-Gastronomie BUNDESPRESSESTRAND eröffnete während der Wintermonate 2004/2005 erstmals eine Winterpräsenz für Abendveranstaltungen in einem zur Sommerlocation nahegelegen Bürogebäude. Die leerstehende Büroetage wurde in eine Winterlandschaft verwandelt, um auch den Berlinern einen kleinen Skiurlaub zu ermöglichen.",
+          descriptionEng:
+            "In 2004/2005 the well known Berlin summer event location BUNDESPRESSESTRAND for the first time opened up a winter venue for evening events in an office buliding near to the summer site. The empty office floor was transformed into a winter landscape in order to allow the Berliners a small skiing vacation.",
+          text: "",
+          textDe: "",
+          textEng: "",
+          img: require("@/assets/img/bps_06.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
+          copyright: ["", ""],
+        },
       ],
       designDtld: {
         id: "E6-02",
+        status: "active",
         category: "exhibitions",
         name: "Design Deutschland 2010",
         nameDe: "Design Deutschland 2010",
@@ -862,6 +886,7 @@ More details about the project can be found on <a href='https://github.com/juhak
 
       immCologne: {
         id: "E7-01",
+        status: "active",
         category: "exhibitions",
         name: "Boulevard of Innovations 2010",
         nameDe: "Boulevard of Innovations 2010",
@@ -897,6 +922,7 @@ More details about the project can be found on <a href='https://github.com/juhak
       graphics: [
         {
           id: "G1",
+          status: "not-active",
           category: "graphics",
           name: "Wonder Wood",
           nameDe: "Wonder Wood",
@@ -940,6 +966,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "G2",
+          status: "active",
           category: "graphics",
           name: "",
           nameDe: "Spot on Materials",
@@ -989,6 +1016,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "G3",
+          status: "active",
           category: "graphics",
           name: "",
           nameDe: "German Shades of Green—SUSTAINABLE DESIGN FROM GERMANY",
@@ -1038,6 +1066,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "G4",
+          status: "not-active",
           category: "graphics",
           name: "Hotel Weisshaar",
           nameDe: "Hotel Weisshaar",
@@ -1071,6 +1100,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "G5",
+          status: "active",
           category: "graphics",
           name: "",
           nameDe: "Access Berlin Design",
@@ -1115,6 +1145,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "G6",
+          status: "not-active",
           category: "graphics",
           name: "",
           nameDe: "Berliner Republik",
@@ -1146,44 +1177,46 @@ More details about the project can be found on <a href='https://github.com/juhak
           servicesEng: [],
           copyright: ["", ""],
         },
-        // {
-        //   id: "G7",
-        //   category: "graphics",
-        //   name: "",
-        //   nameDe: "Marquardt lässt grüssen",
-        //   nameEng: "Marquardt says Hello",
-        //   subtitle: "",
-        //   subtitleDe: "",
-        //   subtitleEng: "",
-        //   description: "",
-        //   descriptionDe:
-        //     "Eine Kleiderkollektion mit Illustrationen zum Ort Marquardt bei Potsdam. ",
-        //   descriptionEng:
-        //     "A dress collection with illustrations inspired by the village of Marquardt near Potsdam.",
-        //   text: "",
-        //   textDe: "",
-        //   textEng: "",
-        //   img: require("@/assets/img/Illustration_04_2.jpg"),
-        //   img1: "",
-        //   img2: "",
-        //   img3: "",
-        //   img4: "",
-        //   img5: "",
-        //   img6: "",
-        //   img7: "",
-        //   img8: "",
-        //   img9: "",
-        //   client: "",
-        //   services: [],
-        //   servicesDe: [],
-        //   servicesEng: [],
-        //   copyright: ["", ""],
-        // },
+        {
+          id: "G7",
+          status: "not-active",
+          category: "graphics",
+          name: "",
+          nameDe: "Marquardt lässt grüssen",
+          nameEng: "Marquardt says Hello",
+          subtitle: "",
+          subtitleDe: "",
+          subtitleEng: "",
+          description: "",
+          descriptionDe:
+            "Eine Kleiderkollektion mit Illustrationen zum Ort Marquardt bei Potsdam. ",
+          descriptionEng:
+            "A dress collection with illustrations inspired by the village of Marquardt near Potsdam.",
+          text: "",
+          textDe: "",
+          textEng: "",
+          img: require("@/assets/img/Illustration_04_2.jpg"),
+          img1: "",
+          img2: "",
+          img3: "",
+          img4: "",
+          img5: "",
+          img6: "",
+          img7: "",
+          img8: "",
+          img9: "",
+          client: "",
+          services: [],
+          servicesDe: [],
+          servicesEng: [],
+          copyright: ["", ""],
+        },
       ],
 
       management: [
         {
           id: "M1",
+          status: "active",
           category: "management",
           name: "",
           nameDe: "Bundespreis Ecodesign",
@@ -1228,6 +1261,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "M2",
+          status: "active",
           category: "management",
           name: "",
           nameDe: "Deutscher Marken- und Designkongress 2011",
@@ -1277,6 +1311,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "M3",
+          status: "active",
           category: "management",
           name: "",
           nameDe: "Deutsches Design Museum",
@@ -1324,6 +1359,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "M4",
+          status: "not-active",
           category: "management",
           name: "",
           nameDe: "Brand New Germany",
@@ -1379,6 +1415,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "M5",
+          status: "not-active",
           category: "management",
           name: "",
           nameDe: "Material Vision Konferenz",
@@ -1424,6 +1461,7 @@ More details about the project can be found on <a href='https://github.com/juhak
         },
         {
           id: "M6",
+          status: "not-active",
           category: "management",
           name: "",
           nameDe: "YDMI–Young Designers Meet the Industry",
@@ -1527,25 +1565,36 @@ More details about the project can be found on <a href='https://github.com/juhak
     },
 
     filterProjects(cat) {
+      this.selectedCategory = cat;
       this.selectedProject = undefined;
       this.detailsWanted = false;
       this.buttonsClicked = true;
       this.me.detailsWanted = false;
+      this.me.softwareSkills = false;
+      this.me.designSkills = false;
       this.contactInfoWanted = false;
+      this.filteredProjects = undefined;
+      let chosenCat = [];
+      let activeProjects = [];
       if (cat !== "about" || cat !== "contact") {
-        if (cat === "news") {
-          this.filteredProjects = this.news;
-        } else if (cat === "software") {
-          this.filteredProjects = this.software;
+        if (cat === "frontend") {
+          chosenCat = this.frontend;
+        } else if (cat === "fullstack") {
+          chosenCat = this.fullstack;
         } else if (cat === "exhibitions") {
-          this.filteredProjects = this.exhibitions;
+          chosenCat = this.exhibitions;
         } else if (cat === "graphics") {
-          this.filteredProjects = this.graphics;
+          chosenCat = this.graphics;
         } else if (cat === "management") {
-          this.filteredProjects = this.management;
+          chosenCat = this.management;
+        }
+        for (let i = 0; i < chosenCat.length; i++) {
+          if (chosenCat[i].status === "active") {
+            activeProjects.push(chosenCat[i]);
+          }
+          this.filteredProjects = activeProjects;
         }
       }
-      this.selectedCategory = this.filteredProjects[0].category;
       this.filterLanguage(this.selectedLanguage);
     },
 
@@ -1558,13 +1607,27 @@ More details about the project can be found on <a href='https://github.com/juhak
       console.log(this.selectedProject.name);
     },
 
-    showDetailsAbout() {
-      this.selectedCategory = "about";
+    showDetailsAbout(cat) {
       this.selectedProject = undefined;
       this.filteredProjects = undefined;
       this.detailsWanted = false;
       this.contactInfoWanted = false;
-      this.me.detailsWanted = true;
+      if (cat === "me") {
+        this.me.detailsWanted = true;
+        this.selectedCategory = "about";
+        this.me.designSkills = false;
+        this.me.softwareSkills = false;
+      } else if (cat === "softwareSkills") {
+        this.me.detailsWanted = false;
+        this.me.softwareSkills = true;
+        this.me.designSkills = false;
+        this.selectedCategory = "softwareSkills";
+      } else if (cat === "designSkills") {
+        this.me.detailsWanted = false;
+        this.me.softwareSkills = false;
+        this.me.designSkills = true;
+        this.selectedCategory = "designSkills";
+      }
     },
 
     showContactInfo() {
@@ -1572,6 +1635,8 @@ More details about the project can be found on <a href='https://github.com/juhak
       this.selectedProject = undefined;
       this.filteredProjects = undefined;
       this.me.detailsWanted = false;
+      this.me.designSkills = false;
+      this.me.softwareSkills = false;
       this.detailsWanted = false;
       this.contactInfoWanted = true;
     },

@@ -2,7 +2,7 @@
   <div style="margin-top: 1.3rem">
     <p>
       {{ me.name }}<br />
-      {{ me.title }} <br /><br />
+      {{ me.title }} / Oracle Certified Associate (OCA) Java SE 8 Programmer<br /><br />
       <a href="mailto:mail@muulti.de">{{ me.mail }}</a>
     </p>
     <h2 style="margin-top: 2rem">IMPRESSUM / IMPRINT</h2>
@@ -12,7 +12,7 @@
 
       Verantwortlich f&uuml;r den Inhalt:<br />
       Julia H&auml;usler-Kun<br />
-      Erstellung und Gestaltung der Webseite: <br />
+      Gestaltung und Programmierung der Webseite: <br />
       Julia H&auml;usler-Kun<br />
     </p>
     <h2 style="margin-top: 2rem">HAFTUNGSAUSSCHLUSS / DISCLAIMER</h2>

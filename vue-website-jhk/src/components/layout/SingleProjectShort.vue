@@ -36,9 +36,9 @@
         <base-button
           v-if="
             selectedLanguage === 'de' &&
-            (selectedProject.id === 'S1' ||
-              selectedProject.id === 'S2' ||
-              selectedProject.id === 'S3')
+            (selectedProject.id === 'FS1' ||
+              selectedProject.id === 'FS2' ||
+              selectedProject.id === 'FR1')
           "
           style="float: left; margin-left: 0px"
           mode="de-eng"
@@ -63,9 +63,9 @@
         <base-button
           v-if="
             selectedLanguage === 'eng' &&
-            (selectedProject.id === 'S1' ||
-              selectedProject.id === 'S2' ||
-              selectedProject.id === 'S3')
+            (selectedProject.id === 'FS1' ||
+              selectedProject.id === 'FS2' ||
+              selectedProject.id === 'FR1')
           "
           style="float: left; margin-left: 0px"
           mode="de-eng"

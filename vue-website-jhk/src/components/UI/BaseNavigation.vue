@@ -1,54 +1,104 @@
 <template>
   <div id="nav">
     <p>
-      <base-button
-        v-if="buttonClick === false || selectedCategory === 'news'"
-        mode="active"
-        @click="$emit('filter-category', 'news');
-          this.buttonClick = true;
-          this.toggleDesign = !false;"
-        ><a href="#">News</a></base-button
-      >
-      <base-button v-else @click="$emit('filter-category', 'news');
-          this.buttonClick = true;
-          this.toggleDesign = false;"
-        ><a href="#">News</a></base-button
-      ><br />
-      <base-button
-        v-if="selectedCategory === 'software'"
-        mode="active"
-        @click="
-          $emit('filter-category', 'software');
+      <base-button v-if="buttonClick === false || selectedCategory === 'about'" 
+      mode="active" 
+      @click="$emit('show-about', 'me'); 
           this.buttonClick = true;
           this.toggleDesign = false;
-        "
-        ><a href="#">Software</a></base-button
+          this.toggleSoftware = false;"
+        ><a href="#">About</a></base-button
       >
       <base-button
         v-else
         @click="
-          $emit('filter-category', 'software');
+          $emit('show-about', 'me');
           this.buttonClick = true;
           this.toggleDesign = false;
-        "
-        ><a href="#">Software</a></base-button
+          this.toggleSoftware = false;"
+        ><a href="#">About</a></base-button
       >
-      <br />
+      
+      <section>
+      <base-button 
+      v-if=" selectedCategory === 'fullstack' || selectedCategory === 'frontend' || selectedCategory === 'softwareSkills'"
+        @click="this.toggleSoftware = true; 
+        this.toggleDesign = false; 
+        this.buttonClick = true; 
+        $emit('show-about', 'softwareSkills');" 
+        
+      style="font-weight: bold">
+      Software
+    </base-button>
+    <base-button v-else
+      @click="this.toggleSoftware = true; 
+      this.toggleDesign = false;
+      this.buttonClick = true; 
+      $emit('show-about', 'softwareSkills');"
+    >
+      Software
+    </base-button>
+
+    <section v-show="toggleSoftware" style="
+        padding-left: 1.25rem;"> 
+      <base-button
+        v-if="selectedCategory === 'fullstack'"
+        mode="active"
+        @click="
+          $emit('filter-category', 'fullstack');
+          this.buttonClick = true;"
+        ><a href="#">Fullstack</a></base-button
+      >
+      <base-button
+        v-else
+        @click="
+          $emit('filter-category', 'fullstack');
+          this.buttonClick = true;
+        "
+        ><a href="#">Fullstack</a></base-button
+      ><br />
+      <base-button
+        v-if="selectedCategory === 'frontend'"
+        mode="active"
+        @click="
+          $emit('filter-category', 'frontend');
+          this.buttonClick = true;
+        "
+        ><a href="#">Frontend</a></base-button
+      >
+      <base-button
+        v-else
+        @click="
+          $emit('filter-category', 'frontend');
+          this.buttonClick = true;"
+        ><a href="#">Frontend</a></base-button
+      ><br />
+</section>
+      </section>
+
+
 
     <section>
-      <base-button @click="toggleDesi = !toggleDesi; $emit('filter-category', 'graphics');" v-if="selectedCategory === 'exhibitions' || selectedCategory === 'graphics' ||selectedCategory === 'management' "
+      <base-button 
+      @click="this.toggleDesign = true; 
+      this.toggleSoftware = false;
+      this.buttonClick = true; 
+      $emit('show-about', 'designSkills');" 
+      v-if="selectedCategory === 'exhibitions' || selectedCategory === 'graphics' ||selectedCategory === 'management' ||selectedCategory === 'designSkills' "
       style="font-weight: bold"
       
     >
       Design
     </base-button>
     <base-button v-else
-      
-      @click="toggleDesi = !toggleDesi; $emit('filter-category', 'graphics');"
+      @click="this.toggleDesign = true; 
+      this.toggleSoftware = false;
+      this.buttonClick = true; 
+      $emit('show-about', 'designSkills');"
     >
       Design
     </base-button>
-    <section v-show="toggleDes" style="
+    <section v-show="toggleDesign" style="
         padding-left: 1.25rem;"> 
 
       <base-button
@@ -106,19 +156,6 @@
     
       ></section>
     </section>
-      <base-button v-if="selectedCategory === 'about'" mode="active"
-        ><a href="#">About</a></base-button
-      >
-      <base-button
-        v-else
-        @click="
-          $emit('show-about', 'about');
-          this.buttonClick = true;
-          this.toggleDesign = false;
-        "
-        ><a href="#">About</a></base-button
-      >
-      <!-- <base-button @click="$emit('show-contact', 'contact')">Contact</base-button> -->
     </p>
   </div>
 </template>
@@ -130,12 +167,13 @@ export default {
   data() {
     return {
       buttonClick: undefined,
-      toggleDesi: false,
+      toggleDesign: false,
+      toggleSoftware: false,
     };
   },
   methods: {},
   created() {
-    this.$emit("filter-category", "news");
+    this.$emit('show-about', 'me');
     this.buttonClick = false;
   },
 };

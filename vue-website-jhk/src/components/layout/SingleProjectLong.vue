@@ -7,7 +7,7 @@
           {{ selectedProject.subtitleDe }}
         </h2>
         <image-change
-          v-if="selectedProject.id !== 'S3'"
+          v-if="selectedProject.id !== 'FS2'"
           :selectedProject="selectedProject"
         ></image-change>
         <video-player v-else></video-player>
@@ -22,7 +22,7 @@
           {{ selectedProject.subtitleEng }}
         </h2>
         <image-change
-          v-if="selectedProject.id !== 'S3'"
+          v-if="selectedProject.id !== 'FS2'"
           :selectedProject="selectedProject"
         ></image-change>
         <video-player v-else></video-player>
