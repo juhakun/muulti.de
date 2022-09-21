@@ -2940,7 +2940,9 @@
         <p
           style="
             padding-bottom: 1.75rem;
+            padding-top: 1.75rem;
             margin-right: 6rem;
+            border-top: 1.5px dotted;
             border-bottom: 1.5px dotted;
             border-color: gray;
             padding-left: 0.5rem;

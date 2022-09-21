@@ -270,7 +270,7 @@ More details about the project can be found on <a href='https://github.com/juhak
           subtitleEng: "Redesign and programming",
           description: "",
           descriptionDe:
-            "Die Webseite <a href='https://www.juliahaeusler.com' target='_blank'>www.juliahaeusler.com</a>, die vor mehreren Jahren in HTML geschrieben wurde, wurde in Design und Programmierung überarbeitet. Die neue Seite, die mit VueJS und JavaScript umgesetzt wurde, findet man jetzt unter <a href='https://www.muulti.de' target='_blank'>www.muulti.de</a>.",
+            "Die Webseite www.juliahaeusler.com, die vor mehreren Jahren in HTML geschrieben wurde, wurde in Design und Programmierung überarbeitet. Die neue Seite, die mit VueJS und JavaScript umgesetzt wurde, findet man jetzt unter <a href='https://www.muulti.de' target='_blank'>www.muulti.de</a>.",
           descriptionEng:
             "The website www.juliahaeusler.com, which was written in HTML several years ago, has had its design and programming revised. The new website, which has been implemented with VueJS and JavaScript, can now be found at www.muulti.de.",
           text: "",
