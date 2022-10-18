@@ -1,12 +1,12 @@
 <template>
-  <div style="height: 200px">
+  <div style="height: 140px">
     <img src="@/assets/img/Header_muulti3.png" style="width: 600px" />
   </div>
 </template>
 
 <style scoped>
 img {
-  margin-top: 1rem;
+  margin-top: -1rem;
   max-width: 480px;
 }
 </style>

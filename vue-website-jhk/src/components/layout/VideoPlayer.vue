@@ -3,7 +3,7 @@
     <video
       controls
       autoplay
-      style="box-shadow: 10px 10px 15px silver; border-radius: 3px; width: 85%"
+      style="box-shadow: 10px 10px 15px silver; border-radius: 3px; width: 65%"
     >
       <source
         type="video/webm"

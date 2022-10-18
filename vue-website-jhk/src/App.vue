@@ -53,20 +53,22 @@ div {
 }
 
 #nav {
-  width: 200px;
+  width: 150px;
+  height: 100%;
   padding-left: 2rem;
-
+  margin-top: 0rem;
   white-space: nowrap;
   border-bottom: 0px dashed;
   border-color: black;
   float: left;
   position: fixed;
+  background: white;
 }
 
 #content {
-  margin-top: 11rem;
+  margin-top: 7.5rem;
   padding-left: 12rem;
-  max-width: 850px;
+  max-width: 820px;
   min-width: 700px;
   float: left;
   position: static;

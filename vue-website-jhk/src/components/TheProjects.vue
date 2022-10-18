@@ -98,7 +98,7 @@ export default {
       contactInfoWanted: false,
       me: {
         detailsWanted: false,
-        portrait: require("@/assets/img/jh2.jpg"),
+        portrait: require("@/assets/img/jh.png"),
         headline: "muulti.de",
         name: "Julia Häusler-Kun",
         mail: "mail@muulti.de",
@@ -170,13 +170,13 @@ export default {
           In der WebApp, die zur Erstellung der Nebenkostenabrechnungen für die Mieter konzipiert wurde, können alle relevanten Daten zu den zu verwaltenden Immobilien erfasst werden. Hierzu zählen u.a. Adresse,
           Eigentümer, Größe des Objekts, Wohneinheiten, Mieter, Zähler und Zählerstände sowie Nebenkosten. Alle Daten werden in einer MySQL-Datenbank gespeichert.
 
-          Die WebApp ist noch in Entwicklung. Der aktuelle Entwicklungsstand kann im dazugehörigen Git-Repository unter <a href='https://github.com/juhakun' target='_blank'>GitHub</a> angesehen werden.`,
+          Die WebApp ist in Entwicklung. Der aktuelle Entwicklungsstand kann im dazugehörigen Git-Repository unter <a href='https://github.com/juhakun' target='_blank' style='font-weight: bold; color:#29a329'>GitHub</a> angesehen werden.`,
           textEng: `Java, Spring, Spring MVC, MySQL and Hibernate are used for the programming of the application. Git is used for version management.
 
           All relevant data on the properties to be managed can be registered in the web app. These include general property information such as address, owner, size of the property, residential units, tenants, counters and counter readings as well as yearly costs. All data is saved in a MySQL database. 
 The web app can then also be used to create annual invoices for extra costs for the tenants.
 
-          The web app is still under development. The current development status can be viewed in the associated Git repository at <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.
+          The web app is under development. The current development status can be viewed in the associated Git repository at <a href='https://github.com/juhakun' target='_blank' style='font-weight: bold; color:#29a329'>GitHub</a>.
 
 `,
           img: require("@/assets/img/Housing.png"),
@@ -226,18 +226,17 @@ The web app can then also be used to create annual invoices for extra costs for 
 Wird ein Ballon angeklickt, explodiert er mit einem lauten Knall. Nur wenn dann ein Stern erscheint, bekommt der Spieler 1 Punkt. Ob ein Stern erscheint, ist ebenfalls zufällig.
 Das Spiel endet nach 20 Ballons. Die erreichten Punkte werden angezeigt und man kann neu beginnen, wenn man möchte.
 
-Das Spiel könnte um viele tolle Funktionen erweitert und die Umsetzung verfeinert werden. Da es allerdings nur ein Übungsprojekt für Multiple Threading ist, wurden es so belassen, wie es ist.
+Das Spiel könnte um viele weitere Funktionen ergänzt und die Umsetzung verfeinert werden. Da es allerdings ein reines Übungsprojekt für Multiple Threading ist, wird das Spiel nicht weiter entwickelt.
 
-Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target='_blank'>GitHub</a> zu finden.`,
+Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target='_blank' style='font-weight: bold; color:#29a329'>GitHub</a> zu finden.`,
           textEng: `The game is a practice project for implementing multiple threads (multiple moving elements at the same time) and embedding sound and graphic elements as parts of the game.
 
-          Before the game starts, one of two levels can be selected. Then you have to catch the red balloons that appear at random positions in the sky. The player is distracted by two clouds moving across the screen from left to right and vice versa.
-When a balloon is clicked, it explodes with a loud bang. If a star then appears, the player gets 1 point. Whether a star appears is also random.
+          Before the game starts, one of two levels can be selected. Then you have to catch the red balloons that appear at random positions in the sky. The player is distracted by two clouds moving across the screen from left to right and vice versa. When a balloon is clicked, it explodes with a loud bang. If a star then appears, the player gets 1 point. Whether a star appears is also random.
 The game ends after 20 balloons. The points achieved are displayed and you can start over if you want.
 
-The game could be expanded with many great functions and the implementation could be refined. However, since it is only a practice project for multiple threading, it has been left as it is.
+The game could be expanded with many more functions and the implementation could be refined. However, since it is a mere practice project for multiple threading, the games will not be further developed.
 
-More details about the project can be found on <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.`,
+More details about the project can be found on <a href='https://github.com/juhakun' target='_blank' style='font-weight: bold; color:#29a329'>GitHub</a>.`,
           img: require("@/assets/img/Balloons.jpeg"),
           img1: "",
           img2: "",
@@ -276,10 +275,10 @@ More details about the project can be found on <a href='https://github.com/juhak
           text: "",
           textDe: `Die neu umgesetzte Webseite <a href='https://www.muulti.de' target='_blank'>www.muulti.de</a> wurde unter Verwendung von Vue.js 3, Vue Cli, Javascript, HTML, CSS und Git in Visual Studio Code erstellt. Sie besteht aus nur 13 Layout- und UI-Komponenten, während die ursprüngliche Webseite aus 62 unterschiedlichen HTML-Seiten bestand, die miteinander verknüpft waren.
 
-Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target='_blank'>GitHub</a> zu finden.`,
+Weitere Details zum Projekt sind bei <a href='https://github.com/juhakun' target='_blank' style='font-weight: bold; color:#29a329'>GitHub</a> zu finden.`,
           textEng: `The revised website <a href='https://www.muulti.de' target='_blank'>www.muulti.de</a> was built in Visual Studio Code using Vue.js 3, Vue Cli, Javascript, HTML, CSS and Git. It consists of only 13 layout and UI components where as the original website consisted of 62 different HTML pages that were linked together.
 
-          More details about the project can be found on <a href='https://github.com/juhakun' target='_blank'>GitHub</a>.`,
+          More details about the project can be found on <a href='https://github.com/juhakun' target='_blank' style='font-weight: bold; color:#29a329'>GitHub</a>.`,
           img: require("@/assets/img/vuejs.png"),
           img1: "",
           img2: "",

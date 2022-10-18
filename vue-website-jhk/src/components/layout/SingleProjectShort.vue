@@ -24,7 +24,7 @@
         </div>
       </td>
       <td style="vertical-align: top">
-        <h2 v-html="project.name.toUpperCase()"></h2>
+        <h2 v-html="project.name.toUpperCase()" style="color: #404040"></h2>
         <p v-html="project.description"></p>
       </td>
     </tr>
@@ -43,7 +43,10 @@
           style="float: left; margin-left: 0px"
           mode="de-eng"
         >
-          <a href="https://github.com/juhakun" target="_blank"
+          <a
+            href="https://github.com/juhakun"
+            target="_blank"
+            style="color: #29a329"
             >mehr auf GitHub</a
           ></base-button
         >
@@ -58,7 +61,7 @@
           "
           style="float: right"
           mode="de-eng"
-          ><a href="#">mehr</a></base-button
+          ><a href="#" style="color: #29a329">mehr</a></base-button
         >
         <base-button
           v-if="
@@ -70,7 +73,10 @@
           style="float: left; margin-left: 0px"
           mode="de-eng"
         >
-          <a href="https://github.com/juhakun" target="_blank"
+          <a
+            href="https://github.com/juhakun"
+            target="_blank"
+            style="color: #29a329"
             >more on GitHub
           </a></base-button
         >
@@ -86,7 +92,7 @@
           "
           style="float: right"
           mode="de-eng"
-          ><a href="#">more</a></base-button
+          ><a href="#" style="color: #29a329">more</a></base-button
         >
       </td>
     </tr>

@@ -2,7 +2,7 @@
   <div>
     <div>
       <section style="margin-top: 2.5rem" v-if="selectedLanguage === 'de'">
-        <h2>
+        <h2 style="color: #404040">
           {{ selectedProject.nameDe.toUpperCase() }}<br />
           {{ selectedProject.subtitleDe }}
         </h2>
@@ -17,7 +17,7 @@
         </div>
       </section>
       <section style="margin-top: 2.5rem" v-if="selectedLanguage === 'eng'">
-        <h2>
+        <h2 style="color: #404040">
           {{ selectedProject.nameEng.toUpperCase() }}<br />
           {{ selectedProject.subtitleEng }}
         </h2>
@@ -34,7 +34,7 @@
     </div>
     <div v-if="selectedProject.name === 'Design Deutschland'">
       <section style="padding-top: 2rem" v-if="selectedLanguage === 'de'">
-        <h2>
+        <h2 style="color: #404040">
           {{ designDtld.nameDe.toUpperCase() }}<br />
           {{ designDtld.subtitleDe }}
         </h2>
@@ -47,7 +47,7 @@
         </div>
       </section>
       <section style="padding-top: 2rem" v-if="selectedLanguage === 'eng'">
-        <h2>
+        <h2 style="color: #404040">
           {{ designDtld.nameEng.toUpperCase() }}<br />
           {{ designDtld.subtitleEng }}
         </h2>
@@ -63,7 +63,7 @@
 
     <div v-if="selectedProject.name === 'Imm Cologne'">
       <section style="padding-top: 2rem" v-if="selectedLanguage === 'de'">
-        <h2>
+        <h2 style="color: #404040">
           {{ imm.nameDe.toUpperCase() }}<br />
           {{ imm.subtitleDe }}
         </h2>
@@ -76,7 +76,7 @@
         </div>
       </section>
       <section style="padding-top: 2rem" v-if="selectedLanguage === 'eng'">
-        <h2>
+        <h2 style="color: #404040">
           {{ imm.nameEng.toUpperCase() }}<br />
           {{ imm.subtitleEng }}
         </h2>
