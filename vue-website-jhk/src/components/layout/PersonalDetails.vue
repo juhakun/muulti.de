@@ -1,11 +1,11 @@
 <template>
   <div>
     <section v-if="me.detailsWanted === true">
+      <img
+        :src="require('@/assets/img/jh_text.png')"
+        style="width: 350px; padding-top: 2.5rem"
+      />
       <section v-if="selectedLanguage === 'de'">
-        <img
-          :src="require('@/assets/img/jh_text.png')"
-          style="width: 350px; padding-top: 2.5rem"
-        />
         <p
           style="
             padding-bottom: 1.75rem;
