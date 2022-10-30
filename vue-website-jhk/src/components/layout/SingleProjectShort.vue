@@ -34,22 +34,44 @@
       </td>
       <td>
         <base-button
-          v-if="
-            selectedLanguage === 'de' &&
-            (selectedProject.id === 'FS1' ||
-              selectedProject.id === 'FS2' ||
-              selectedProject.id === 'FR1')
-          "
+          v-if="selectedLanguage === 'de' && selectedProject.id === 'FS1'"
           style="float: left; margin-left: 0px"
           mode="de-eng"
         >
           <a
-            href="https://github.com/juhakun"
+            href="https://github.com/juhakun/propertyM"
             target="_blank"
             style="color: #29a329"
             >mehr auf GitHub</a
           ></base-button
         >
+
+        <base-button
+          v-if="selectedLanguage === 'de' && selectedProject.id === 'FS2'"
+          style="float: left; margin-left: 0px"
+          mode="de-eng"
+        >
+          <a
+            href="https://github.com/juhakun/catch-the-balloons"
+            target="_blank"
+            style="color: #29a329"
+            >mehr auf GitHub</a
+          ></base-button
+        >
+
+        <base-button
+          v-if="selectedLanguage === 'de' && selectedProject.id === 'FR1'"
+          style="float: left; margin-left: 0px"
+          mode="de-eng"
+        >
+          <a
+            href="https://github.com/juhakun/muulti.de"
+            target="_blank"
+            style="color: #29a329"
+            >mehr auf GitHub</a
+          ></base-button
+        >
+
         <base-button
           @click="selectProject(this.selectedProject)"
           v-if="
@@ -64,21 +86,42 @@
           ><a href="#" style="color: #29a329">mehr</a></base-button
         >
         <base-button
-          v-if="
-            selectedLanguage === 'eng' &&
-            (selectedProject.id === 'FS1' ||
-              selectedProject.id === 'FS2' ||
-              selectedProject.id === 'FR1')
-          "
+          v-if="selectedLanguage === 'eng' && selectedProject.id === 'FS1'"
           style="float: left; margin-left: 0px"
           mode="de-eng"
         >
           <a
-            href="https://github.com/juhakun"
+            href="https://github.com/juhakun/propertyM"
             target="_blank"
             style="color: #29a329"
-            >more on GitHub
-          </a></base-button
+            >more on GitHub</a
+          ></base-button
+        >
+
+        <base-button
+          v-if="selectedLanguage === 'eng' && selectedProject.id === 'FS2'"
+          style="float: left; margin-left: 0px"
+          mode="de-eng"
+        >
+          <a
+            href="https://github.com/juhakun/catch-the-balloons"
+            target="_blank"
+            style="color: #29a329"
+            >more on GitHub</a
+          ></base-button
+        >
+
+        <base-button
+          v-if="selectedLanguage === 'eng' && selectedProject.id === 'FR1'"
+          style="float: left; margin-left: 0px"
+          mode="de-eng"
+        >
+          <a
+            href="https://github.com/juhakun/muulti.de"
+            target="_blank"
+            style="color: #29a329"
+            >more on GitHub</a
+          ></base-button
         >
 
         <base-button
